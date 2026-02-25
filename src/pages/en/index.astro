@@ -1,0 +1,179 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Dr Delhasse — Cardiologist in Sion and Valais" description="Cardiology and internal medicine consultations at the CIC Clinic in Saxon, Valais. Personalised care, cardiac examinations, comprehensive follow-up." lang="en">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__content container">
+      <h1 class="hero__title">One sees clearly only<br />with the <span class="text-primary">heart</span></h1>
+      <p class="hero__quote">"What is essential is invisible to the eye."<br /><em>— Antoine de Saint-Exupéry</em></p>
+      <div class="hero__actions">
+        <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
+        <a href="/en/about" class="btn btn--outline">About Dr. Delhasse</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consultation Process -->
+  <section class="section process">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 3rem;">
+        <h2>How does an appointment with your <span class="text-primary">cardiologist</span> work?</h2>
+      </div>
+
+      <div class="process__grid grid grid--4">
+        <div class="process__card">
+          <div class="process__number">01</div>
+          <img src="/images/le-bilan.webp" alt="The check-up" class="process__img" loading="lazy" />
+          <h3>The Check-up</h3>
+          <p>A cardiology check-up provides an in-depth assessment of heart health to detect risks or diseases.</p>
+        </div>
+
+        <div class="process__card">
+          <div class="process__number">02</div>
+          <img src="/images/prise-informations.webp" alt="Information gathering" class="process__img" loading="lazy" />
+          <h3>Information Gathering</h3>
+          <p>After reviewing medical and family history as well as lifestyle, the physician performs a clinical exam, including blood-pressure measurement and cardiac auscultation.</p>
+        </div>
+
+        <div class="process__card">
+          <div class="process__number">03</div>
+          <img src="/images/examen.webp" alt="The exam" class="process__img" loading="lazy" />
+          <h3>The Exam</h3>
+          <p>Depending on findings, tests such as electrocardiograms, echocardiography or exercise testing may be prescribed. Blood tests often complete the work-up to assess risk factors like cholesterol or diabetes.</p>
+        </div>
+
+        <div class="process__card">
+          <div class="process__number">04</div>
+          <img src="/images/resultats.webp" alt="The results" class="process__img" loading="lazy" />
+          <h3>The Results</h3>
+          <p>After the evaluation, the doctor explains the results, proposes a personalised plan with advice and treatment options, and arranges follow-up if necessary to prevent or effectively treat cardiovascular disease.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About CTA -->
+  <section class="section section--navy about-cta">
+    <div class="container about-cta__inner">
+      <div class="about-cta__text">
+        <h2>A heart healing hearts</h2>
+        <p>Read my story and my commitment.</p>
+        <a href="/en/about" class="btn btn--outline">Learn more</a>
+      </div>
+      <div class="about-cta__image">
+        <img src="/images/dr-delhasse.jpeg" alt="Dr. Sébastien Delhasse" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Heart & You -->
+  <section class="section section--gray services">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 3rem;">
+        <h2>Your Heart <span class="text-primary">&</span> You</h2>
+      </div>
+
+      <div class="grid grid--3">
+        <a href="/en/consultations" class="service-card">
+          <img src="/images/question-medicale.webp" alt="Symptoms" class="service-card__img" loading="lazy" />
+          <div class="service-card__body">
+            <h3>Symptoms to Watch</h3>
+            <span class="service-card__link">Learn more →</span>
+          </div>
+        </a>
+
+        <a href="/en/consultations" class="service-card">
+          <img src="/images/collaboration.webp" alt="Areas of Expertise" class="service-card__img" loading="lazy" />
+          <div class="service-card__body">
+            <h3>Areas of Expertise</h3>
+            <span class="service-card__link">Learn more →</span>
+          </div>
+        </a>
+
+        <a href="/en/consultations" class="service-card">
+          <img src="/images/demande-rdv.webp" alt="Cardiological Examinations" class="service-card__img" loading="lazy" />
+          <div class="service-card__body">
+            <h3>Cardiological Examinations</h3>
+            <span class="service-card__link">Learn more →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="section section--navy cta">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 3rem;">
+        <h2>Book an appointment</h2>
+      </div>
+      <div class="cta__cards grid grid--3">
+        <div class="cta-card">
+          <h4>Appointment Request</h4>
+          <p>Need a cardiology consultation in Sion or anywhere else in Valais? Request an appointment — it's quick and secure.</p>
+          <a href="/en/contact" class="btn btn--primary">Contact us</a>
+        </div>
+        <div class="cta-card">
+          <h4>Simple Medical Question</h4>
+          <p>Ask a brief question. Get a prompt, professional answer.</p>
+          <a href="/en/contact" class="btn btn--primary">Contact us</a>
+        </div>
+        <div class="cta-card">
+          <h4>Collaboration or Other</h4>
+          <p>For any collaboration proposal, conference, or other specific request.</p>
+          <a href="/en/contact" class="btn btn--primary">Contact us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%);
+    color: var(--color-white);
+    padding: 8rem 0 6rem;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+  }
+  .hero__title { font-size: 3.5rem; color: var(--color-white); margin-bottom: 1.5rem; line-height: 1.15; }
+  .hero__quote { font-size: 1.2rem; color: rgba(255,255,255,0.75); margin-bottom: 2.5rem; max-width: 500px; }
+  .hero__quote em { font-size: 0.95rem; opacity: 0.7; }
+  .hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .process__card { background: var(--color-white); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .process__card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .process__number { padding: 1.25rem 1.25rem 0; font-size: 2rem; font-weight: 700; color: var(--color-primary); opacity: 0.3; }
+  .process__img { width: 100%; height: 180px; object-fit: cover; }
+  .process__card h3 { padding: 1rem 1.25rem 0.5rem; font-size: 1.1rem; }
+  .process__card p { padding: 0 1.25rem 1.5rem; font-size: 0.9rem; line-height: 1.5; }
+
+  .about-cta__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .about-cta__text h2 { color: var(--color-white); margin-bottom: 1rem; }
+  .about-cta__text p { color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-bottom: 2rem; }
+  .about-cta__image img { border-radius: 8px; width: 100%; max-width: 400px; }
+
+  .service-card { display: block; background: var(--color-white); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: all 0.3s ease; text-decoration: none; }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .service-card__img { width: 100%; height: 200px; object-fit: cover; }
+  .service-card__body { padding: 1.5rem; }
+  .service-card h3 { margin-bottom: 0.75rem; }
+  .service-card__link { color: var(--color-primary); font-weight: 600; font-size: 0.9rem; }
+
+  .cta-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 2rem; text-align: center; transition: all 0.3s ease; }
+  .cta-card:hover { background: rgba(255,255,255,0.1); }
+  .cta-card h4 { color: var(--color-white); margin-bottom: 1rem; font-size: 1.15rem; }
+  .cta-card p { color: rgba(255,255,255,0.7); font-size: 0.95rem; margin-bottom: 1.5rem; }
+
+  @media (max-width: 768px) {
+    .hero { padding: 6rem 0 4rem; min-height: auto; }
+    .hero__title { font-size: 2.25rem; }
+    .about-cta__inner { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+    .about-cta__image img { margin: 0 auto; }
+  }
+</style>

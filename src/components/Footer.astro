@@ -1,0 +1,239 @@
+---
+interface Props {
+  lang?: 'fr' | 'en' | 'de';
+}
+
+const { lang = 'fr' } = Astro.props;
+const prefix = lang === 'fr' ? '' : `/${lang}`;
+
+const labels = {
+  fr: {
+    nav: 'Navigation',
+    contact: 'Contact',
+    phone: 'Téléphone',
+    address: 'Adresse',
+    legal: 'Mentions légales',
+    privacy: 'Politique de confidentialité',
+    rights: 'Tous droits réservés',
+    powered: 'Powered by',
+    links: [
+      { label: 'Présentation', href: `${prefix}/a-propos` },
+      { label: 'Approche thérapeutique', href: `${prefix}/prendre-soin-de-votre-coeur` },
+      { label: 'Rendez-vous', href: `${prefix}/contact` },
+      { label: 'Le Cœur & vous', href: `${prefix}/consultations` },
+      { label: 'Formations', href: `${prefix}/formations` },
+    ],
+  },
+  en: {
+    nav: 'Navigation',
+    contact: 'Contact',
+    phone: 'Phone',
+    address: 'Address',
+    legal: 'Legal Notice',
+    privacy: 'Privacy Policy',
+    rights: 'All rights reserved',
+    powered: 'Powered by',
+    links: [
+      { label: 'About', href: `${prefix}/about` },
+      { label: 'Therapeutic Approach', href: `${prefix}/caring-for-your-heart` },
+      { label: 'Appointment', href: `${prefix}/contact` },
+      { label: 'Heart & You', href: `${prefix}/consultations` },
+      { label: 'Training', href: `${prefix}/training` },
+    ],
+  },
+  de: {
+    nav: 'Navigation',
+    contact: 'Kontakt',
+    phone: 'Telefon',
+    address: 'Adresse',
+    legal: 'Impressum',
+    privacy: 'Datenschutzrichtlinie',
+    rights: 'Alle Rechte vorbehalten',
+    powered: 'Powered by',
+    links: [
+      { label: 'Vorstellung', href: `${prefix}/ueber-mich` },
+      { label: 'Therapeutischer Ansatz', href: `${prefix}/fuer-ihr-herz-sorgen` },
+      { label: 'Termin', href: `${prefix}/kontakt` },
+      { label: 'Herz & Sie', href: `${prefix}/sprechstunden` },
+      { label: 'Fortbildungen', href: `${prefix}/fortbildungen` },
+    ],
+  },
+};
+
+const t = labels[lang];
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer__main container">
+    <div class="footer__brand">
+      <img src="/images/logo-footer.png" alt="Dr. Delhasse" width="180" height="50" class="footer__logo" />
+      <p class="footer__tagline">On ne voit bien qu'avec le cœur</p>
+    </div>
+
+    <div class="footer__nav">
+      <h4>{t.nav}</h4>
+      <ul>
+        {t.links.map((link) => (
+          <li><a href={link.href}>{link.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="footer__contact">
+      <h4>{t.contact}</h4>
+      <ul>
+        <li>
+          <strong>{t.phone}</strong><br />
+          <a href="tel:+41277434059">+41 27 743 40 59</a>
+        </li>
+        <li>
+          <strong>{t.address}</strong><br />
+          Clinique CIC Saxon<br />
+          Rte du Léman 29<br />
+          1907 Saxon
+        </li>
+        <li>
+          <strong>Horaires</strong><br />
+          09:00 – 17:00
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="container footer__bottom-inner">
+      <p>&copy; {year} Dr. Sébastien Delhasse. {t.rights}.</p>
+      <div class="footer__legal">
+        <a href={`${prefix}/mentions-legales`}>{t.legal}</a>
+        <a href={`${prefix}/politique-de-confidentialite`}>{t.privacy}</a>
+      </div>
+      <p class="footer__credit">{t.powered} <a href="https://osom.ch" target="_blank" rel="noopener">OSOM</a></p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-navy);
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .footer__main {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 3rem;
+    padding: 4rem 2rem 3rem;
+  }
+
+  .footer__logo {
+    height: 40px;
+    width: auto;
+    margin-bottom: 1rem;
+    filter: brightness(0) invert(1);
+  }
+
+  .footer__tagline {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+  }
+
+  .footer h4 {
+    color: var(--color-white);
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .footer__nav ul,
+  .footer__contact ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer__nav a {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.9rem;
+    transition: color var(--transition);
+  }
+
+  .footer__nav a:hover {
+    color: var(--color-white);
+  }
+
+  .footer__contact li {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 1rem;
+  }
+
+  .footer__contact strong {
+    color: var(--color-white);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  .footer__contact a {
+    color: rgba(255, 255, 255, 0.75);
+    transition: color var(--transition);
+  }
+
+  .footer__contact a:hover {
+    color: var(--color-white);
+  }
+
+  .footer__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.25rem 0;
+    font-size: 0.8rem;
+  }
+
+  .footer__bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer__bottom p {
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+  }
+
+  .footer__legal {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer__legal a {
+    color: rgba(255, 255, 255, 0.5);
+    transition: color var(--transition);
+  }
+
+  .footer__legal a:hover {
+    color: var(--color-white);
+  }
+
+  .footer__credit a {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .footer__main {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 3rem 1.25rem 2rem;
+    }
+
+    .footer__bottom-inner {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>

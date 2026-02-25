@@ -1,0 +1,51 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Prévention cardiovasculaire — Dr Delhasse, Cardiologue" description="Surpoids, cholestérol, diabète, tabagisme : les 4 grands facteurs de risque cardiovasculaire et comment les maîtriser." lang="fr">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1><span class="text-primary">Prévention</span></h1>
+      <p class="hero-sub">Le meilleur traitement est celui que l'on évite</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container detail-content">
+      <img src="/images/svg/expertise/prevention.svg" alt="Prévention" class="detail-icon" />
+
+      <p>Quatre grands facteurs de risque cardiovasculaire :</p>
+
+      <h2>1. Surpoids et obésité</h2>
+      <p>Le surpoids et l'obésité concernent plus de 30% des personnes dans les pays industrialisés. L'obésité implique une prédisposition génétique et nécessite une alimentation équilibrée ainsi qu'une activité physique régulière pour gérer les risques.</p>
+
+      <h2>2. Lipides sanguins / Cholestérol</h2>
+      <p>Un taux élevé de cholestérol LDL favorise les maladies cardiovasculaires, notamment l'infarctus et l'AVC. Le diagnostic nécessite des analyses sanguines, et des médicaments sont souvent nécessaires au-delà des seuls changements alimentaires.</p>
+
+      <h2>3. Diabète</h2>
+      <p>Le diabète de type 1 et de type 2 élèvent la glycémie, endommageant les vaisseaux des organes. La perte de poids aide dans le type 2, mais des médicaments et l'insuline peuvent être nécessaires. Le contrôle de la glycémie réduit les risques d'insuffisance rénale, d'AVC et d'infarctus.</p>
+
+      <h2>4. Tabagisme</h2>
+      <p>Facteur de risque majeur pour l'infarctus, l'AVC et les cancers. Les substituts nicotiniques et les médicaments peuvent aider au sevrage.</p>
+
+      <div class="detail-cta">
+        <a href="/domaines-dexpertise" class="btn btn--outline">&larr; Tous les domaines</a>
+        <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
+  .detail-content { max-width: 800px; }
+  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
+  .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
+  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
+</style>

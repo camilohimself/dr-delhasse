@@ -1,0 +1,42 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Œdèmes des jambes : faut-il consulter un cardiologue ? — Dr Delhasse" description="Les jambes gonflées peuvent signaler une insuffisance cardiaque. Découvrez les causes cardiaques des œdèmes des membres inférieurs." lang="fr">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1>Œdèmes des <span class="text-primary">jambes</span></h1>
+      <p class="hero-sub">Faut-il consulter un cardiologue ?</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container detail-content">
+      <img src="/images/svg/symptomes/Edema-en-la-pierna.svg" alt="Œdèmes des jambes" class="detail-icon" />
+
+      <p>Les jambes gonflées, ou œdèmes des membres inférieurs peuvent avoir plusieurs origines. En cardiologie, l'insuffisance cardiaque droite est une cause fréquente : lorsque le cœur peine à faire circuler le sang, celui-ci s'accumule dans les veines, laissant l'eau s'infiltrer dans les tissus.</p>
+
+      <p>D'autres facteurs peuvent s'y associer, comme l'insuffisance veineuse, certaines maladies rénales ou des effets secondaires de médicaments.</p>
+
+      <p>La consultation en cardiologie permet de comprendre l'origine et de proposer une prise en charge, en alliant écoute attentive, examen clinique et examens ciblés.</p>
+
+      <div class="detail-cta">
+        <a href="/symptomes" class="btn btn--outline">&larr; Tous les symptômes</a>
+        <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
+  .detail-content { max-width: 800px; }
+  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
+  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
+</style>

@@ -1,0 +1,110 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Therapeutic Approach — Dr Delhasse" description="Discover Dr Delhasse's personalised therapeutic approach: support, integrative cardiology and the emotional dimension of the heart." lang="en">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1>Caring for your heart <span class="text-primary">at your own pace</span></h1>
+    </div>
+  </section>
+
+  <section class="section tabs-section">
+    <div class="container">
+      <div class="tabs" role="tablist">
+        <button class="tab active" role="tab" aria-selected="true" data-tab="support">Support</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="cardiology">Cardiology & internal medicine</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="reasons">The heart has its reasons</button>
+      </div>
+
+      <div class="tab-panel active" id="support">
+        <div class="tab-content">
+          <div class="tab-content__text">
+            <h2>Support</h2>
+            <p>Changing habits or following a long-term treatment is not always easy, but every small step counts for your heart. That is why I adopt two complementary approaches depending on your needs:</p>
+
+            <p><strong>Therapeutic education</strong>, essential for better understanding and managing your condition. For example, in the case of heart failure, taking medication correctly is crucial, but polypharmacy can be confusing. I help you organise your treatment to avoid errors and maximise its effectiveness.</p>
+
+            <p><strong>Motivational interviewing</strong>, a caring exchange that allows you to find within yourself the desire and motivation to change certain habits. To quit smoking after cardiac surgery, for instance, a simple instruction is not enough: together, we explore what truly motivates you, without pressure or judgement, to make this change more natural and lasting.</p>
+
+            <p>You remain in charge of your health, and my role is to guide you with tools adapted to your life. Your heart deserves the best, and so do you!</p>
+          </div>
+          <div class="tab-content__image">
+            <img src="/images/accompagnement.webp" alt="Therapeutic support" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="cardiology">
+        <div class="tab-content">
+          <div class="tab-content__text">
+            <h2>Cardiology and internal medicine: an integrative approach</h2>
+            <p>Internal medicine stands out through its holistic view of the patient. It takes into account the multiple interactions between organs and physiological systems, enabling precise diagnoses and personalised treatments. The internist plays a key role in monitoring chronic and complex conditions, aiming not only to treat the disease but also to consider the patient as a whole.</p>
+
+            <p>Cardiology, although now a distinct speciality, is an integral part of internal medicine. Every cardiac condition can have repercussions throughout the body. Other diseases can also involve the heart. Indeed, the heart is not an isolated organ; it responds to signals from the nervous, endocrine and even emotional systems, which justifies a thorough understanding of its interactions with the rest of the body.</p>
+
+            <p>It is even common to maintain regular contact with colleagues from other specialities (general medicine, geriatrics, oncology, etc.) whether for referral or consultation.</p>
+          </div>
+          <div class="tab-content__image">
+            <img src="/images/cardiologie-med-interne.webp" alt="Cardiology and internal medicine" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="reasons">
+        <div class="tab-content">
+          <div class="tab-content__text">
+            <h2>The heart has its reasons that reason knows nothing of</h2>
+            <p>The heart is not only a physiological engine but also a powerful emotional symbol. It reflects deep emotions such as stress, love, fear and courage. This psychosomatic dimension influences the course of cardiac conditions and must be integrated into patient care.</p>
+
+            <p>Every patient is unique, and their history, emotions and lifestyle influence the effectiveness of treatments.</p>
+
+            <p>Understanding the heart is not just about analysing its beats — it is also about listening to the patient and hearing what their heart expresses beyond numbers and examinations.</p>
+          </div>
+          <div class="tab-content__image">
+            <img src="/images/coeur-raisons.webp" alt="The heart has its reasons" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .tabs { display: flex; gap: 0; border-bottom: 2px solid #e5e5e5; margin-bottom: 3rem; }
+  .tab { padding: 1rem 2rem; background: none; border: none; font-size: 1rem; font-weight: 600; color: var(--color-gray); cursor: pointer; position: relative; transition: color 0.3s ease; }
+  .tab:hover { color: var(--color-navy); }
+  .tab.active { color: var(--color-primary); }
+  .tab.active::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background: var(--color-primary); }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+  .tab-content { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: start; }
+  .tab-content__image img { width: 100%; border-radius: 8px; }
+  @media (max-width: 768px) {
+    .hero-page h1 { font-size: 2rem; }
+    .tabs { flex-direction: column; border-bottom: none; gap: 0.5rem; }
+    .tab { text-align: left; padding: 0.75rem 1rem; border: 1px solid #e5e5e5; border-radius: 4px; }
+    .tab.active::after { display: none; }
+    .tab.active { border-color: var(--color-primary); background: #fef2f2; }
+    .tab-content { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('.tab-panel');
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach((t) => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      panels.forEach((p) => p.classList.remove('active'));
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      const target = tab.getAttribute('data-tab');
+      document.getElementById(target!)?.classList.add('active');
+    });
+  });
+</script>

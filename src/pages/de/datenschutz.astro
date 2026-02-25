@@ -1,0 +1,84 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Datenschutzerklärung — Dr. Sébastien Delhasse" description="Datenschutzerklärung und Schutz personenbezogener Daten der Website drdelhasse-cardiologue.ch" lang="de">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1><span class="text-primary">Datenschutzerklärung</span></h1>
+    </div>
+  </section>
+
+  <section class="section legal">
+    <div class="container legal-content">
+      <p>Der Schutz Ihrer persönlichen Daten und die Wahrung des ärztlichen Berufsgeheimnisses sind Prioritäten für Dr. Sébastien Delhasse. Diese Erklärung beschreibt, wie wir Ihre Daten erheben, verwenden und schützen, gemäss dem Bundesgesetz über den Datenschutz (DSG).</p>
+
+      <h2>1. Verantwortlicher für die Datenverarbeitung</h2>
+      <ul>
+        <li><strong>Name:</strong> Dr. Sébastien Delhasse</li>
+        <li><strong>Firmenname:</strong> CABINET MÉDICAL DELHASSE Sébastien Sàrl</li>
+        <li><strong>Adresse:</strong> Route de la Bonne-Eau 18, 3960 Sierre, Wallis, Schweiz</li>
+        <li><strong>E-Mail:</strong> sebastien.delhasse@hotmail.com</li>
+      </ul>
+
+      <h2>2. Erhobene Daten</h2>
+      <ul>
+        <li><strong>Freiwillig bereitgestellte Daten:</strong> Name, Vorname, E-Mail-Adresse, Telefonnummer, Nachrichteninhalt und Anhänge über das Kontaktformular. Medizinische Daten werden nur mit Ihrer ausdrücklichen Zustimmung verarbeitet.</li>
+        <li><strong>Automatisch erhobene Daten:</strong> IP-Adresse, Browsertyp, besuchte Seiten, Besuchsdauer (über analytische Cookies, sofern Sie zustimmen).</li>
+      </ul>
+
+      <h2>3. Zwecke und Rechtsgrundlagen</h2>
+      <ul>
+        <li>Verwaltung von Kontakt- und Terminanfragen — <em>Erfüllung einer öffentlichen Aufgabe</em> (Art. 6 DSG).</li>
+        <li>Verbesserung der Benutzererfahrung und Website-Leistung — <em>Zustimmung für nicht wesentliche Cookies</em> (Art. 13 DSG).</li>
+        <li>Einhaltung gesetzlicher und regulatorischer Verpflichtungen (Archivierung medizinischer Daten).</li>
+      </ul>
+
+      <h2>4. Aufbewahrungsdauer</h2>
+      <ul>
+        <li><strong>Kontaktdaten:</strong> 10 Jahre Aufbewahrung, gemäss medizinischen Verpflichtungen.</li>
+        <li><strong>Analytische Cookies:</strong> 13 Monate Aufbewahrung, dann automatische Löschung.</li>
+      </ul>
+
+      <h2>5. Empfänger</h2>
+      <p>Daten können weitergegeben werden an:</p>
+      <ul>
+        <li>Unsere technischen Dienstleister (Hosting, CRM-Lösungen usw.), alle zur Vertraulichkeit verpflichtet.</li>
+        <li>Zuständige Behörden im Falle einer rechtlichen oder gerichtlichen Anforderung.</li>
+      </ul>
+
+      <h2>6. Übermittlung ausserhalb der Schweiz</h2>
+      <p>Daten werden hauptsächlich in der Schweiz gehostet. Wenn ein Drittanbieter Ihre Daten in der Europäischen Union speichert, gelten die DSGVO-Standardgarantien.</p>
+
+      <h2>7. Sicherheit</h2>
+      <p>Technische Massnahmen (SSL/TLS-Verschlüsselung, Firewalls) und organisatorische Massnahmen (eingeschränkter Zugang, regelmässige Backups) gewährleisten den Schutz Ihrer Daten.</p>
+
+      <h2>8. Ihre Rechte</h2>
+      <p>Gemäss DSG können Sie folgende Rechte ausüben:</p>
+      <ul>
+        <li>Recht auf Auskunft, Berichtigung oder Löschung Ihrer Daten.</li>
+        <li>Recht auf Einschränkung oder Widerspruch gegen die Verarbeitung.</li>
+        <li>Recht auf Datenübertragbarkeit (soweit anwendbar).</li>
+        <li>Recht auf jederzeitigen Widerruf Ihrer Zustimmung zu analytischen Cookies.</li>
+      </ul>
+      <p>Um Ihre Rechte auszuüben, schreiben Sie uns an <a href="mailto:sebastien.delhasse@hotmail.com">sebastien.delhasse@hotmail.com</a> oder per Post an die Praxisadresse.</p>
+
+      <h2>9. Aktualisierung</h2>
+      <p>Diese Erklärung kann jederzeit geändert werden.</p>
+      <p><strong>Letzte Aktualisierung:</strong> 20. Juni 2025.</p>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .legal-content { max-width: 800px; }
+  .legal-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
+  .legal-content ul { margin-bottom: 1rem; padding-left: 1.5rem; }
+  .legal-content li { list-style: disc; margin-bottom: 0.5rem; color: var(--color-gray); font-size: 0.95rem; }
+  .legal-content a { color: var(--color-primary); font-weight: 600; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
+</style>

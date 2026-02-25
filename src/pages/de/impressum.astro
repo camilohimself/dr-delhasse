@@ -1,0 +1,76 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Impressum — Dr. Sébastien Delhasse" description="Impressum der Website drdelhasse-cardiologue.ch" lang="de">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1><span class="text-primary">Impressum</span></h1>
+    </div>
+  </section>
+
+  <section class="section legal">
+    <div class="container legal-content">
+      <h2>1. Herausgeber der Website</h2>
+      <p>Diese Website wird von Dr. Sébastien Delhasse herausgegeben.</p>
+      <ul>
+        <li><strong>Firmenname:</strong> CABINET MÉDICAL DELHASSE Sébastien Sàrl</li>
+        <li><strong>Adresse:</strong> Route de la Bonne-Eau 18, 3960 Sierre, Wallis, Schweiz</li>
+        <li><strong>E-Mail:</strong> sebastien.delhasse@hotmail.com</li>
+        <li><strong>UID-Nummer:</strong> CHE-427.497.813</li>
+      </ul>
+
+      <h2>2. Verantwortlicher für die Veröffentlichung</h2>
+      <p>Dr. Sébastien Delhasse</p>
+
+      <h2>3. Konzeption und Realisierung</h2>
+      <ul>
+        <li><strong>Unternehmen:</strong> OSOM creative Sàrl</li>
+        <li><strong>Adresse:</strong> Rue des Cèdres 5, 1950 Sion, Wallis, Schweiz</li>
+        <li><strong>Website:</strong> www.osom.ch</li>
+        <li><strong>Technischer Kontakt:</strong> hello@osom.ch</li>
+      </ul>
+
+      <h2>4. Hosting</h2>
+      <ul>
+        <li><strong>Unternehmen:</strong> Hostpoint AG</li>
+        <li><strong>Adresse:</strong> Neue Jonastrasse 60, 8640 Rapperswil-Jona, Schweiz</li>
+        <li><strong>Website:</strong> www.hostpoint.ch</li>
+      </ul>
+
+      <h2>5. Cookies und Zustimmungsbanner</h2>
+      <p>Ein Cookie-Banner ermöglicht es Ihnen, Ihre Zustimmung zu den verschiedenen Arten von verwendeten Cookies zu erteilen oder zu widerrufen:</p>
+      <ul>
+        <li><strong>Unbedingt erforderliche Cookies:</strong> für den Betrieb der Website unerlässlich.</li>
+        <li><strong>Funktionale Cookies:</strong> Speicherung Ihrer Auswahl und Präferenzen.</li>
+        <li><strong>Analytische Cookies:</strong> anonymisierte Besucherstatistiken.</li>
+      </ul>
+      <p>Sie können Ihre Präferenzen jederzeit über den Link «Cookie-Einstellungen» am Ende der Seite anpassen.</p>
+
+      <h2>6. Haftungsbeschränkung</h2>
+      <p>Die auf dieser Website veröffentlichten Informationen dienen ausschliesslich zu Informationszwecken. Sie können eine ärztliche Konsultation nicht ersetzen und sollten nicht zur Diagnose oder Behandlung ohne professionellen Rat verwendet werden.</p>
+
+      <h2>7. Geistiges Eigentum</h2>
+      <p>Alle Inhalte (Texte, Bilder, Logos, Grafiken, Videos, Icons, Software usw.) auf dieser Website sind urheberrechtlich geschützt und gehören ihren jeweiligen Eigentümern. Jede Vervielfältigung, Darstellung oder Änderung, auch teilweise, ist ohne vorherige schriftliche Genehmigung verboten.</p>
+
+      <h2>8. Personendaten</h2>
+      <p>Diese Website ist beim Bund gemäss dem Bundesgesetz über den Datenschutz (DSG) registriert. Weitere Einzelheiten zur Erhebung und Verwendung Ihrer Daten finden Sie in unserer <a href="/de/datenschutz">Datenschutzerklärung</a>.</p>
+
+      <h2>9. Anwendbares Recht und Gerichtsstand</h2>
+      <p>Dieses Impressum unterliegt dem Schweizer Recht. Im Streitfall sind ausschliesslich die zuständigen Gerichte des Kantons Wallis, Sitz des Herausgebers, zuständig.</p>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .legal-content { max-width: 800px; }
+  .legal-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
+  .legal-content ul { margin-bottom: 1rem; padding-left: 1.5rem; }
+  .legal-content li { list-style: disc; margin-bottom: 0.5rem; color: var(--color-gray); font-size: 0.95rem; }
+  .legal-content a { color: var(--color-primary); font-weight: 600; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
+</style>

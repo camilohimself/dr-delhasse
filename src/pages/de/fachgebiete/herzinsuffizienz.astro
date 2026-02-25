@@ -1,0 +1,33 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Herzinsuffizienz — Dr. Delhasse" description="Diagnose und Behandlung der systolischen und diastolischen Herzinsuffizienz." lang="de">
+  <section class="hero-page"><div class="container"><h1><span class="text-primary">Herzinsuffizienz</span></h1><p class="hero-sub">Wenn das Herz ermüdet, zählt jedes Detail</p></div></section>
+  <section class="section"><div class="container detail-content">
+    <img src="/images/svg/expertise/Insuffisance-cardiaque.svg" alt="Herzinsuffizienz" class="detail-icon" />
+    <p>Die Herzinsuffizienz ist die Unfähigkeit des Herzens, ausreichend Blut zu den Organen zu pumpen. Sie verursacht Atemnot, Lungenödem und kann zu einer terminalen Herzinsuffizienz fortschreiten.</p>
+    <h2>Zwei Typen</h2>
+    <ul>
+      <li><strong>Systolische Insuffizienz:</strong> Unfähigkeit, Blut auszuwerfen</li>
+      <li><strong>Diastolische Insuffizienz:</strong> Unfähigkeit des Herzmuskels, sich nach der Kontraktion zu entspannen</li>
+    </ul>
+    <p>Beide Typen werden mit Medikamenten behandelt, um Lebensqualität und Lebenserwartung zu verbessern. Die chronische Behandlung beruht auf einem multidisziplinären Ansatz. Spezielle Herzschrittmacher (ICD/CRT) können vorgeschlagen werden. Komplexe Fälle werden mit Universitätsspitälern (HUG, CHUV, Inselspital) verfolgt.</p>
+    <div class="detail-cta">
+      <a href="/de/fachgebiete" class="btn btn--outline">&larr; Alle Fachgebiete</a>
+      <a href="/de/kontakt" class="btn btn--primary">Termin vereinbaren</a>
+    </div>
+  </div></section>
+</Layout>
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
+  .detail-content { max-width: 800px; }
+  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
+  .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
+  .detail-content ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+  .detail-content li { list-style: disc; margin-bottom: 0.5rem; color: var(--color-gray); font-size: 1rem; line-height: 1.7; }
+  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
+</style>

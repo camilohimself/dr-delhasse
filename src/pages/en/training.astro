@@ -1,0 +1,51 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Training — Dr Delhasse's Commitment to Cardiology" description="Dr Delhasse actively participates in continuing medical education in cardiology. Lectures, conferences and exchanges throughout Valais." lang="en">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1><span class="text-primary">Training</span></h1>
+      <p class="hero-sub">Dr Delhasse actively participates in continuing medical education in cardiology. Lectures, conferences and exchanges throughout Valais.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--2 formations-grid">
+        <div class="formation-card">
+          <img src="/images/formation-irm.webp" alt="The hidden power of cardiac MRI" loading="lazy" />
+          <div class="formation-card__body">
+            <h2>The hidden power of cardiac MRI</h2>
+            <p>Discover how cardiac MRI is revolutionising the diagnosis and monitoring of cardiovascular conditions.</p>
+            <a href="/en/contact" class="btn btn--primary">Learn more</a>
+          </div>
+        </div>
+        <div class="formation-card">
+          <img src="/images/formation-vitalite.webp" alt="Heart & Vitality Programme" loading="lazy" />
+          <div class="formation-card__body">
+            <h2>Heart & Vitality Programme</h2>
+            <p>A comprehensive programme to care for your heart daily, combining physical activity and medical follow-up.</p>
+            <a href="/en/contact" class="btn btn--primary">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; max-width: 650px; }
+  .formations-grid { margin-top: 1rem; }
+  .formation-card { background: var(--color-white); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.08); transition: all 0.3s ease; }
+  .formation-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+  .formation-card img { width: 100%; height: 250px; object-fit: cover; }
+  .formation-card__body { padding: 2rem; }
+  .formation-card h2 { font-size: 1.4rem; margin-bottom: 1rem; }
+  .formation-card p { margin-bottom: 1.5rem; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
+</style>

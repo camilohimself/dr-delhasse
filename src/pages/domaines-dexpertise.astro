@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const domaines = [
+  { title: 'Rythmologie', icon: '/images/svg/expertise/Rythmologie.svg', text: "Du simple trouble du rythme aux pathologies complexes. Explorez notre expertise dans le diagnostic et le traitement de l'activité électrique du cœur.", href: '/domaines-dexpertise/rythmologie' },
+  { title: 'Maladies valvulaires', icon: '/images/svg/expertise/Maladie-valvulaires.svg', text: "Sténose ou insuffisance, vos valves cardiaques sont au cœur de notre attention. Découvrez les solutions modernes, de la surveillance aux interventions de pointe.", href: '/domaines-dexpertise/maladie-valvulaires' },
+  { title: 'Prévention', icon: '/images/svg/expertise/prevention.svg', text: "Le meilleur traitement est celui que l'on évite. Apprenez à maîtriser vos facteurs de risque (cholestérol, tension) pour protéger votre avenir cardiovasculaire.", href: '/domaines-dexpertise/prevention' },
+  { title: 'Hypertension artérielle', icon: '/images/svg/expertise/Hypertension-arterielle.svg', text: "Souvent silencieuse, l'hypertension endommage vos artères. Une prise en charge spécialisée est essentielle pour contrôler votre tension et protéger vos organes.", href: '/domaines-dexpertise/hypertension-arterielle' },
+  { title: 'Maladie coronarienne', icon: '/images/svg/expertise/Maladie-coronarienne.svg', text: "L'angine de poitrine est le signal d'alarme de vos artères. Comprenez cette maladie pour agir avant qu'elle ne mène à des complications plus graves.", href: '/domaines-dexpertise/maladie-coronarienne' },
+  { title: 'Suivi après infarctus', icon: '/images/svg/expertise/Suivi-apres-infarctus.svg', text: "Survivre à un infarctus est la première étape. Découvrez l'importance d'un suivi personnalisé pour une récupération optimale et la prévention des récidives.", href: '/domaines-dexpertise/suivi-apres-infarctus' },
+  { title: 'Insuffisance cardiaque', icon: '/images/svg/expertise/Insuffisance-cardiaque.svg', text: "Lorsque le cœur fatigue, chaque détail compte. Explorez les approches modernes pour gérer l'insuffisance cardiaque et améliorer votre qualité de vie.", href: '/domaines-dexpertise/insuffisance-cardiaque' },
+  { title: 'Bilan préopératoire', icon: '/images/svg/expertise/Bilan-preoperatoire.svg', text: "Toute chirurgie est un stress pour le cœur. Notre évaluation préopératoire vise à garantir votre sécurité, quelle que soit l'intervention prévue.", href: '/domaines-dexpertise/bilan-preoperatoire' },
+  { title: 'Cardiomyopathies', icon: '/images/svg/expertise/Cardiomyopathies.svg', text: "Les maladies du muscle cardiaque sont complexes et souvent d'origine génétique. Découvrez comment un diagnostic précis est la clé d'une prise en charge efficace.", href: '/domaines-dexpertise/cardiomyopathies' },
+  { title: 'Évaluation à la pratique sportive', icon: '/images/svg/expertise/Evaluation-a-la-pratique-sportive.svg', text: "Sportif amateur ou confirmé ? Une évaluation cardiologique vous permet de pratiquer votre passion en toute sécurité et d'optimiser vos performances.", href: '/domaines-dexpertise/evaluation-a-la-pratique-sportive' },
+];
+---
+
+<Layout title="Domaines d'expertise — Cardiologie en Valais" description="Rythmologie, prévention, hypertension, maladies coronariennes, insuffisance cardiaque et plus. Dr Delhasse, cardiologue FMH." lang="fr">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1>Domaines d'<span class="text-primary">expertise</span></h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="card-grid">
+        {domaines.map((d) => (
+          <div class="card">
+            <img src={d.icon} alt={d.title} class="card__icon" loading="lazy" />
+            <h3>{d.title}</h3>
+            <p>{d.text}</p>
+            <a href={d.href} class="card__link">En savoir plus &rarr;</a>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center" style="margin-top: 3rem;">
+        <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page {
+    background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%);
+    padding: 6rem 0 4rem;
+    color: var(--color-white);
+  }
+
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .card {
+    background: var(--color-white);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-left-color: var(--color-primary);
+  }
+
+  .card__icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 1.25rem;
+  }
+
+  .card h3 { margin-bottom: 0.75rem; font-size: 1.15rem; }
+  .card p { font-size: 0.95rem; line-height: 1.6; }
+  .card__link { display: inline-block; margin-top: 0.75rem; color: var(--color-primary); font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: color 0.3s; }
+  .card__link:hover { color: var(--color-navy); }
+</style>

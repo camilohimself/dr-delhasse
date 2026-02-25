@@ -1,0 +1,42 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Chest Pain: When Should You Worry? — Dr Delhasse" description="Not all chest pain is cardiac in origin. Learn to recognise the warning signs that require a cardiology consultation." lang="en">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1>Chest <span class="text-primary">Pain</span></h1>
+      <p class="hero-sub">When should you worry?</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container detail-content">
+      <img src="/images/svg/symptomes/Dolor-en-el-pecho.svg" alt="Chest pain" class="detail-icon" />
+
+      <p>Experiencing chest pain can be alarming, but not all chest pain is cardiac in origin. Heart-related pain often presents as a sensation of pressure in the centre of the chest, potentially radiating to the left arm, jaw or back. It typically occurs during exertion or stress and subsides at rest. It may be a warning sign of coronary artery disease. Other symptoms such as breathlessness, sweating or nausea should also raise concern.</p>
+
+      <p>Pain that persists, intensifies or is accompanied by unusual symptoms requires a prompt consultation. Conversely, if it varies with breathing or position, it is often benign.</p>
+
+      <p>When in doubt, it is better not to wait. If the pain is unusual or intense, seeking immediate medical advice can prevent complications. A false alarm is always better than an underestimated problem.</p>
+
+      <div class="detail-cta">
+        <a href="/en/symptoms" class="btn btn--outline">&larr; All symptoms</a>
+        <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
+  .detail-content { max-width: 800px; }
+  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
+  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
+</style>

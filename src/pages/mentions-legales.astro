@@ -1,0 +1,108 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Mentions légales — Dr. Sébastien Delhasse" description="Mentions légales du site drdelhasse-cardiologue.ch" lang="fr">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1>Mentions <span class="text-primary">légales</span></h1>
+    </div>
+  </section>
+
+  <section class="section legal">
+    <div class="container legal-content">
+
+      <h2>1. Éditeur du site</h2>
+      <p>Ce site est édité par le Dr Sébastien Delhasse.</p>
+      <ul>
+        <li><strong>Raison sociale :</strong> CABINET MÉDICAL DELHASSE Sébastien Sàrl</li>
+        <li><strong>Adresse :</strong> Route de la Bonne-Eau 18, 3960 Sierre, Valais, Suisse</li>
+        <li><strong>Adresse e-mail :</strong> sebastien.delhasse@hotmail.com</li>
+        <li><strong>Numéro IDE :</strong> CHE-427.497.813</li>
+      </ul>
+
+      <h2>2. Responsable de la publication</h2>
+      <p>Dr Sébastien Delhasse</p>
+
+      <h2>3. Conception et réalisation</h2>
+      <ul>
+        <li><strong>Société :</strong> OSOM creative Sàrl</li>
+        <li><strong>Adresse :</strong> Rue des Cèdres 5, 1950 Sion, Valais, Suisse</li>
+        <li><strong>Site web :</strong> www.osom.ch</li>
+        <li><strong>Contact technique :</strong> hello@osom.ch</li>
+      </ul>
+
+      <h2>4. Hébergement</h2>
+      <ul>
+        <li><strong>Société :</strong> Hostpoint SA</li>
+        <li><strong>Adresse :</strong> Neue Jonastrasse 60, 8640 Rapperswil-Jona, Suisse</li>
+        <li><strong>Site web :</strong> www.hostpoint.ch</li>
+      </ul>
+
+      <h2>5. Cookies et bandeau de consentement</h2>
+      <p>Un bandeau cookies vous permet de donner ou retirer votre consentement aux différents types de cookies utilisés :</p>
+      <ul>
+        <li><strong>Cookies strictement nécessaires :</strong> indispensables au fonctionnement du site.</li>
+        <li><strong>Cookies fonctionnels :</strong> mémorisation de vos choix et préférences.</li>
+        <li><strong>Cookies analytiques :</strong> statistiques de fréquentation anonymisées.</li>
+      </ul>
+      <p>Vous pouvez à tout moment ajuster vos préférences via le lien « Paramètres cookies » en bas de page.</p>
+
+      <h2>6. Limitation de responsabilité</h2>
+      <p>Les informations publiées sur ce site sont fournies à titre strictement informatif. Elles ne sauraient remplacer une consultation médicale et ne doivent pas être utilisées pour établir un diagnostic ou un traitement sans avis professionnel.</p>
+
+      <h2>7. Propriété intellectuelle</h2>
+      <p>Tous les contenus (textes, images, logos, graphismes, vidéos, icônes, logiciels...) présents sur ce site sont protégés par le droit d'auteur et appartiennent à leurs titulaires respectifs. Toute reproduction, représentation ou modification, même partielle, est interdite sans autorisation écrite préalable.</p>
+
+      <h2>8. Données personnelles</h2>
+      <p>Ce site est déclaré auprès de la Confédération au titre de la Loi fédérale sur la protection des données (LPD). Pour plus de détails sur la collecte et l'usage de vos données, consultez notre <a href="/politique-de-confidentialite">Politique de confidentialité</a>.</p>
+
+      <h2>9. Droit applicable et for juridique</h2>
+      <p>Les présentes mentions légales sont soumises au droit suisse. En cas de litige, seuls les tribunaux compétents du canton du Valais, siège de l'éditeur, sont habilités.</p>
+
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page {
+    background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%);
+    padding: 6rem 0 4rem;
+    color: var(--color-white);
+  }
+
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+
+  .legal-content {
+    max-width: 800px;
+  }
+
+  .legal-content h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+
+  .legal-content ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .legal-content li {
+    list-style: disc;
+    margin-bottom: 0.5rem;
+    color: var(--color-gray);
+    font-size: 0.95rem;
+  }
+
+  .legal-content a {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .hero-page h1 { font-size: 2rem; }
+  }
+</style>

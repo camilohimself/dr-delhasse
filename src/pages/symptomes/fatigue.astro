@@ -1,0 +1,42 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Fatigue inexpliquée : et si le cœur était en cause ? — Dr Delhasse" description="Une fatigue persistante peut être liée à un problème cardiaque. Insuffisance cardiaque, troubles du rythme : découvrez les causes cardiaques de la fatigue." lang="fr">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1>Fatigue <span class="text-primary">inexpliquée</span></h1>
+      <p class="hero-sub">Et si le cœur était en cause ?</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container detail-content">
+      <img src="/images/svg/symptomes/Fatiga.svg" alt="Fatigue" class="detail-icon" />
+
+      <p>La fatigue en cardiologie traduit souvent une inadéquation entre les besoins et l'apport en oxygène des tissus. L'insuffisance cardiaque réduit le débit cardiaque, entraînant une hypoperfusion des organes comme les muscles et le cerveau. Cela se traduit par un manque d'énergie et un ralentissement cognitif.</p>
+
+      <p>Les troubles du rythme altèrent la fonction ventriculaire et diminuent l'efficacité hémodynamique, induisant une fatigue fluctuante, parfois associée à des vertiges. L'ischémie myocardique limite la réserve énergétique du cœur, aggravant la sensation d'épuisement à l'effort.</p>
+
+      <p>Face à une fatigue inexpliquée et persistante, l'évaluation cardiaque est utile.</p>
+
+      <div class="detail-cta">
+        <a href="/symptomes" class="btn btn--outline">&larr; Tous les symptômes</a>
+        <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
+  .detail-content { max-width: 800px; }
+  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
+  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
+</style>

@@ -1,0 +1,79 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const examens = [
+  { title: 'Électrocardiogramme (ECG)', icon: '/images/svg/examens/Electrocardiogramme.svg', text: "Un examen rapide et indolore qui en dit long sur l'activité électrique de votre cœur. Découvrez ce qu'un simple ECG peut révéler.", href: '/examens-cardiologiques/electrocardiogramme' },
+  { title: 'Échocardiographie', icon: '/images/svg/examens/Ecocardiografia.svg', text: "Voir son propre cœur battre en direct. L'échocardiographie, ou ultrasons du cœur, est une fenêtre ouverte sur sa structure et sa fonction de pompage.", href: '/examens-cardiologiques/echocardiographie' },
+  { title: 'Ergométrie', icon: '/images/svg/examens/Ergometria.svg', text: "Comment votre cœur réagit-il à l'effort ? Le test d'effort sur vélo permet de déceler des anomalies qui n'apparaissent qu'en situation de stress.", href: '/examens-cardiologiques/ergometrie' },
+  { title: 'Stimulateur cardiaque', icon: '/images/svg/examens/Marcapasos.svg', text: "Quand le rythme cardiaque est trop lent ou dangereusement rapide, des dispositifs implantables modernes peuvent prendre le relais pour protéger votre cœur.", href: '/examens-cardiologiques/stimulateur-cardiaque' },
+  { title: 'Laboratoire', icon: '/images/svg/examens/Laboratorio.svg', text: "Une simple prise de sang peut révéler des informations cruciales sur votre santé cardiovasculaire, des facteurs de risque aux marqueurs d'une souffrance cardiaque.", href: '/examens-cardiologiques/laboratoire' },
+  { title: 'IRM cardiaque', icon: '/images/svg/examens/Resonancia-magnetica.svg', text: "L'imagerie de pointe pour une vision d'une précision inégalée. Découvrez quand l'IRM cardiaque est utilisée pour analyser en détail le muscle du cœur.", href: '/examens-cardiologiques/irm-cardiaque' },
+  { title: 'Holter et R-test', icon: '/images/svg/examens/Holter-y-prueba.svg', text: "Certains troubles du rythme sont discrets et intermittents. Le Holter ou le R-Test permettent de les « capturer » sur 24h ou plus pour un diagnostic précis.", href: '/examens-cardiologiques/holter-et-r-test' },
+];
+---
+
+<Layout title="Examens cardiologiques — Suivi à Sion" description="ECG, échocardiographie, ergométrie, IRM cardiaque, Holter : découvrez les examens cardiologiques proposés par le Dr Delhasse." lang="fr">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1>Examens <span class="text-primary">cardiologiques</span></h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="card-grid">
+        {examens.map((e) => (
+          <div class="card">
+            <img src={e.icon} alt={e.title} class="card__icon" loading="lazy" />
+            <h3>{e.title}</h3>
+            <p>{e.text}</p>
+            <a href={e.href} class="card__link">En savoir plus &rarr;</a>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center" style="margin-top: 3rem;">
+        <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page {
+    background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%);
+    padding: 6rem 0 4rem;
+    color: var(--color-white);
+  }
+
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .card {
+    background: var(--color-white);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-left-color: var(--color-primary);
+  }
+
+  .card__icon { width: 56px; height: 56px; margin-bottom: 1.25rem; }
+  .card h3 { margin-bottom: 0.75rem; font-size: 1.15rem; }
+  .card p { font-size: 0.95rem; line-height: 1.6; }
+  .card__link { display: inline-block; margin-top: 0.75rem; color: var(--color-primary); font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: color 0.3s; }
+  .card__link:hover { color: var(--color-navy); }
+</style>

@@ -1,0 +1,103 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Le Cœur & Vous — Consultations en cardiologie à Sion" description="Symptômes, domaines d'expertise et examens cardiologiques. Approche complète pour examiner, diagnostiquer et traiter les conditions cardiaques." lang="fr">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1>Le Cœur <span class="text-primary">&</span> vous</h1>
+      <p class="hero-sub">Une approche complète pour examiner, diagnostiquer et traiter les conditions cardiaques.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--3">
+        <a href="/symptomes" class="hub-card">
+          <img src="/images/collaboration.webp" alt="Symptômes" loading="lazy" />
+          <div class="hub-card__body">
+            <h2>Symptômes</h2>
+            <p>Découvrez les signes cliniques qui nécessitent une consultation cardiologique.</p>
+            <span class="hub-card__link">En savoir plus →</span>
+          </div>
+        </a>
+
+        <a href="/domaines-dexpertise" class="hub-card">
+          <img src="/images/question-medicale.webp" alt="Domaines d'expertise" loading="lazy" />
+          <div class="hub-card__body">
+            <h2>Domaines d'expertise</h2>
+            <p>Spécialités et conditions cardiaques traitées par le Dr. Delhasse.</p>
+            <span class="hub-card__link">En savoir plus →</span>
+          </div>
+        </a>
+
+        <a href="/examens-cardiologiques" class="hub-card">
+          <img src="/images/demande-rdv.webp" alt="Examens cardiologiques" loading="lazy" />
+          <div class="hub-card__body">
+            <h2>Examens cardiologiques</h2>
+            <p>ECG, échocardiographie, test d'effort et autres procédures diagnostiques.</p>
+            <span class="hub-card__link">En savoir plus →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page {
+    background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%);
+    padding: 6rem 0 4rem;
+    color: var(--color-white);
+  }
+
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
+
+  .hub-card {
+    display: block;
+    background: var(--color-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .hub-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  }
+
+  .hub-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .hub-card__body {
+    padding: 2rem;
+  }
+
+  .hub-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .hub-card p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .hub-card__link {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero-page h1 { font-size: 2rem; }
+  }
+</style>

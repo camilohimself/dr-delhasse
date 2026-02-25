@@ -1,0 +1,79 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const symptoms = [
+  {
+    title: 'Chest pain',
+    icon: '/images/svg/symptomes/Dolor-en-el-pecho.svg',
+    text: 'Not all chest pain is cardiac in origin, but some are warning signs that should never be ignored. Learn to recognise them.',
+  },
+  {
+    title: 'Fainting / Dizziness',
+    icon: '/images/svg/symptomes/Malestar.svg',
+    text: 'A simple dizzy spell may seem harmless, but it can also be the first sign of a heart condition. Do not underestimate this symptom.',
+  },
+  {
+    title: 'Palpitations',
+    icon: '/images/svg/symptomes/Palpitaciones.svg',
+    text: 'Is your heart racing? Find out when simple palpitations may conceal a rhythm disorder requiring medical attention.',
+  },
+  {
+    title: 'Fatigue',
+    icon: '/images/svg/symptomes/Fatiga.svg',
+    text: 'Persistent, unexplained fatigue is not normal. It may be directly linked to the health of your heart. Understand why.',
+  },
+  {
+    title: 'Dyspnoea',
+    icon: '/images/svg/symptomes/Disnea.svg',
+    text: 'Shortness of breath is not always a lung problem. Discover when your breathing alerts you to the health of your heart.',
+  },
+  {
+    title: 'Irregular heartbeat',
+    icon: '/images/svg/symptomes/Arritmia-1.svg',
+    text: 'Has your smartwatch detected an irregular rhythm? Learn what these alerts mean and when a cardiologist\'s opinion is essential.',
+  },
+  {
+    title: 'Leg oedema',
+    icon: '/images/svg/symptomes/Edema-en-la-pierna.svg',
+    text: 'Swollen legs are not just a comfort problem. Discover how they can be a visible sign of heart failure.',
+  },
+];
+---
+
+<Layout title="Common Cardiac Symptoms — Dr Delhasse" description="Chest pain, palpitations, fatigue, dyspnoea: discover the symptoms that require a cardiology consultation." lang="en">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1><span class="text-primary">Symptoms</span></h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="card-grid">
+        {symptoms.map((s) => (
+          <div class="card">
+            <img src={s.icon} alt={s.title} class="card__icon" loading="lazy" />
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+          </div>
+        ))}
+      </div>
+      <div class="text-center" style="margin-top: 3rem;">
+        <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
+  .card { background: var(--color-white); border-radius: 8px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: all 0.3s ease; border-left: 3px solid transparent; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); border-left-color: var(--color-primary); }
+  .card__icon { width: 56px; height: 56px; margin-bottom: 1.25rem; }
+  .card h3 { margin-bottom: 0.75rem; font-size: 1.15rem; }
+  .card p { font-size: 0.95rem; line-height: 1.6; }
+</style>

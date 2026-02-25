@@ -1,0 +1,44 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Laboratory — Blood Tests — Dr Delhasse" description="Blood tests in cardiology: cholesterol, blood sugar, cardiac enzymes, BNP. Comprehensive cardiovascular health assessment." lang="en">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1><span class="text-primary">Laboratory</span></h1>
+      <p class="hero-sub">Blood analysis in service of the heart</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container detail-content">
+      <img src="/images/svg/examens/Laboratorio.svg" alt="Laboratory" class="detail-icon" />
+
+      <p>Blood analysis is a key element of the cardiology assessment. Measuring blood lipids (cholesterol, triglycerides) and blood sugar helps identify cardiovascular risk factors.</p>
+
+      <p>In emergencies, cardiac enzymes — substances present in heart muscle cells and released upon injury — indicate possible myocardial damage, while BNP and its precursor are markers of heart failure.</p>
+
+      <p>Electrolyte levels (sodium, potassium, calcium) are crucial, as their imbalances can cause rhythm disorders or impair cardiac function. Finally, kidney and liver function tests are essential, as these organs are often affected in heart failure.</p>
+
+      <p>These analyses enable a comprehensive evaluation of cardiovascular health and treatment adjustment.</p>
+
+      <div class="detail-cta">
+        <a href="/en/cardiac-examinations" class="btn btn--outline">&larr; All examinations</a>
+        <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
+  .detail-content { max-width: 800px; }
+  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
+  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
+</style>

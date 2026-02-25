@@ -1,0 +1,54 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Évaluation à la pratique sportive — Dr Delhasse, Cardiologue" description="Bilan cardiologique sportif : test d'effort, évaluation cardiovasculaire pour sportifs amateurs et confirmés en Valais." lang="fr">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1>Évaluation à la <span class="text-primary">pratique sportive</span></h1>
+      <p class="hero-sub">Pratiquez votre passion en toute sécurité</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container detail-content">
+      <img src="/images/svg/expertise/Evaluation-a-la-pratique-sportive.svg" alt="Évaluation à la pratique sportive" class="detail-icon" />
+
+      <p>Le bilan sportif chez un cardiologue est important pour pratiquer une activité physique en sécurité. Un test d'effort est réalisé en fonction des caractéristiques individuelles et de l'intensité de l'activité physique.</p>
+
+      <h2>Situations où l'évaluation sportive est recommandée</h2>
+      <ul>
+        <li>Lors d'une reprise du sport après un arrêt prolongé</li>
+        <li>Pour les compétiteurs ou pratiquants de disciplines intenses comme le marathon ou la plongée</li>
+        <li>En cas d'antécédents cardiovasculaires familiaux</li>
+        <li>Avec des symptômes (douleurs thoraciques, palpitations)</li>
+        <li>Avec des pathologies cardiaques comme l'hypertension ou après un infarctus</li>
+        <li>Après des événements cardiaques (chirurgie, stent)</li>
+        <li>Pour les seniors et personnes à risque (diabète, obésité) souhaitant rester actifs</li>
+      </ul>
+
+      <p>Il permet de prévenir les complications et de maximiser les bienfaits du sport sur le cœur, dans une région comme le Valais, où le sport fait partie intégrante du mode de vie.</p>
+
+      <div class="detail-cta">
+        <a href="/domaines-dexpertise" class="btn btn--outline">&larr; Tous les domaines</a>
+        <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
+  .detail-content { max-width: 800px; }
+  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
+  .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
+  .detail-content ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+  .detail-content li { list-style: disc; margin-bottom: 0.5rem; color: var(--color-gray); font-size: 1rem; line-height: 1.7; }
+  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
+</style>

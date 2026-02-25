@@ -1,0 +1,51 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const untersuchungen = [
+  { title: 'Elektrokardiogramm (EKG)', icon: '/images/svg/examens/Electrocardiogramme.svg', text: 'Eine schnelle, schmerzlose Untersuchung, die viel über die elektrische Aktivität Ihres Herzens verrät. Erfahren Sie, was ein einfaches EKG aufdecken kann.' },
+  { title: 'Echokardiografie', icon: '/images/svg/examens/Ecocardiografia.svg', text: 'Ihr eigenes Herz in Echtzeit schlagen sehen. Die Echokardiografie — Herzultraschall — ist ein Fenster zu seiner Struktur und Pumpfunktion.' },
+  { title: 'Ergometrie', icon: '/images/svg/examens/Ergometria.svg', text: 'Wie reagiert Ihr Herz auf Belastung? Der Fahrrad-Belastungstest kann Anomalien aufdecken, die nur unter körperlichem Stress auftreten.' },
+  { title: 'Herzschrittmacher', icon: '/images/svg/examens/Marcapasos.svg', text: 'Wenn der Herzrhythmus zu langsam oder gefährlich schnell ist, können moderne implantierbare Geräte einspringen, um Ihr Herz zu schützen.' },
+  { title: 'Labor', icon: '/images/svg/examens/Laboratorio.svg', text: 'Eine einfache Blutabnahme kann entscheidende Informationen über Ihre Herz-Kreislauf-Gesundheit liefern, von Risikofaktoren bis zu Markern einer Herzbelastung.' },
+  { title: 'Kardio-MRT', icon: '/images/svg/examens/Resonancia-magnetica.svg', text: 'Spitzenbildgebung für unerreichte Präzision. Erfahren Sie, wann das Kardio-MRT eingesetzt wird, um den Herzmuskel im Detail zu analysieren.' },
+  { title: 'Holter und R-Test', icon: '/images/svg/examens/Holter-y-prueba.svg', text: 'Manche Rhythmusstörungen sind subtil und intermittierend. Der Holter oder R-Test erfasst sie über 24 Stunden oder mehr für eine präzise Diagnose.' },
+];
+---
+
+<Layout title="Herzuntersuchungen — Nachsorge in Sitten" description="EKG, Echokardiografie, Ergometrie, Kardio-MRT, Holter: Entdecken Sie die Herzuntersuchungen von Dr. Delhasse." lang="de">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1><span class="text-primary">Herzuntersuchungen</span></h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="card-grid">
+        {untersuchungen.map((e) => (
+          <div class="card">
+            <img src={e.icon} alt={e.title} class="card__icon" loading="lazy" />
+            <h3>{e.title}</h3>
+            <p>{e.text}</p>
+          </div>
+        ))}
+      </div>
+      <div class="text-center" style="margin-top: 3rem;">
+        <a href="/de/kontakt" class="btn btn--primary">Termin vereinbaren</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
+  .card { background: var(--color-white); border-radius: 8px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: all 0.3s ease; border-left: 3px solid transparent; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); border-left-color: var(--color-primary); }
+  .card__icon { width: 56px; height: 56px; margin-bottom: 1.25rem; }
+  .card h3 { margin-bottom: 0.75rem; font-size: 1.15rem; }
+  .card p { font-size: 0.95rem; line-height: 1.6; }
+</style>

@@ -1,0 +1,47 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Preoperative Assessment — Dr Delhasse, Cardiologist" description="Cardiac evaluation before cardiac or non-cardiac surgery. Specialist preoperative assessment by Dr Delhasse." lang="en">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1>Preoperative <span class="text-primary">Assessment</span></h1>
+      <p class="hero-sub">Your cardiac safety before any procedure</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container detail-content">
+      <img src="/images/svg/expertise/Bilan-preoperatoire.svg" alt="Preoperative assessment" class="detail-icon" />
+
+      <p>The cardiologist's involvement in a preoperative assessment varies depending on the planned procedure.</p>
+
+      <h2>For Non-Cardiac Operations</h2>
+      <p>The cardiologist's role during surgery involves completing the overall health assessment in coordination with other specialists. Cardiac evaluation is not systematically required before every procedure, but becomes necessary if cardiac vulnerabilities exist. This evaluation provides essential information to surgeons and anaesthetists for appropriate care and patient safety.</p>
+
+      <h2>For Cardiac Operations</h2>
+      <p>When cardiac pathology is severe or does not respond to medical treatment, cardiac surgery may become the only alternative to improve cardiac function or save lives. The cardiologist, working with the multidisciplinary Heart Team, carefully evaluates the severity of the condition, risks and benefits of the intervention.</p>
+
+      <p>The cardiologist discusses procedures with patients, evaluates alternatives and ensures understanding. Informed consent is fundamental. The EUROSCORE is used to estimate operative risk in cardiac surgery, evaluating the risk-benefit balance.</p>
+
+      <div class="detail-cta">
+        <a href="/en/areas-of-expertise" class="btn btn--outline">&larr; All areas</a>
+        <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
+  .detail-content { max-width: 800px; }
+  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
+  .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
+  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
+</style>

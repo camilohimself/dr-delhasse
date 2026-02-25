@@ -1,0 +1,26 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Holter und R-Test — Dr. Delhasse" description="Holter-EKG und R-Test: verlängerte Herzrhythmusüberwachung zur Erkennung intermittierender Störungen." lang="de">
+  <section class="hero-page"><div class="container"><h1>Holter und <span class="text-primary">R-Test</span></h1><p class="hero-sub">Verlängerte Herzrhythmusüberwachung</p></div></section>
+  <section class="section"><div class="container detail-content">
+    <img src="/images/svg/examens/Holter-y-prueba.svg" alt="Holter und R-Test" class="detail-icon" />
+    <p>Das Langzeit-EKG oder Holter-EKG besteht in der kontinuierlichen Aufzeichnung der elektrischen Herzaktivität über 24 Stunden oder mehr mit einem tragbaren Gerät.</p>
+    <p>Diese Untersuchung erkennt intermittierende Herzrhythmusstörungen, die bei einem Standard-Ruhe-EKG oft fehlen.</p>
+    <p>Der R-Test ist eine Alternative für eine verlängerte Überwachung bis zu einer Woche. Im Gegensatz zum Holter ist die Aufzeichnung nicht kontinuierlich, sondern wird automatisch bei Anomalien oder manuell vom Patienten bei Symptomen ausgelöst.</p>
+    <div class="detail-cta">
+      <a href="/de/herzuntersuchungen" class="btn btn--outline">&larr; Alle Untersuchungen</a>
+      <a href="/de/kontakt" class="btn btn--primary">Termin vereinbaren</a>
+    </div>
+  </div></section>
+</Layout>
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
+  .detail-content { max-width: 800px; }
+  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
+  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
+</style>

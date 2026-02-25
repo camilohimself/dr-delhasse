@@ -1,0 +1,44 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Cardiac MRI — Dr Delhasse, Cardiologist" description="Cardiac MRI offers unparalleled precision imaging for diagnosing heart muscle diseases." lang="en">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1>Cardiac <span class="text-primary">MRI</span></h1>
+      <p class="hero-sub">State-of-the-art imaging for your heart</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container detail-content">
+      <img src="/images/svg/examens/Resonancia-magnetica.svg" alt="Cardiac MRI" class="detail-icon" />
+
+      <p>Cardiac MRI is an advanced imaging technique that allows examination of the heart with great precision. It is a non-invasive examination well tolerated by the majority of patients.</p>
+
+      <p>The examination was previously a research tool in medical imaging. Technological advances have made it more accessible for routine clinical diagnostics. It provides detailed images for numerous indications, characterising diseases affecting the heart muscle (cardiomyopathies), evaluating cardiac function, coronary blood flow and tissue viability after a heart attack.</p>
+
+      <p>Compared to echocardiography, cardiac MRI offers greater precision and reproducibility. However, high cost, limited availability and examination duration (40-90 minutes) limit its use. It primarily serves as a complementary tool for complex cases requiring in-depth evaluation.</p>
+
+      <p>Continued technological development and expanding indications support progressive integration into clinical practice, facilitated by collaboration between cardiologists, radiologists and cardiac surgeons.</p>
+
+      <div class="detail-cta">
+        <a href="/en/cardiac-examinations" class="btn btn--outline">&larr; All examinations</a>
+        <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
+  .detail-content { max-width: 800px; }
+  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
+  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
+</style>

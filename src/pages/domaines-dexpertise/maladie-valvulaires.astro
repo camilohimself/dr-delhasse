@@ -1,0 +1,49 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Maladies valvulaires — Dr Delhasse, Cardiologue" description="Sténose aortique, insuffisance mitrale : diagnostic et traitement des maladies valvulaires par le Dr Delhasse, cardiologue FMH en Valais." lang="fr">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1>Maladies <span class="text-primary">valvulaires</span></h1>
+      <p class="hero-sub">Les clapets du cœur sous surveillance</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container detail-content">
+      <img src="/images/svg/expertise/Maladie-valvulaires.svg" alt="Maladies valvulaires" class="detail-icon" />
+
+      <p>Le cœur humain possède quatre valves cardiaques : la valve aortique, la valve pulmonaire, la valve mitrale et la valve tricuspide. Elles fonctionnent comme des clapets anti-retour dans une pompe, orientant le flux sanguin dans une seule direction.</p>
+
+      <p>Lorsqu'une valve est défectueuse en raison d'une anomalie congénitale, d'une maladie ou d'une usure importante, elle empêche une ouverture correcte (sténose) ou une fermeture correcte (insuffisance). Ces anomalies peuvent provoquer un souffle cardiaque détecté lors de l'examen clinique. L'échocardiographie confirme le diagnostic.</p>
+
+      <h2>Sténose aortique</h2>
+      <p>La sténose aortique est la maladie valvulaire la plus fréquente. Elle réduit la capacité physique et peut provoquer un essoufflement, des douleurs thoraciques et des syncopes. Les cas sévères nécessitent un remplacement valvulaire par cathétérisme (TAVI) ou chirurgie.</p>
+
+      <h2>Insuffisance mitrale</h2>
+      <p>L'insuffisance mitrale, la deuxième pathologie la plus fréquente, provoque un essoufflement, une accumulation de liquide pulmonaire et une dilatation cardiaque. Un diagnostic précoce permet une réparation chirurgicale. Chez les patients avec un cœur dilaté et affaibli, la valve peut être reconstruite par cathétérisme à l'aide d'un dispositif MitraClip.</p>
+
+      <p>Ces maladies valvulaires doivent être détectées et traitées précocement pour prévenir l'aggravation des symptômes et préserver la fonction cardiaque.</p>
+
+      <div class="detail-cta">
+        <a href="/domaines-dexpertise" class="btn btn--outline">&larr; Tous les domaines</a>
+        <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
+  .detail-content { max-width: 800px; }
+  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
+  .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
+  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
+</style>

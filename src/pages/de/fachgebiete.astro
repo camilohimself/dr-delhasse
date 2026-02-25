@@ -1,0 +1,54 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const fachgebiete = [
+  { title: 'Rhythmologie', icon: '/images/svg/expertise/Rythmologie.svg', text: 'Von einfachen Rhythmusstörungen bis zu komplexen Erkrankungen. Entdecken Sie unsere Expertise in der Diagnose und Behandlung der elektrischen Aktivität des Herzens.' },
+  { title: 'Herzklappenerkrankungen', icon: '/images/svg/expertise/Maladie-valvulaires.svg', text: 'Stenose oder Insuffizienz — Ihre Herzklappen stehen im Mittelpunkt unserer Aufmerksamkeit. Entdecken Sie moderne Lösungen, von der Überwachung bis zu Spitzeninterventionen.' },
+  { title: 'Prävention', icon: '/images/svg/expertise/prevention.svg', text: 'Die beste Behandlung ist die, die man vermeidet. Lernen Sie, Ihre Risikofaktoren (Cholesterin, Blutdruck) zu kontrollieren, um Ihre kardiovaskuläre Zukunft zu schützen.' },
+  { title: 'Arterielle Hypertonie', icon: '/images/svg/expertise/Hypertension-arterielle.svg', text: 'Oft still, schädigt Bluthochdruck Ihre Arterien. Eine spezialisierte Behandlung ist unerlässlich, um Ihren Blutdruck zu kontrollieren und Ihre Organe zu schützen.' },
+  { title: 'Koronare Herzkrankheit', icon: '/images/svg/expertise/Maladie-coronarienne.svg', text: 'Angina pectoris ist das Warnsignal Ihrer Arterien. Verstehen Sie diese Krankheit, um zu handeln, bevor sie zu ernsteren Komplikationen führt.' },
+  { title: 'Nachsorge nach Herzinfarkt', icon: '/images/svg/expertise/Suivi-apres-infarctus.svg', text: 'Einen Herzinfarkt zu überleben ist der erste Schritt. Entdecken Sie die Bedeutung einer personalisierten Nachsorge für eine optimale Erholung und Rückfallprävention.' },
+  { title: 'Herzinsuffizienz', icon: '/images/svg/expertise/Insuffisance-cardiaque.svg', text: 'Wenn das Herz ermüdet, zählt jedes Detail. Entdecken Sie moderne Ansätze zur Behandlung der Herzinsuffizienz und zur Verbesserung Ihrer Lebensqualität.' },
+  { title: 'Präoperative Beurteilung', icon: '/images/svg/expertise/Bilan-preoperatoire.svg', text: 'Jede Operation ist eine Belastung für das Herz. Unsere präoperative Beurteilung zielt darauf ab, Ihre Sicherheit zu gewährleisten, unabhängig vom geplanten Eingriff.' },
+  { title: 'Kardiomyopathien', icon: '/images/svg/expertise/Cardiomyopathies.svg', text: 'Herzmuskelerkrankungen sind komplex und oft genetisch bedingt. Erfahren Sie, wie eine präzise Diagnose der Schlüssel zu einer wirksamen Behandlung ist.' },
+  { title: 'Sporteignungsbeurteilung', icon: '/images/svg/expertise/Evaluation-a-la-pratique-sportive.svg', text: 'Amateur- oder Leistungssportler? Eine kardiologische Beurteilung ermöglicht es Ihnen, Ihre Leidenschaft sicher auszuüben und Ihre Leistung zu optimieren.' },
+];
+---
+
+<Layout title="Fachgebiete — Kardiologie im Wallis" description="Rhythmologie, Prävention, Hypertonie, koronare Herzkrankheit, Herzinsuffizienz und mehr. Dr. Delhasse, FMH-Kardiologe." lang="de">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1><span class="text-primary">Fachgebiete</span></h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="card-grid">
+        {fachgebiete.map((d) => (
+          <div class="card">
+            <img src={d.icon} alt={d.title} class="card__icon" loading="lazy" />
+            <h3>{d.title}</h3>
+            <p>{d.text}</p>
+          </div>
+        ))}
+      </div>
+      <div class="text-center" style="margin-top: 3rem;">
+        <a href="/de/kontakt" class="btn btn--primary">Termin vereinbaren</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
+  .card { background: var(--color-white); border-radius: 8px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: all 0.3s ease; border-left: 3px solid transparent; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); border-left-color: var(--color-primary); }
+  .card__icon { width: 56px; height: 56px; margin-bottom: 1.25rem; }
+  .card h3 { margin-bottom: 0.75rem; font-size: 1.15rem; }
+  .card p { font-size: 0.95rem; line-height: 1.6; }
+</style>

@@ -1,0 +1,188 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Approche thérapeutique — Dr Delhasse" description="Découvrez l'approche thérapeutique personnalisée du Dr Delhasse : accompagnement, cardiologie intégrative et dimension émotionnelle du cœur." lang="fr">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1>Prendre soin de votre cœur <span class="text-primary">à votre rythme</span></h1>
+    </div>
+  </section>
+
+  <!-- Tabs -->
+  <section class="section tabs-section">
+    <div class="container">
+      <div class="tabs" role="tablist">
+        <button class="tab active" role="tab" aria-selected="true" data-tab="accompagnement">Accompagnement</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="cardiologie">Cardiologie et médecine interne</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="raisons">Le cœur a ses raisons</button>
+      </div>
+
+      <!-- Tab 1: Accompagnement -->
+      <div class="tab-panel active" id="accompagnement">
+        <div class="tab-content">
+          <div class="tab-content__text">
+            <h2>Accompagnement</h2>
+            <p>Changer ses habitudes ou suivre un traitement au long cours n'est pas toujours simple, mais chaque petit pas compte pour votre cœur. C'est pourquoi j'adopte deux approches complémentaires selon vos besoins :</p>
+
+            <p><strong>L'éducation thérapeutique</strong>, essentielle pour mieux comprendre et gérer votre maladie. Par exemple, en cas d'insuffisance cardiaque, bien prendre ses médicaments est crucial, mais la polymédication peut être source de confusion. Je vous aide à organiser votre traitement pour éviter les erreurs et maximiser son efficacité.</p>
+
+            <p><strong>L'entretien motivationnel</strong>, un échange bienveillant qui vous permet de trouver en vous-même l'envie et la motivation de changer certaines habitudes. Pour arrêter de fumer après une chirurgie cardiaque, par exemple, il ne suffit pas d'une injonction : ensemble, nous explorons ce qui vous motive vraiment, sans pression ni jugement, afin de rendre ce changement plus naturel et durable.</p>
+
+            <p>Vous restez acteur de votre santé, et mon rôle est de vous guider avec des outils adaptés à votre vie. Votre cœur mérite le meilleur, et vous aussi !</p>
+          </div>
+          <div class="tab-content__image">
+            <img src="/images/accompagnement.webp" alt="Accompagnement thérapeutique" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: Cardiologie et médecine interne -->
+      <div class="tab-panel" id="cardiologie">
+        <div class="tab-content">
+          <div class="tab-content__text">
+            <h2>Cardiologie et médecine interne : une approche intégrative</h2>
+            <p>La médecine interne se distingue par une vision globale du patient. Elle prend en compte les multiples interactions entre les organes et les systèmes physiologiques, permettant ainsi d'élaborer des diagnostics précis et des traitements personnalisés. L'interniste joue un rôle clé dans le suivi des pathologies chroniques et complexes, veillant non seulement à traiter la maladie, mais aussi à considérer le patient dans son ensemble.</p>
+
+            <p>La cardiologie, bien qu'étant aujourd'hui une spécialité distincte, fait partie intégrante de la médecine interne. Chaque pathologie cardiaque peut avoir des répercussions sur l'ensemble du corps. Des maladies peuvent aussi impliquer le cœur. En effet, le cœur n'est pas un organe isolé ; il répond à des signaux provenant du système nerveux, endocrinien et même émotionnel, ce qui justifie une compréhension fine de ses interactions avec le reste de l'organisme.</p>
+
+            <p>Il est même habituel que des contacts réguliers aient lieu avec les confrères d'autres spécialités (médecine générale, gériatrie, oncologie, etc.) que cela soit pour une orientation ou une sollicitation pour un avis.</p>
+          </div>
+          <div class="tab-content__image">
+            <img src="/images/cardiologie-med-interne.webp" alt="Cardiologie et médecine interne" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3: Le cœur a ses raisons -->
+      <div class="tab-panel" id="raisons">
+        <div class="tab-content">
+          <div class="tab-content__text">
+            <h2>Le cœur a ses raisons que la raison ignore</h2>
+            <p>Le cœur est non seulement un moteur physiologique, mais aussi un symbole émotionnel puissant. Il reflète les émotions profondes telles que le stress, l'amour, la peur ou encore le courage. Cette dimension psychosomatique influence l'évolution des pathologies cardiaques et doit être intégrée dans la prise en charge des patients.</p>
+
+            <p>Chaque patient est unique, et son histoire, ses émotions et son mode de vie influencent l'efficacité des traitements.</p>
+
+            <p>Comprendre le cœur, ce n'est pas seulement analyser ses battements mais c'est aussi écouter le patient et entendre ce que son cœur exprime au-delà des chiffres et des examens.</p>
+          </div>
+          <div class="tab-content__image">
+            <img src="/images/coeur-raisons.webp" alt="Le cœur a ses raisons" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page {
+    background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%);
+    padding: 6rem 0 4rem;
+    color: var(--color-white);
+  }
+
+  .hero-page h1 {
+    color: var(--color-white);
+    font-size: 2.75rem;
+  }
+
+  .tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid #e5e5e5;
+    margin-bottom: 3rem;
+  }
+
+  .tab {
+    padding: 1rem 2rem;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-gray);
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .tab:hover {
+    color: var(--color-navy);
+  }
+
+  .tab.active {
+    color: var(--color-primary);
+  }
+
+  .tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--color-primary);
+  }
+
+  .tab-panel {
+    display: none;
+  }
+
+  .tab-panel.active {
+    display: block;
+  }
+
+  .tab-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .tab-content__image img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  @media (max-width: 768px) {
+    .hero-page h1 { font-size: 2rem; }
+
+    .tabs {
+      flex-direction: column;
+      border-bottom: none;
+      gap: 0.5rem;
+    }
+
+    .tab {
+      text-align: left;
+      padding: 0.75rem 1rem;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+    }
+
+    .tab.active::after { display: none; }
+    .tab.active { border-color: var(--color-primary); background: #fef2f2; }
+
+    .tab-content {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('.tab-panel');
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach((t) => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      panels.forEach((p) => p.classList.remove('active'));
+
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      const target = tab.getAttribute('data-tab');
+      document.getElementById(target!)?.classList.add('active');
+    });
+  });
+</script>

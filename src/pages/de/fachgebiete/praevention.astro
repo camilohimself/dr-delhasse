@@ -1,0 +1,32 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Kardiovaskuläre Prävention — Dr. Delhasse" description="Übergewicht, Cholesterin, Diabetes, Rauchen: die 4 grossen kardiovaskulären Risikofaktoren." lang="de">
+  <section class="hero-page"><div class="container"><h1><span class="text-primary">Prävention</span></h1><p class="hero-sub">Die beste Behandlung ist die, die man vermeidet</p></div></section>
+  <section class="section"><div class="container detail-content">
+    <img src="/images/svg/expertise/prevention.svg" alt="Prävention" class="detail-icon" />
+    <h2>1. Übergewicht und Adipositas</h2>
+    <p>Übergewicht und Adipositas betreffen mehr als 30% der Menschen in Industrieländern. Eine ausgewogene Ernährung und regelmässige körperliche Aktivität sind erforderlich.</p>
+    <h2>2. Blutfette / Cholesterin</h2>
+    <p>Erhöhtes LDL-Cholesterin fördert Herz-Kreislauf-Erkrankungen, insbesondere Herzinfarkt und Schlaganfall.</p>
+    <h2>3. Diabetes</h2>
+    <p>Diabetes Typ 1 und 2 erhöhen den Blutzucker und schädigen die Gefässe der Organe. Blutzuckerkontrolle reduziert Risiken.</p>
+    <h2>4. Rauchen</h2>
+    <p>Ein Hauptrisikofaktor für Herzinfarkt, Schlaganfall und Krebs. Nikotinersatz und Medikamente können beim Aufhören helfen.</p>
+    <div class="detail-cta">
+      <a href="/de/fachgebiete" class="btn btn--outline">&larr; Alle Fachgebiete</a>
+      <a href="/de/kontakt" class="btn btn--primary">Termin vereinbaren</a>
+    </div>
+  </div></section>
+</Layout>
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
+  .detail-content { max-width: 800px; }
+  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
+  .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
+  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
+</style>

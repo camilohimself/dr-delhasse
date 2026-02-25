@@ -1,0 +1,76 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Über Dr. Delhasse — Kardiologe im Wallis" description="Werdegang, Ausbildung und Engagement von Dr. Sébastien Delhasse, FMH-Kardiologe in Saxon, Wallis." lang="de">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1>Ein Weg, geleitet vom <span class="text-primary">Herzen</span></h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container about-grid">
+      <div class="about-text">
+        <p>Die Kardiologie hat sich mir als Selbstverständlichkeit aufgedrängt. Das Herz, dieses Organ in ständiger Bewegung, spiegelt sowohl die präzise Mechanik des menschlichen Körpers als auch das subtile Geheimnis wider, das das Leben umgibt. Sich um das Herz zu kümmern bedeutet, das fragile Gleichgewicht zwischen Medizin und der Vitalität zu verstehen, die jeden Menschen antreibt.</p>
+
+        <p>Ursprünglich aus Belgien stammend, habe ich mich vor etwa zehn Jahren in der Schweiz niedergelassen. Mein medizinischer Werdegang begann mit einer Ausbildung in Allgemeiner Innerer Medizin. Ich praktizierte im Wallis, dann am Universitätsspital Lausanne (CHUV), wo ich die FMH-Spezialisierung in Innerer Medizin erlangte.</p>
+
+        <h2>Expertise, aufgebaut über den ganzen Kontinent</h2>
+
+        <p>Angezogen von der Präzision und Vielfalt der Kardiologie, setzte ich meine Ausbildung am Universitätsspital Bern (Inselspital) fort, wo ich meine Kenntnisse in der Behandlung kardiovaskulärer Erkrankungen vertiefte. Im Laufe meiner Karriere hatte ich das Glück, mit erfahrenen Fachleuten zusammenzuarbeiten, die mich durch ihre Strenge, Menschlichkeit und ihr Wissen inspiriert haben. 2024 absolvierte ich eine Weiterbildung in kardialer Bildgebung am Royal Brompton Hospital in London mit Spezialisierung auf Kardio-MRT. Diese internationale Erfahrung ermöglichte es mir, meine Kompetenzen zu erweitern und einen umfassenderen Ansatz für Herz-Kreislauf-Erkrankungen zu verfolgen.</p>
+
+        <a href="/de/kontakt" class="btn btn--primary">Termin vereinbaren</a>
+      </div>
+      <div class="about-image">
+        <img src="/images/dr-delhasse.jpeg" alt="Dr. Sébastien Delhasse" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--gray">
+    <div class="container">
+      <h2>Mein tägliches Engagement</h2>
+      <p class="subtitle">Über medizinische Kompetenz hinaus ist jede Begegnung mit einem Patienten eine Gelegenheit zum Zuhören, zur Präzision und zur Menschlichkeit.</p>
+
+      <div class="grid grid--2 engagement-grid">
+        <div class="engagement-card">
+          <h3>Aktuelle Tätigkeit</h3>
+          <p>Heute teile ich meine Tätigkeit zwischen dem Kantonsspital Sitten und meiner Praxis an der Klinik Saxon auf, wo ich eine Betreuung anbiete, die medizinische Expertise mit persönlicher Begleitung verbindet. Als aktives Mitglied der Schweizerischen Ärztegesellschaft (FMH) und der Europäischen Gesellschaft für Kardiologie (ESC) setze ich mich für eine Versorgung ein, die auf den neuesten wissenschaftlichen Empfehlungen basiert.</p>
+        </div>
+        <div class="engagement-card">
+          <h3>Jenseits der Medizin</h3>
+          <p>Ausserhalb meiner beruflichen Tätigkeit pflege ich ein besonderes Interesse am Lesen. Begeistert vom Sport, praktiziere ich regelmässig Laufen und Volleyball — Disziplinen, die mir Gleichgewicht und Dynamik im Alltag bringen. Aufmerksam für die Welt um mich herum, weiss ich auch die Schönheit eines Museums oder die Energie einer unbekannten Stadt zu schätzen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Exzellente medizinische Infrastruktur</h2>
+      <p>Ideal gelegen im Herzen der Schweizer Alpen, zwischen Sitten und Martigny, ist die Klinik CIC Saxon eine moderne medizinische Einrichtung, die darauf ausgelegt ist, qualitativ hochwertige Versorgung in einer hochmodernen Umgebung zu bieten. Mit einem Team von Gesundheitsfachleuten, die in verschiedenen medizinischen Bereichen spezialisiert sind, wurde die Klinik ursprünglich mit einem chirurgischen Schwerpunkt gegründet, erweitert aber heute ihre Leistungen auf andere Fachgebiete.</p>
+
+      <p>Seit April 2025 markiert die Eröffnung der kardiologischen Sprechstunden einen wichtigen Meilenstein. Die Patienten können von einer umfassenden Betreuung profitieren, die von der zugänglichen Kardiologie über die Überwachung häufiger Herzerkrankungen bis hin zu spezialisierten Untersuchungen reicht.</p>
+
+      <p>Um den Bedürfnissen einer vielfältigen Patientenbasis besser gerecht zu werden, werden Konsultationen auf Französisch, Englisch und Deutsch angeboten. Die Klinik CIC Saxon positioniert sich damit als Zentrum für Exzellenz und Innovation im Dienste der Gesundheit aller.</p>
+
+      <div class="text-center" style="margin-top: 2rem;">
+        <a href="/de/kontakt" class="btn btn--navy">Termin vereinbaren</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .about-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: start; }
+  .about-image img { border-radius: 8px; width: 100%; position: sticky; top: calc(var(--header-height) + 2rem); }
+  .engagement-grid { margin-top: 2rem; }
+  .engagement-card { background: var(--color-white); padding: 2rem; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .engagement-card h3 { margin-bottom: 1rem; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } .about-grid { grid-template-columns: 1fr; } }
+</style>

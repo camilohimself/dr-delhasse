@@ -1,0 +1,40 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Électrocardiogramme (ECG) — Dr Delhasse" description="L'ECG est un examen standard important pour enregistrer l'activité électrique du cœur. Découvrez cet examen avec le Dr Delhasse." lang="fr">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1><span class="text-primary">Électrocardiogramme</span> (ECG)</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container detail-content">
+      <img src="/images/svg/examens/Electrocardiogramme.svg" alt="Électrocardiogramme" class="detail-icon" />
+
+      <p>L'ECG est un examen standard important, car il est disponible presque partout et facile à réaliser. L'ECG de repos est généralement réalisé en position couchée.</p>
+
+      <p>L'ECG enregistre, à l'aide d'électrodes placées à la surface du corps, les courants électriques qui traversent le cœur à chaque battement, ce qui permet de mesurer l'activité électrique des oreillettes et des ventricules, ainsi que le rythme et la fréquence cardiaques.</p>
+
+      <p>Certaines maladies cardiovasculaires s'accompagnent de modifications caractéristiques de l'ECG. En revanche, l'ECG ne permet que d'obtenir des informations indirectes sur la structure et la fonction du cœur. Un ECG est régulièrement réalisé en cas de suspicion de trouble du rythme.</p>
+
+      <div class="detail-cta">
+        <a href="/examens-cardiologiques" class="btn btn--outline">&larr; Tous les examens</a>
+        <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .detail-content { max-width: 800px; }
+  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
+  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
+</style>

@@ -1,0 +1,138 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const symptomes = [
+  {
+    title: 'Douleurs thoraciques',
+    icon: '/images/svg/symptomes/Dolor-en-el-pecho.svg',
+    text: "Toutes les douleurs thoraciques ne sont pas d'origine cardiaque, mais certaines sont des signaux d'alerte à ne jamais ignorer. Apprenez à les reconnaître.",
+    href: '/symptomes/douleurs-thoraciques',
+  },
+  {
+    title: 'Malaise',
+    icon: '/images/svg/symptomes/Malestar.svg',
+    text: "Un simple vertige peut sembler anodin, mais il peut aussi être le premier signe d'un trouble cardiaque. Ne sous-estimez pas ce symptôme.",
+    href: '/symptomes/malaise',
+  },
+  {
+    title: 'Palpitations',
+    icon: '/images/svg/symptomes/Palpitaciones.svg',
+    text: "Votre cœur s'emballe ? Découvrez quand de simples palpitations peuvent cacher un trouble du rythme nécessitant une attention médicale.",
+    href: '/symptomes/palpitations',
+  },
+  {
+    title: 'Fatigue',
+    icon: '/images/svg/symptomes/Fatiga.svg',
+    text: "Une fatigue persistante et inexpliquée n'est pas normale. Elle peut être directement liée à la santé de votre cœur. Comprenez pourquoi.",
+    href: '/symptomes/fatigue',
+  },
+  {
+    title: 'Dyspnée',
+    icon: '/images/svg/symptomes/Disnea.svg',
+    text: "L'essoufflement n'est pas toujours un problème pulmonaire. Découvrez quand votre souffle vous alerte sur la santé de votre cœur.",
+    href: '/symptomes/dyspnee',
+  },
+  {
+    title: 'Rythme cardiaque irrégulier',
+    icon: '/images/svg/symptomes/Arritmia-1.svg',
+    text: "Votre montre connectée a détecté un rythme irrégulier ? Apprenez ce que ces alertes signifient et quand l'avis d'un cardiologue est indispensable.",
+    href: '/symptomes/rythme-cardiaque-irregulier',
+  },
+  {
+    title: 'Œdèmes des jambes',
+    icon: '/images/svg/symptomes/Edema-en-la-pierna.svg',
+    text: "Des jambes gonflées ne sont pas qu'un problème de confort. Découvrez comment elles peuvent être le signe visible d'une insuffisance cardiaque.",
+    href: '/symptomes/oedemes-des-jambes',
+  },
+];
+---
+
+<Layout title="Symptômes cardiaques fréquents — Dr Delhasse" description="Douleurs thoraciques, palpitations, fatigue, dyspnée : découvrez les symptômes qui nécessitent une consultation cardiologique." lang="fr">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1><span class="text-primary">Symptômes</span></h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="card-grid">
+        {symptomes.map((s) => (
+          <div class="card">
+            <img src={s.icon} alt={s.title} class="card__icon" loading="lazy" />
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+            <a href={s.href} class="card__link">En savoir plus &rarr;</a>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center" style="margin-top: 3rem;">
+        <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page {
+    background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%);
+    padding: 6rem 0 4rem;
+    color: var(--color-white);
+  }
+
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .card {
+    background: var(--color-white);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-left-color: var(--color-primary);
+  }
+
+  .card__icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 1.25rem;
+  }
+
+  .card h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.15rem;
+  }
+
+  .card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .card__link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .card__link:hover {
+    color: var(--color-navy);
+  }
+</style>

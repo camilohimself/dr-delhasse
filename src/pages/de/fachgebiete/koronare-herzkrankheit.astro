@@ -1,0 +1,26 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Koronare Herzkrankheit — Dr. Delhasse" description="Angina pectoris, Herzinfarkt: die koronare Herzkrankheit verstehen und behandeln." lang="de">
+  <section class="hero-page"><div class="container"><h1>Koronare <span class="text-primary">Herzkrankheit</span></h1><p class="hero-sub">Angina pectoris: das Warnsignal Ihrer Arterien</p></div></section>
+  <section class="section"><div class="container detail-content">
+    <img src="/images/svg/expertise/Maladie-coronarienne.svg" alt="Koronare Herzkrankheit" class="detail-icon" />
+    <p>Die koronare Herzkrankheit äussert sich als Angina pectoris (Brustenge bei Belastung) oder Herzinfarkt, verursacht durch Verengung der Koronararterien durch Cholesterinablagerungen.</p>
+    <p>Sie kann Brustschmerzen, Rhythmusstörungen oder in schweren Fällen einen Herzinfarkt verursachen. Die progressive Verengung kann durch präventive Massnahmen verlangsamt oder verhindert werden.</p>
+    <p>Bei anhaltender Angina und nicht aussagekräftigem EKG muss eine Koronarangiographie durchgeführt werden. Der Kardiologe prüft das Vorhandensein weiterer vaskulärer Komplikationen durch eine umfassende vaskuläre Abklärung.</p>
+    <div class="detail-cta">
+      <a href="/de/fachgebiete" class="btn btn--outline">&larr; Alle Fachgebiete</a>
+      <a href="/de/kontakt" class="btn btn--primary">Termin vereinbaren</a>
+    </div>
+  </div></section>
+</Layout>
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
+  .detail-content { max-width: 800px; }
+  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
+  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
+</style>

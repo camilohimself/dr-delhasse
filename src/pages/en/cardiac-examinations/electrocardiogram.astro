@@ -1,0 +1,40 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Electrocardiogram (ECG) — Dr Delhasse" description="The ECG is an important standard examination for recording the heart's electrical activity." lang="en">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1><span class="text-primary">Electrocardiogram</span> (ECG)</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container detail-content">
+      <img src="/images/svg/examens/Electrocardiogramme.svg" alt="Electrocardiogram" class="detail-icon" />
+
+      <p>The ECG is an important standard examination, as it is available almost everywhere and easy to perform. The resting ECG is generally performed in a lying position.</p>
+
+      <p>The ECG records, using electrodes placed on the body surface, the electrical currents that pass through the heart with each beat, measuring the electrical activity of the atria and ventricles, as well as heart rhythm and rate.</p>
+
+      <p>Certain cardiovascular diseases are accompanied by characteristic ECG changes. However, the ECG only provides indirect information about the heart's structure and function. An ECG is regularly performed when a rhythm disorder is suspected.</p>
+
+      <div class="detail-cta">
+        <a href="/en/cardiac-examinations" class="btn btn--outline">&larr; All examinations</a>
+        <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .detail-content { max-width: 800px; }
+  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
+  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
+</style>

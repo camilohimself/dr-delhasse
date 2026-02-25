@@ -1,0 +1,26 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Arterielle Hypertonie — Dr. Delhasse" description="Bluthochdruck, oft still, schädigt Ihre Organe. Spezialisierte Konsultation mit Dr. Delhasse im Wallis." lang="de">
+  <section class="hero-page"><div class="container"><h1>Arterielle <span class="text-primary">Hypertonie</span></h1><p class="hero-sub">Der stille Killer</p></div></section>
+  <section class="section"><div class="container detail-content">
+    <img src="/images/svg/expertise/Hypertension-arterielle.svg" alt="Bluthochdruck" class="detail-icon" />
+    <p>Ein Blutdruck von 100/70 mmHg reicht unter normalen Bedingungen generell aus, um die Organe zu versorgen. Steigt der Blutdruck über 140/90 mmHg, schädigt dies Organe wie Herz, Arterien, Nieren, Augen und Gehirn.</p>
+    <p>Es ist daher wichtig, bei Bluthochdruck einen Kardiologen aufzusuchen. Während der Konsultation profitieren Sie von einer Evaluation der möglichen Ursachen, einer personalisierten Behandlungsanpassung und gezielten Ratschlägen zur Lebensstiländerung.</p>
+    <p>All diese Massnahmen zielen darauf ab, den Blutdruck wirksam zu kontrollieren, Komplikationen vorzubeugen und Ihre langfristige Gesundheit zu schützen.</p>
+    <div class="detail-cta">
+      <a href="/de/fachgebiete" class="btn btn--outline">&larr; Alle Fachgebiete</a>
+      <a href="/de/kontakt" class="btn btn--primary">Termin vereinbaren</a>
+    </div>
+  </div></section>
+</Layout>
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
+  .detail-content { max-width: 800px; }
+  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
+  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
+</style>

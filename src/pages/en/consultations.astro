@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Your Heart & You — Cardiology Consultations" description="Symptoms, areas of expertise and cardiac examinations. A comprehensive approach to examining, diagnosing and treating heart conditions." lang="en">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1>Your Heart <span class="text-primary">&</span> You</h1>
+      <p class="hero-sub">A comprehensive approach to examining, diagnosing and treating cardiac conditions.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--3">
+        <a href="/en/symptoms" class="hub-card">
+          <img src="/images/collaboration.webp" alt="Symptoms" loading="lazy" />
+          <div class="hub-card__body">
+            <h2>Symptoms</h2>
+            <p>Discover the clinical signs that require a cardiology consultation.</p>
+            <span class="hub-card__link">Learn more →</span>
+          </div>
+        </a>
+        <a href="/en/areas-of-expertise" class="hub-card">
+          <img src="/images/question-medicale.webp" alt="Areas of Expertise" loading="lazy" />
+          <div class="hub-card__body">
+            <h2>Areas of Expertise</h2>
+            <p>Specialities and cardiac conditions treated by Dr. Delhasse.</p>
+            <span class="hub-card__link">Learn more →</span>
+          </div>
+        </a>
+        <a href="/en/cardiac-examinations" class="hub-card">
+          <img src="/images/demande-rdv.webp" alt="Cardiac Examinations" loading="lazy" />
+          <div class="hub-card__body">
+            <h2>Cardiac Examinations</h2>
+            <p>ECG, echocardiography, exercise testing and other diagnostic procedures.</p>
+            <span class="hub-card__link">Learn more →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
+  .hub-card { display: block; background: var(--color-white); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.08); transition: all 0.3s ease; text-decoration: none; }
+  .hub-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+  .hub-card img { width: 100%; height: 220px; object-fit: cover; }
+  .hub-card__body { padding: 2rem; }
+  .hub-card h2 { font-size: 1.4rem; margin-bottom: 0.75rem; }
+  .hub-card p { font-size: 0.95rem; margin-bottom: 1rem; }
+  .hub-card__link { color: var(--color-primary); font-weight: 600; font-size: 0.9rem; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
+</style>

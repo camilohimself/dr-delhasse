@@ -1,0 +1,42 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Echocardiography — Dr Delhasse, Cardiologist" description="Echocardiography allows real-time heart visualisation. Performed by Dr Delhasse in consultation." lang="en">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1><span class="text-primary">Echocardiography</span></h1>
+      <p class="hero-sub">Heart ultrasound</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container detail-content">
+      <img src="/images/svg/examens/Ecocardiografia.svg" alt="Echocardiography" class="detail-icon" />
+
+      <p>Echocardiography is an examination performed by the cardiologist, who has the skills to acquire precise heart images and, more importantly, interpret them in the correct clinical context.</p>
+
+      <p>The examination is practical and accessible in consultation, offering immediate analysis. It evaluates parameters including left ventricular function, helps clarify the origin of problems, determines the levels of care needed and guides therapeutic decisions while providing prognostic information.</p>
+
+      <p>The examination also analyses cardiac structure including valves, pericardium, heart muscle and great vessels. Applications extend to monitoring diagnosed cardiac diseases, patients receiving treatments affecting the heart, and at-risk patients.</p>
+
+      <div class="detail-cta">
+        <a href="/en/cardiac-examinations" class="btn btn--outline">&larr; All examinations</a>
+        <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
+  .detail-content { max-width: 800px; }
+  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
+  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
+</style>

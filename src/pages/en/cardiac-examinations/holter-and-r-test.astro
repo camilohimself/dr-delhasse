@@ -1,0 +1,44 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Holter and R-Test — Dr Delhasse, Cardiologist" description="Holter ECG and R-Test: prolonged heart rhythm monitoring to detect intermittent disorders." lang="en">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1>Holter and <span class="text-primary">R-Test</span></h1>
+      <p class="hero-sub">Prolonged heart rhythm monitoring</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container detail-content">
+      <img src="/images/svg/examens/Holter-y-prueba.svg" alt="Holter and R-test" class="detail-icon" />
+
+      <p>The long-duration ECG, or Holter ECG, involves continuously recording the heart's electrical activity for 24 hours or more, using a portable device worn by the patient.</p>
+
+      <p>This examination detects intermittent heart rhythm disorders, often absent during a standard resting ECG.</p>
+
+      <p>The R-Test is an alternative allowing prolonged monitoring, up to one week.</p>
+
+      <p>Unlike the Holter, recording is not continuous but triggered either automatically by the device when an anomaly is detected, or manually by the patient when experiencing symptoms. This approach detects more spaced or unpredictable rhythm disorders.</p>
+
+      <div class="detail-cta">
+        <a href="/en/cardiac-examinations" class="btn btn--outline">&larr; All examinations</a>
+        <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
+  .detail-content { max-width: 800px; }
+  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
+  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
+</style>

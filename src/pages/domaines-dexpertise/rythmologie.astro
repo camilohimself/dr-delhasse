@@ -1,0 +1,54 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Rythmologie — Troubles du rythme cardiaque — Dr Delhasse" description="Diagnostic et traitement des troubles du rythme cardiaque : bradycardie, tachycardie, fibrillation auriculaire. Dr Delhasse, cardiologue FMH." lang="fr">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1><span class="text-primary">Rythmologie</span></h1>
+      <p class="hero-sub">L'activité électrique de votre cœur</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container detail-content">
+      <img src="/images/svg/expertise/Rythmologie.svg" alt="Rythmologie" class="detail-icon" />
+
+      <p>Le cœur bat normalement 60 à 80 fois par minute, soit environ 100 000 fois par jour. À l'effort, il peut atteindre 140 à 200 battements par minute selon l'âge.</p>
+
+      <p>Les troubles du rythme cardiaque se manifestent soit par une bradycardie (pouls anormalement lent) soit par une tachycardie (pouls anormalement rapide). Le diagnostic repose sur des électrocardiogrammes ou des enregistreurs Holter.</p>
+
+      <p>Les arythmies auriculaires sont généralement bénignes, tandis que les arythmies ventriculaires (tachycardies ou fibrillation) peuvent provoquer des syncopes et être potentiellement fatales sans traitement.</p>
+
+      <h2>Traitements</h2>
+      <ul>
+        <li><strong>Bradycardie :</strong> traitée par pacemakers</li>
+        <li><strong>Tachycardie :</strong> contrôlée par médicaments (bêta-bloquants, antagonistes calciques, amiodarone), ablation par cathéter, ou défibrillateurs implantables (DAI)</li>
+        <li><strong>Fibrillation auriculaire :</strong> l'arythmie la plus fréquente, causée par des circuits électriques chaotiques ; peut être arrêtée par choc électrique ou médicaments, avec ablation si nécessaire</li>
+      </ul>
+
+      <p>Le cardiologue aide les patients à comprendre leur rythme cardiaque et propose une prise en charge adaptée pour une meilleure qualité de vie.</p>
+
+      <div class="detail-cta">
+        <a href="/domaines-dexpertise" class="btn btn--outline">&larr; Tous les domaines</a>
+        <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
+  .detail-content { max-width: 800px; }
+  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
+  .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
+  .detail-content ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+  .detail-content li { list-style: disc; margin-bottom: 0.5rem; color: var(--color-gray); font-size: 1rem; line-height: 1.7; }
+  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
+</style>

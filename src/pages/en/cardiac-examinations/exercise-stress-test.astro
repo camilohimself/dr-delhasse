@@ -1,0 +1,42 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Exercise Stress Test — Dr Delhasse" description="The exercise stress test on a bicycle evaluates your heart's response to physical exertion." lang="en">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1>Exercise <span class="text-primary">Stress Test</span></h1>
+      <p class="hero-sub">Cardiac ergometry</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container detail-content">
+      <img src="/images/svg/examens/Ergometria.svg" alt="Exercise stress test" class="detail-icon" />
+
+      <p>The exercise stress test, or ergometry, is a key examination for evaluating your heart's response to physical exertion.</p>
+
+      <p>The clinic performs this examination on a stationary bicycle while recording the electrocardiogram (ECG) in real time. The test identifies potential coronary artery disease through ECG changes during physical exertion that reveal possible arterial narrowing.</p>
+
+      <p>Beyond cardiovascular screening, the stress test provides a comprehensive evaluation of fatigue, blood pressure and pulse evolution, and rhythm disorder monitoring.</p>
+
+      <div class="detail-cta">
+        <a href="/en/cardiac-examinations" class="btn btn--outline">&larr; All examinations</a>
+        <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
+  .detail-content { max-width: 800px; }
+  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
+  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
+</style>

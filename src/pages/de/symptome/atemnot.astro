@@ -1,0 +1,44 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Atemnot — Dyspnoe und Herz — Dr. Delhasse" description="Atemnot kann einen kardialen Ursprung haben. Erfahren Sie, wann eine kardiologische Konsultation erforderlich ist." lang="de">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1><span class="text-primary">Atemnot</span></h1>
+      <p class="hero-sub">Wenn die Atemnot vom Herzen kommt</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container detail-content">
+      <img src="/images/svg/symptomes/Disnea.svg" alt="Atemnot" class="detail-icon" />
+
+      <p>Wenn Sie ohne offensichtlichen Grund Atemnot verspüren, ohne sich angestrengt zu haben, denkt man häufig, dass es von den Lungen kommt. Die möglichen Ursachen sind jedoch zahlreich, und der Ursprung kann verborgen sein. Wenn die Beschwerden leicht sind, entscheidet man sich manchmal, damit zu leben, ohne einen Arzt aufzusuchen.</p>
+
+      <p>In diesen Situationen kann eine abnormale Atemnot unbemerkt bleiben und die Einleitung von Untersuchungen oder Behandlungen verzögern. Oft wird die Ursache erst erkannt, wenn sich das Problem so weit verschlimmert hat, dass es zu einem Notfall wird.</p>
+
+      <p>Das Herz — zuständig für die Blutzirkulation im Körper — kann beteiligt sein. Seine Funktion kann durch einen geschwächten Muskel, geschädigte Klappen oder Rhythmusstörungen beeinträchtigt sein, was zu einer Herzinsuffizienz führt. Diese Erkrankung äussert sich häufig als Atemnot, selbst bei minimaler Aktivität.</p>
+
+      <p>Eine Konsultation bei Ihrem Arzt ermöglicht die frühzeitige Erkennung dieser Probleme, die Verbesserung Ihrer Symptome und den Schutz Ihrer langfristigen Gesundheit.</p>
+
+      <div class="detail-cta">
+        <a href="/de/symptome" class="btn btn--outline">&larr; Alle Symptome</a>
+        <a href="/de/kontakt" class="btn btn--primary">Termin vereinbaren</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
+  .detail-content { max-width: 800px; }
+  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
+  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
+</style>

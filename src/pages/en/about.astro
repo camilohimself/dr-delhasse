@@ -1,0 +1,83 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="About Dr Delhasse — Cardiologist in Valais" description="Background, training and commitment of Dr Sébastien Delhasse, FMH cardiologist in Saxon, Valais." lang="en">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1>A journey guided by the <span class="text-primary">heart</span></h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container about-grid">
+      <div class="about-text">
+        <p>Cardiology came to me as a natural calling. The heart, this organ in perpetual motion, reflects both the precise mechanics of the human body and the subtle mystery that surrounds life. Caring for the heart means understanding the delicate balance between medicine and the vitality that drives every individual.</p>
+
+        <p>Originally from Belgium, I settled in Switzerland about ten years ago. My medical career began with training in general internal medicine. I practised in Valais, then at the Lausanne University Hospital (CHUV), where I obtained my FMH specialisation in internal medicine.</p>
+
+        <h2>Expertise built across the continent</h2>
+
+        <p>Drawn to the precision and diversity of cardiology, I continued my training at the University Hospital of Bern (Inselspital), where I deepened my knowledge of cardiovascular pathology management. Throughout my career, I have had the opportunity to collaborate with experienced professionals whose rigour, humanity and knowledge have been a source of inspiration. In 2024, I completed training in cardiac imaging at the Royal Brompton Hospital in London, specialising in cardiac MRI. This international experience allowed me to broaden my skills and adopt a more comprehensive approach to cardiovascular disease.</p>
+
+        <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
+      </div>
+      <div class="about-image">
+        <img src="/images/dr-delhasse.jpeg" alt="Dr. Sébastien Delhasse" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--gray">
+    <div class="container">
+      <h2>My daily commitment</h2>
+      <p class="subtitle">Beyond medical skills, every encounter with a patient is an opportunity for listening, precision and humanity.</p>
+
+      <div class="grid grid--2 engagement-grid">
+        <div class="engagement-card">
+          <h3>Current practice</h3>
+          <p>Today, I divide my time between the Cantonal Hospital of Sion and my practice at the Saxon Clinic, where I offer care combining medical expertise and personalised support. An active member of the Swiss Medical Association (FMH) and the European Society of Cardiology (ESC), I am committed to providing care based on the latest scientific recommendations.</p>
+        </div>
+        <div class="engagement-card">
+          <h3>Beyond medicine</h3>
+          <p>Outside my professional life, I have a particular interest in reading. Passionate about sport, I regularly practise running and volleyball — disciplines that bring balance and dynamism to my daily life. Attentive to the world around me, I also appreciate the beauty of a museum or the energy of an unfamiliar city, sometimes letting a sense of mystery drive my exploration beyond the obvious.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>A centre of excellence in medicine</h2>
+      <p>Ideally located in the heart of the Swiss Alps, between Sion and Martigny, the CIC Clinic in Saxon is a modern medical facility designed to deliver quality care in a state-of-the-art environment. With a team of healthcare professionals specialised in various medical fields, the clinic was originally founded with a surgical focus but now extends its services to other specialities.</p>
+
+      <p>Since April 2025, the opening of cardiology consultations marks a key milestone. Patients can benefit from comprehensive care, ranging from accessible community cardiology and monitoring of common cardiac conditions to specialised investigations made possible by cutting-edge technical facilities.</p>
+
+      <p>To better meet the needs of a diverse patient base, consultations are offered in French, English and German, reflecting the clinic's commitment to providing accessible and personalised care. The CIC Clinic in Saxon thus positions itself as a centre of excellence and innovation serving the health of all.</p>
+
+      <div class="text-center" style="margin-top: 2rem;">
+        <a href="/en/contact" class="btn btn--navy">Book an appointment</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page {
+    background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%);
+    padding: 6rem 0 4rem;
+    color: var(--color-white);
+  }
+  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .about-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: start; }
+  .about-image img { border-radius: 8px; width: 100%; position: sticky; top: calc(var(--header-height) + 2rem); }
+  .engagement-grid { margin-top: 2rem; }
+  .engagement-card { background: var(--color-white); padding: 2rem; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .engagement-card h3 { margin-bottom: 1rem; }
+  @media (max-width: 768px) {
+    .hero-page h1 { font-size: 2rem; }
+    .about-grid { grid-template-columns: 1fr; }
+  }
+</style>

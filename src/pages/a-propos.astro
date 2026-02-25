@@ -1,0 +1,117 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="À propos du Dr Delhasse — Cardiologue en Valais" description="Parcours, formation et engagement du Dr Sébastien Delhasse, cardiologue FMH à Saxon, Valais." lang="fr">
+
+  <section class="hero-page">
+    <div class="container">
+      <h1>Un parcours guidé par le <span class="text-primary">cœur</span></h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container about-grid">
+      <div class="about-text">
+        <p>La cardiologie s'est imposée à moi comme une évidence. Le cœur, cet organe en perpétuel mouvement, reflète à la fois la mécanique précise du corps humain et le mystère subtil qui entoure la vie. Prendre soin du cœur, c'est comprendre l'équilibre fragile entre la médecine et la vitalité qui anime chaque individu.</p>
+
+        <p>Originaire de Belgique, je me suis installé en Suisse il y a une dizaine d'années. Mon parcours médical a débuté par une formation en médecine interne générale. J'ai exercé en Valais, puis au Centre Hospitalier Universitaire Vaudois (CHUV) à Lausanne, où j'ai obtenu la spécialisation FMH en médecine interne.</p>
+
+        <h2>Une expertise construite à travers le continent</h2>
+
+        <p>Attiré par la précision et la diversité de la cardiologie, j'ai poursuivi ma formation à l'hôpital universitaire de Berne (Inselspital), où j'ai approfondi mes connaissances dans la prise en charge des pathologies cardiovasculaires. Tout au long de mon parcours, j'ai eu la chance de collaborer avec des professionnels expérimentés qui m'ont inspiré par leur rigueur, humanité et savoir. En 2024, j'ai complété une formation en imagerie cardiaque au Royal Brompton Hospital de Londres, avec une spécialisation en IRM cardiaque. Cette expérience internationale m'a permis d'élargir mes compétences et d'adopter une approche plus globale des maladies cardiovasculaires.</p>
+
+        <a href="/contact" class="btn btn--primary">Demande de rendez-vous</a>
+      </div>
+      <div class="about-image">
+        <img src="/images/dr-delhasse.jpeg" alt="Dr. Sébastien Delhasse" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--gray">
+    <div class="container">
+      <h2>Mon engagement au quotidien</h2>
+      <p class="subtitle">Au-delà des compétences médicales, chaque rencontre avec un patient est une opportunité d'écoute, de précision et d'humanité.</p>
+
+      <div class="grid grid--2 engagement-grid">
+        <div class="engagement-card">
+          <h3>Activité actuelle</h3>
+          <p>Aujourd'hui, je partage mon activité entre l'Hôpital cantonal de Sion et mon cabinet à la Clinique de Saxon, où j'offre une prise en charge alliant expertise médicale et accompagnement personnalisé. Membre actif de la Société Suisse des Médecins (FMH) et de la Société Européenne de Cardiologie (ESC), je m'engage à appliquer des soins fondés sur les dernières recommandations scientifiques.</p>
+        </div>
+        <div class="engagement-card">
+          <h3>Au-delà de la médecine</h3>
+          <p>En dehors de mon activité professionnelle, je cultive un intérêt particulier pour la lecture. Passionné par le sport, je pratique régulièrement la course à pied et le volleyball, des disciplines qui m'apportent équilibre et dynamisme au quotidien. Attentif au monde qui m'entoure, je sais aussi apprécier la beauté d'un musée ou l'énergie d'une ville inconnue, laissant parfois planer une part de mystère sur ce qui me pousse à explorer au-delà des évidences.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Une infrastructure d'excellence en médecine</h2>
+      <p>Idéalement située au cœur des Alpes suisses, entre Sion et Martigny, la Clinique CIC de Saxon est un établissement médical moderne, conçu pour offrir des soins de qualité dans un environnement à la pointe de la technologie. Forte d'une équipe de professionnels de la santé spécialisés dans divers domaines médicaux, la clinique a initialement été fondée avec une vocation chirurgicale, mais elle étend aujourd'hui ses prestations à d'autres spécialités.</p>
+
+      <p>Depuis le mois d'avril 2025, l'ouverture des consultations en cardiologie marque une étape clé. Les patients peuvent bénéficier d'un accompagnement complet, allant de la cardiologie de proximité accessible à tous, aux bilans et suivis des pathologies cardiaques courantes, jusqu'aux investigations spécialisées, rendues possibles par le plateau technique de pointe.</p>
+
+      <p>Pour mieux répondre aux besoins d'une patientèle diversifiée, les consultations se font en français, anglais et allemand, illustrant l'engagement de la clinique à fournir des soins accessibles et personnalisés. La Clinique CIC de Saxon se positionne ainsi comme un lieu d'excellence et d'innovation au service de la santé de tous.</p>
+
+      <div class="text-center" style="margin-top: 2rem;">
+        <a href="/contact" class="btn btn--navy">Prendre rendez-vous</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero-page {
+    background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%);
+    padding: 6rem 0 4rem;
+    color: var(--color-white);
+  }
+
+  .hero-page h1 {
+    color: var(--color-white);
+    font-size: 2.75rem;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .about-image img {
+    border-radius: 8px;
+    width: 100%;
+    position: sticky;
+    top: calc(var(--header-height) + 2rem);
+  }
+
+  .engagement-grid {
+    margin-top: 2rem;
+  }
+
+  .engagement-card {
+    background: var(--color-white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  .engagement-card h3 {
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero-page h1 {
+      font-size: 2rem;
+    }
+
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
