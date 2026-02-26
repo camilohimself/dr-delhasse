@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 
 const symptome = [
   { title: 'Brustschmerzen', icon: '/images/svg/symptomes/Dolor-en-el-pecho.svg', text: 'Nicht alle Brustschmerzen sind kardialen Ursprungs, aber einige sind Warnsignale, die nie ignoriert werden sollten. Lernen Sie, sie zu erkennen.' },
@@ -16,6 +17,7 @@ const symptome = [
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Startseite', href:'/de'}, {label:'Symptome'}]} />
       <h1><span class="text-primary">Symptome</span></h1>
     </div>
   </section>

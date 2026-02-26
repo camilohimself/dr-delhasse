@@ -1,11 +1,13 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Heart Failure — Dr Delhasse, Cardiologist" description="Diagnosis and management of systolic and diastolic heart failure by Dr Delhasse, FMH cardiologist." lang="en">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Home', href:'/en'}, {label:'Areas of Expertise', href:'/en/areas-of-expertise'}, {label:'Heart Failure'}]} />
       <h1>Heart <span class="text-primary">Failure</span></h1>
       <p class="hero-sub">When the heart tires, every detail matters</p>
     </div>
@@ -13,6 +15,7 @@ import Layout from '../../../layouts/Layout.astro';
 
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/insuffisance-cardiaque.webp" alt="Heart failure" class="detail-hero-img" />
       <img src="/images/svg/expertise/Insuffisance-cardiaque.svg" alt="Heart failure" class="detail-icon" />
 
       <p>Heart failure is the heart's inability to pump enough blood to the organs, manifesting during exertion or at rest. It causes breathing difficulties, pulmonary oedema and can progress to terminal cardiac failure.</p>
@@ -28,7 +31,7 @@ import Layout from '../../../layouts/Layout.astro';
       <p>Chronic management relies on a multidisciplinary approach. The cardiologist monitors signs of worsening via echocardiography, adjusts treatment, or proposes alternatives such as special cardiac stimulators (ICD/CRT) to improve quality of life and prevent hospitalisations. Complex cases are followed up with university hospitals (HUG, CHUV, Inselspital).</p>
 
       <div class="detail-cta">
-        <a href="/en/areas-of-expertise" class="btn btn--outline">&larr; All areas</a>
+        <a href="/en/areas-of-expertise" class="btn btn--outline-dark">&larr; All areas</a>
         <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
       </div>
     </div>
@@ -42,6 +45,7 @@ import Layout from '../../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
   .detail-content ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }

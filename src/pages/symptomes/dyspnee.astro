@@ -1,18 +1,26 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import EmergencyBanner from '../../components/EmergencyBanner.astro';
 ---
 
 <Layout title="Dyspnée — Essoufflement et cœur — Dr Delhasse" description="L'essoufflement peut avoir une origine cardiaque. Découvrez quand la dyspnée nécessite une consultation cardiologique." lang="fr">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[
+        { label: 'Accueil', href: '/' },
+        { label: 'Symptômes', href: '/symptomes' },
+        { label: 'Dyspnée' }
+      ]} />
       <h1><span class="text-primary">Dyspnée</span></h1>
       <p class="hero-sub">Quand l'essoufflement vient du cœur</p>
     </div>
   </section>
-
+  <EmergencyBanner lang="fr" />
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/dyspnee.webp" alt="Dyspnée" class="detail-hero-img" />
       <img src="/images/svg/symptomes/Disnea.svg" alt="Dyspnée" class="detail-icon" />
 
       <p>Si vous ressentez un essoufflement sans raison évidente, comme sans avoir fourni d'effort, il est courant de penser que cela provient des poumons. Pourtant, les causes possibles sont nombreuses, et l'origine peut être dissimulée. Lorsque le trouble est léger, on choisit parfois de vivre avec, sans consulter. Cela arrive particulièrement chez les personnes âgées, dont la mobilité réduite retarde l'apparition des symptômes.</p>
@@ -24,7 +32,7 @@ import Layout from '../../layouts/Layout.astro';
       <p>Consulter votre médecin permet de détecter ces problèmes tôt, d'améliorer vos symptômes et de protéger votre santé à long terme.</p>
 
       <div class="detail-cta">
-        <a href="/symptomes" class="btn btn--outline">&larr; Tous les symptômes</a>
+        <a href="/symptomes" class="btn btn--outline-dark">&larr; Tous les symptômes</a>
         <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
       </div>
     </div>
@@ -38,6 +46,7 @@ import Layout from '../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
   @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }

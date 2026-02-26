@@ -1,11 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Training — Dr Delhasse's Commitment to Cardiology" description="Dr Delhasse actively participates in continuing medical education in cardiology. Lectures, conferences and exchanges throughout Valais." lang="en">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Home', href:'/en'}, {label:'Training'}]} />
       <h1><span class="text-primary">Training</span></h1>
       <p class="hero-sub">Dr Delhasse actively participates in continuing medical education in cardiology. Lectures, conferences and exchanges throughout Valais.</p>
     </div>

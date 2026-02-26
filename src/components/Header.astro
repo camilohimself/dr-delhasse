@@ -34,55 +34,44 @@ const nav = {
 const links = nav[lang];
 const homeHref = lang === 'fr' ? '/' : `/${lang}`;
 
-// Smart language switcher — maps current page path to equivalent in other languages
-const currentPath = Astro.url.pathname;
+// Active nav detection
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 
+// Smart language switcher
 const routeMap: Record<string, Record<string, string>> = {
-  // Top-level pages
   '/a-propos': { fr: '/a-propos', en: '/en/about', de: '/de/ueber-mich' },
   '/en/about': { fr: '/a-propos', en: '/en/about', de: '/de/ueber-mich' },
   '/de/ueber-mich': { fr: '/a-propos', en: '/en/about', de: '/de/ueber-mich' },
-
   '/prendre-soin-de-votre-coeur': { fr: '/prendre-soin-de-votre-coeur', en: '/en/caring-for-your-heart', de: '/de/fuer-ihr-herz-sorgen' },
   '/en/caring-for-your-heart': { fr: '/prendre-soin-de-votre-coeur', en: '/en/caring-for-your-heart', de: '/de/fuer-ihr-herz-sorgen' },
   '/de/fuer-ihr-herz-sorgen': { fr: '/prendre-soin-de-votre-coeur', en: '/en/caring-for-your-heart', de: '/de/fuer-ihr-herz-sorgen' },
-
   '/contact': { fr: '/contact', en: '/en/contact', de: '/de/kontakt' },
   '/en/contact': { fr: '/contact', en: '/en/contact', de: '/de/kontakt' },
   '/de/kontakt': { fr: '/contact', en: '/en/contact', de: '/de/kontakt' },
-
   '/consultations': { fr: '/consultations', en: '/en/consultations', de: '/de/sprechstunden' },
   '/en/consultations': { fr: '/consultations', en: '/en/consultations', de: '/de/sprechstunden' },
   '/de/sprechstunden': { fr: '/consultations', en: '/en/consultations', de: '/de/sprechstunden' },
-
   '/formations': { fr: '/formations', en: '/en/training', de: '/de/fortbildungen' },
   '/en/training': { fr: '/formations', en: '/en/training', de: '/de/fortbildungen' },
   '/de/fortbildungen': { fr: '/formations', en: '/en/training', de: '/de/fortbildungen' },
-
   '/symptomes': { fr: '/symptomes', en: '/en/symptoms', de: '/de/symptome' },
   '/en/symptoms': { fr: '/symptomes', en: '/en/symptoms', de: '/de/symptome' },
   '/de/symptome': { fr: '/symptomes', en: '/en/symptoms', de: '/de/symptome' },
-
   '/domaines-dexpertise': { fr: '/domaines-dexpertise', en: '/en/areas-of-expertise', de: '/de/fachgebiete' },
   '/en/areas-of-expertise': { fr: '/domaines-dexpertise', en: '/en/areas-of-expertise', de: '/de/fachgebiete' },
   '/de/fachgebiete': { fr: '/domaines-dexpertise', en: '/en/areas-of-expertise', de: '/de/fachgebiete' },
-
   '/examens-cardiologiques': { fr: '/examens-cardiologiques', en: '/en/cardiac-examinations', de: '/de/herzuntersuchungen' },
   '/en/cardiac-examinations': { fr: '/examens-cardiologiques', en: '/en/cardiac-examinations', de: '/de/herzuntersuchungen' },
   '/de/herzuntersuchungen': { fr: '/examens-cardiologiques', en: '/en/cardiac-examinations', de: '/de/herzuntersuchungen' },
-
   '/mentions-legales': { fr: '/mentions-legales', en: '/en/legal-notice', de: '/de/impressum' },
   '/en/legal-notice': { fr: '/mentions-legales', en: '/en/legal-notice', de: '/de/impressum' },
   '/de/impressum': { fr: '/mentions-legales', en: '/en/legal-notice', de: '/de/impressum' },
-
   '/politique-de-confidentialite': { fr: '/politique-de-confidentialite', en: '/en/privacy-policy', de: '/de/datenschutz' },
   '/en/privacy-policy': { fr: '/politique-de-confidentialite', en: '/en/privacy-policy', de: '/de/datenschutz' },
   '/de/datenschutz': { fr: '/politique-de-confidentialite', en: '/en/privacy-policy', de: '/de/datenschutz' },
 };
 
-const cleanPath = currentPath.replace(/\/$/, '') || '/';
-const mapped = routeMap[cleanPath];
-
+const mapped = routeMap[currentPath];
 const langSwitch = [
   { code: 'fr' as const, label: 'FR', href: mapped?.fr || '/' },
   { code: 'en' as const, label: 'EN', href: mapped?.en || '/en' },
@@ -91,31 +80,50 @@ const langSwitch = [
 ---
 
 <header class="header" id="header">
-  <div class="header__inner container">
-    <a href={homeHref} class="header__logo">
-      <img src="/images/logo-without-background.png" alt="Dr. Sébastien Delhasse — Cardiologue" width="200" height="60" />
-    </a>
+  <!-- Top bar with phone -->
+  <div class="header__topbar">
+    <div class="container header__topbar-inner">
+      <a href="tel:+41277434059" class="header__phone">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +41 27 743 40 59
+      </a>
+      <span class="header__hours">
+        {lang === 'fr' ? 'Lun–Ven 09:00–17:00' : lang === 'en' ? 'Mon–Fri 09:00–17:00' : 'Mo–Fr 09:00–17:00'}
+      </span>
+    </div>
+  </div>
 
-    <button class="header__toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+  <div class="header__main">
+    <div class="header__inner container">
+      <a href={homeHref} class="header__logo">
+        <img src="/images/logo-without-background.png" alt="Dr. Sébastien Delhasse — Cardiologue" width="200" height="60" />
+      </a>
 
-    <nav class="header__nav" id="nav">
-      <ul class="header__links">
-        {links.map((link) => (
-          <li><a href={link.href}>{link.label}</a></li>
-        ))}
-      </ul>
-      <div class="header__lang">
-        {langSwitch.map((l) => (
-          <a href={l.href} class:list={['header__lang-link', { active: l.code === lang }]}>
-            {l.label}
-          </a>
-        ))}
-      </div>
-    </nav>
+      <button class="header__toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="header__nav" id="nav">
+        <ul class="header__links">
+          {links.map((link) => {
+            const linkPath = link.href.replace(/\/$/, '') || '/';
+            const isActive = currentPath === linkPath || currentPath.startsWith(linkPath + '/');
+            return (
+              <li><a href={link.href} class:list={{ active: isActive }}>{link.label}</a></li>
+            );
+          })}
+        </ul>
+        <div class="header__lang">
+          {langSwitch.map((l) => (
+            <a href={l.href} class:list={['header__lang-link', { active: l.code === lang }]}>
+              {l.label}
+            </a>
+          ))}
+        </div>
+      </nav>
+    </div>
   </div>
 </header>
 
@@ -126,11 +134,49 @@ const langSwitch = [
     left: 0;
     right: 0;
     z-index: 1000;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .header__topbar {
+    background: var(--color-navy);
+    padding: 0.35rem 0;
+    font-size: 0.8rem;
+  }
+
+  .header__topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.5rem;
+  }
+
+  .header__phone {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--color-white);
+    font-weight: 600;
+    transition: opacity var(--transition);
+  }
+
+  .header__phone:hover {
+    opacity: 0.8;
+  }
+
+  .header__phone svg {
+    color: var(--color-primary);
+  }
+
+  .header__hours {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.75rem;
+  }
+
+  .header__main {
     background: rgba(255, 255, 255, 0.97);
     backdrop-filter: blur(8px);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     height: var(--header-height);
-    transition: box-shadow 0.3s ease;
   }
 
   .header__inner {
@@ -164,7 +210,8 @@ const langSwitch = [
     position: relative;
   }
 
-  .header__links a:hover {
+  .header__links a:hover,
+  .header__links a.active {
     color: var(--color-primary);
   }
 
@@ -179,7 +226,8 @@ const langSwitch = [
     transition: width var(--transition);
   }
 
-  .header__links a:hover::after {
+  .header__links a:hover::after,
+  .header__links a.active::after {
     width: 100%;
   }
 
@@ -224,13 +272,21 @@ const langSwitch = [
   }
 
   @media (max-width: 960px) {
+    .header__topbar-inner {
+      justify-content: center;
+    }
+
+    .header__hours {
+      display: none;
+    }
+
     .header__toggle {
       display: flex;
     }
 
     .header__nav {
       position: fixed;
-      top: var(--header-height);
+      top: calc(var(--header-height) + 28px);
       left: 0;
       right: 0;
       bottom: 0;
@@ -240,6 +296,7 @@ const langSwitch = [
       padding: 2rem;
       transform: translateX(100%);
       transition: transform 0.3s ease;
+      overflow-y: auto;
     }
 
     .header__nav.open {
@@ -273,5 +330,16 @@ const langSwitch = [
   toggle?.addEventListener('click', () => {
     const isOpen = nav?.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(isOpen));
+    // Lock body scroll when menu is open
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  // Close menu when a nav link is clicked
+  nav?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle?.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
   });
 </script>

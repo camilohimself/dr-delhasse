@@ -1,18 +1,23 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import EmergencyBanner from '../../../components/EmergencyBanner.astro';
 ---
 
 <Layout title="Brustschmerzen: Wann sollten Sie sich Sorgen machen? — Dr. Delhasse" description="Nicht alle Brustschmerzen sind kardialen Ursprungs. Lernen Sie die Warnsignale zu erkennen." lang="de">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Startseite', href:'/de'}, {label:'Symptome', href:'/de/symptome'}, {label:'Brustschmerzen'}]} />
       <h1><span class="text-primary">Brustschmerzen</span></h1>
       <p class="hero-sub">Wann sollten Sie sich Sorgen machen?</p>
     </div>
   </section>
+  <EmergencyBanner lang="de" />
 
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/douleurs-thoraciques.webp" alt="Brustschmerzen" class="detail-hero-img" />
       <img src="/images/svg/symptomes/Dolor-en-el-pecho.svg" alt="Brustschmerzen" class="detail-icon" />
 
       <p>Brustschmerzen können beunruhigend sein, aber nicht alle haben einen kardialen Ursprung. Herzbedingte Schmerzen äussern sich oft als Druckgefühl in der Brustmitte, das in den linken Arm, den Kiefer oder den Rücken ausstrahlen kann. Sie treten typischerweise bei Belastung oder Stress auf und klingen in Ruhe ab. Sie können ein Warnsignal für eine koronare Herzkrankheit sein. Weitere Symptome wie Atemnot, Schweissausbrüche oder Übelkeit sollten ebenfalls aufmerksam machen.</p>
@@ -22,7 +27,7 @@ import Layout from '../../../layouts/Layout.astro';
       <p>Im Zweifelsfall ist es besser, nicht zu warten. Bei ungewöhnlichen oder intensiven Schmerzen kann eine sofortige Konsultation Komplikationen verhindern. Ein Fehlalarm ist immer besser als ein unterschätztes Problem.</p>
 
       <div class="detail-cta">
-        <a href="/de/symptome" class="btn btn--outline">&larr; Alle Symptome</a>
+        <a href="/de/symptome" class="btn btn--outline-dark">&larr; Alle Symptome</a>
         <a href="/de/kontakt" class="btn btn--primary">Termin vereinbaren</a>
       </div>
     </div>
@@ -36,6 +41,7 @@ import Layout from '../../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
   @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }

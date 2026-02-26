@@ -68,7 +68,7 @@ const year = new Date().getFullYear();
   <div class="footer__main container">
     <div class="footer__brand">
       <img src="/images/logo-footer.png" alt="Dr. Delhasse" width="180" height="50" class="footer__logo" />
-      <p class="footer__tagline">On ne voit bien qu'avec le cœur</p>
+      <p class="footer__tagline">{lang === 'fr' ? "On ne voit bien qu'avec le cœur" : lang === 'en' ? 'One sees clearly only with the heart' : 'Man sieht nur mit dem Herzen gut'}</p>
     </div>
 
     <div class="footer__nav">
@@ -94,7 +94,7 @@ const year = new Date().getFullYear();
           1907 Saxon
         </li>
         <li>
-          <strong>Horaires</strong><br />
+          <strong>{lang === 'fr' ? 'Horaires' : lang === 'en' ? 'Hours' : 'Öffnungszeiten'}</strong><br />
           09:00 – 17:00
         </li>
       </ul>
@@ -103,7 +103,7 @@ const year = new Date().getFullYear();
 
   <div class="footer__bottom">
     <div class="container footer__bottom-inner">
-      <p>&copy; {year} Dr. Sébastien Delhasse. {t.rights}.</p>
+      <p>&copy; {year} Cabinet Médical Delhasse Sébastien Sàrl. {t.rights}.</p>
       <div class="footer__legal">
         <a href={lang === 'en' ? '/en/legal-notice' : lang === 'de' ? '/de/impressum' : '/mentions-legales'}>{t.legal}</a>
         <a href={lang === 'en' ? '/en/privacy-policy' : lang === 'de' ? '/de/datenschutz' : '/politique-de-confidentialite'}>{t.privacy}</a>

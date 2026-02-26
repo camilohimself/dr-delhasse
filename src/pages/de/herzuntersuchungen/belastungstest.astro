@@ -1,15 +1,19 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
 ---
 <Layout title="Ergometrie — Belastungstest — Dr. Delhasse" description="Der Belastungstest auf dem Fahrrad bewertet die Reaktion Ihres Herzens auf körperliche Anstrengung." lang="de">
-  <section class="hero-page"><div class="container"><h1><span class="text-primary">Ergometrie</span></h1><p class="hero-sub">Der kardiale Belastungstest</p></div></section>
+  <section class="hero-page"><div class="container">
+      <Breadcrumb items={[{label:'Startseite', href:'/de'}, {label:'Herzuntersuchungen', href:'/de/herzuntersuchungen'}, {label:'Belastungstest'}]} />
+      <h1><span class="text-primary">Ergometrie</span></h1><p class="hero-sub">Der kardiale Belastungstest</p></div></section>
   <section class="section"><div class="container detail-content">
+    <img src="/images/detail/epreuve-effort.webp" alt="Belastungstest" class="detail-hero-img" />
     <img src="/images/svg/examens/Ergometria.svg" alt="Belastungstest" class="detail-icon" />
     <p>Der Belastungstest oder die Ergometrie ist eine Schlüsseluntersuchung zur Bewertung der Reaktion Ihres Herzens auf körperliche Anstrengung.</p>
     <p>Die Klinik führt diese Untersuchung auf einem stationären Fahrrad durch, während das Elektrokardiogramm (EKG) in Echtzeit aufgezeichnet wird. Der Test identifiziert eine mögliche koronare Herzkrankheit durch EKG-Veränderungen während der Belastung.</p>
     <p>Über das kardiovaskuläre Screening hinaus liefert der Belastungstest eine umfassende Bewertung von Ermüdung, Blutdruck- und Pulsentwicklung sowie Rhythmusstörungen.</p>
     <div class="detail-cta">
-      <a href="/de/herzuntersuchungen" class="btn btn--outline">&larr; Alle Untersuchungen</a>
+      <a href="/de/herzuntersuchungen" class="btn btn--outline-dark">&larr; Alle Untersuchungen</a>
       <a href="/de/kontakt" class="btn btn--primary">Termin vereinbaren</a>
     </div>
   </div></section>
@@ -20,6 +24,7 @@ import Layout from '../../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
   @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }

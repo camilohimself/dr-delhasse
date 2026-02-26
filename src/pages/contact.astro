@@ -42,11 +42,8 @@ import Layout from '../layouts/Layout.astro';
       <!-- Contact Form -->
       <div class="contact-form-wrapper">
         <h2>Envoyez-nous un <span class="text-primary">message</span></h2>
-        <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="contact" />
-          <p class="hidden" style="display:none;">
-            <label>Ne pas remplir : <input name="bot-field" /></label>
-          </p>
+        <form class="contact-form" id="contact-form" name="contact" method="POST" action="mailto:sebastien.delhasse@hotmail.com" enctype="text/plain">
+          <p style="display:none;"><label>Ne pas remplir : <input name="bot-field" /></label></p>
 
           <div class="form-row">
             <div class="form-group">
@@ -82,6 +79,11 @@ import Layout from '../layouts/Layout.astro';
 
           <button type="submit" class="btn btn--primary">Envoyer le message</button>
         </form>
+        <div class="form-success" id="form-success" style="display:none;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <h3>Message envoyé !</h3>
+          <p>Nous reviendrons vers vous dans les meilleurs délais.</p>
+        </div>
       </div>
 
       <!-- Info -->
@@ -171,24 +173,6 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 600;
     color: var(--color-navy);
     margin-bottom: 0.5rem;
-  }
-
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    padding: 0.75rem 1rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-family: var(--font-family);
-    transition: border-color 0.3s ease;
-  }
-
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
-    outline: none;
-    border-color: var(--color-primary);
   }
 
   .form-group textarea {

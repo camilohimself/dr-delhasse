@@ -1,11 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Ihr Herz & Sie — Kardiologische Sprechstunden" description="Symptome, Fachgebiete und Herzuntersuchungen. Ein umfassender Ansatz zur Untersuchung, Diagnose und Behandlung von Herzerkrankungen." lang="de">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Startseite', href:'/de'}, {label:'Sprechstunden'}]} />
       <h1>Ihr Herz <span class="text-primary">&</span> Sie</h1>
       <p class="hero-sub">Ein umfassender Ansatz zur Untersuchung, Diagnose und Behandlung von Herzerkrankungen.</p>
     </div>

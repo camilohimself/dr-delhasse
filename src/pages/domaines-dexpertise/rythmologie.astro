@@ -1,11 +1,17 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Rythmologie — Troubles du rythme cardiaque — Dr Delhasse" description="Diagnostic et traitement des troubles du rythme cardiaque : bradycardie, tachycardie, fibrillation auriculaire. Dr Delhasse, cardiologue FMH." lang="fr">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[
+        { label: 'Accueil', href: '/' },
+        { label: "Domaines d'expertise", href: '/domaines-dexpertise' },
+        { label: 'Rythmologie' }
+      ]} />
       <h1><span class="text-primary">Rythmologie</span></h1>
       <p class="hero-sub">L'activité électrique de votre cœur</p>
     </div>
@@ -13,6 +19,7 @@ import Layout from '../../layouts/Layout.astro';
 
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/rythmologie.webp" alt="Rythmologie" class="detail-hero-img" />
       <img src="/images/svg/expertise/Rythmologie.svg" alt="Rythmologie" class="detail-icon" />
 
       <p>Le cœur bat normalement 60 à 80 fois par minute, soit environ 100 000 fois par jour. À l'effort, il peut atteindre 140 à 200 battements par minute selon l'âge.</p>
@@ -31,7 +38,7 @@ import Layout from '../../layouts/Layout.astro';
       <p>Le cardiologue aide les patients à comprendre leur rythme cardiaque et propose une prise en charge adaptée pour une meilleure qualité de vie.</p>
 
       <div class="detail-cta">
-        <a href="/domaines-dexpertise" class="btn btn--outline">&larr; Tous les domaines</a>
+        <a href="/domaines-dexpertise" class="btn btn--outline-dark">&larr; Tous les domaines</a>
         <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
       </div>
     </div>
@@ -45,6 +52,7 @@ import Layout from '../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
   .detail-content ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }

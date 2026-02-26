@@ -1,15 +1,19 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
 ---
 <Layout title="Kardio-MRT — Dr. Delhasse" description="Das Kardio-MRT bietet eine Bildgebung von unerreichter Präzision für die Diagnose von Herzmuskelerkrankungen." lang="de">
-  <section class="hero-page"><div class="container"><h1>Kardio-<span class="text-primary">MRT</span></h1><p class="hero-sub">Spitzenbildgebung für Ihr Herz</p></div></section>
+  <section class="hero-page"><div class="container">
+      <Breadcrumb items={[{label:'Startseite', href:'/de'}, {label:'Herzuntersuchungen', href:'/de/herzuntersuchungen'}, {label:'Kardio-MRT'}]} />
+      <h1>Kardio-<span class="text-primary">MRT</span></h1><p class="hero-sub">Spitzenbildgebung für Ihr Herz</p></div></section>
   <section class="section"><div class="container detail-content">
+    <img src="/images/detail/irm-cardiaque.webp" alt="Kardio-MRT" class="detail-hero-img" />
     <img src="/images/svg/examens/Resonancia-magnetica.svg" alt="Kardio-MRT" class="detail-icon" />
     <p>Das Kardio-MRT ist eine fortschrittliche Bildgebungstechnik, die das Herz mit grosser Präzision untersucht. Es ist eine nicht-invasive, gut verträgliche Untersuchung.</p>
     <p>Es liefert detaillierte Bilder für zahlreiche Indikationen, charakterisiert Kardiomyopathien, bewertet die Herzfunktion, die Koronardurchblutung und die Gewebeviabilität nach Herzinfarkt.</p>
     <p>Im Vergleich zur Echokardiographie bietet das Kardio-MRT eine grössere Präzision und Reproduzierbarkeit. Kosten, begrenzte Verfügbarkeit und Untersuchungsdauer (40-90 Minuten) schränken jedoch die Nutzung ein.</p>
     <div class="detail-cta">
-      <a href="/de/herzuntersuchungen" class="btn btn--outline">&larr; Alle Untersuchungen</a>
+      <a href="/de/herzuntersuchungen" class="btn btn--outline-dark">&larr; Alle Untersuchungen</a>
       <a href="/de/kontakt" class="btn btn--primary">Termin vereinbaren</a>
     </div>
   </div></section>
@@ -20,6 +24,7 @@ import Layout from '../../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
   @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }

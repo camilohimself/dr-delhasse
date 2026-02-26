@@ -1,18 +1,26 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import EmergencyBanner from '../../components/EmergencyBanner.astro';
 ---
 
 <Layout title="Douleurs thoraciques : quand faut-il s'inquiéter ? — Dr Delhasse" description="Toutes les douleurs thoraciques ne sont pas d'origine cardiaque. Apprenez à reconnaître les signaux d'alerte nécessitant une consultation cardiologique." lang="fr">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[
+        { label: 'Accueil', href: '/' },
+        { label: 'Symptômes', href: '/symptomes' },
+        { label: 'Douleurs thoraciques' }
+      ]} />
       <h1>Douleurs <span class="text-primary">thoraciques</span></h1>
       <p class="hero-sub">Quand faut-il s'inquiéter ?</p>
     </div>
   </section>
-
+  <EmergencyBanner lang="fr" />
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/douleurs-thoraciques.webp" alt="Douleurs thoraciques" class="detail-hero-img" />
       <img src="/images/svg/symptomes/Dolor-en-el-pecho.svg" alt="Douleurs thoraciques" class="detail-icon" />
 
       <p>Ressentir une douleur thoracique peut être inquiétant, mais toutes ne sont pas d'origine cardiaque. Les douleurs liées au cœur se manifestent souvent par une sensation d'oppression au centre de la poitrine, pouvant irradier vers le bras gauche, la mâchoire ou le dos. Elles surviennent généralement à l'effort ou en situation de stress et s'atténuent au repos. Elles peuvent être le signe avant-coureur d'une maladie coronarienne. D'autres signes comme un essoufflement, des sueurs ou des nausées doivent alerter.</p>
@@ -22,7 +30,7 @@ import Layout from '../../layouts/Layout.astro';
       <p>En cas de doute, mieux vaut ne pas attendre. Si la douleur est inhabituelle ou intense, consulter immédiatement peut éviter des complications. Mieux vaut une fausse alerte qu'un problème sous-estimé.</p>
 
       <div class="detail-cta">
-        <a href="/symptomes" class="btn btn--outline">&larr; Tous les symptômes</a>
+        <a href="/symptomes" class="btn btn--outline-dark">&larr; Tous les symptômes</a>
         <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
       </div>
     </div>
@@ -36,6 +44,7 @@ import Layout from '../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
   @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }

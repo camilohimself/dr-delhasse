@@ -1,18 +1,24 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import EmergencyBanner from '../../../components/EmergencyBanner.astro';
 ---
 
 <Layout title="Swollen Legs: Should You See a Cardiologist? — Dr Delhasse" description="Swollen legs can signal heart failure. Discover the cardiac causes of lower limb oedema." lang="en">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Home', href:'/en'}, {label:'Symptoms', href:'/en/symptoms'}, {label:'Leg Oedema'}]} />
       <h1>Leg <span class="text-primary">Oedema</span></h1>
       <p class="hero-sub">Should you see a cardiologist?</p>
     </div>
   </section>
 
+  <EmergencyBanner lang="en" />
+
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/oedemes-jambes.webp" alt="Leg oedema consultation" class="detail-hero-img" />
       <img src="/images/svg/symptomes/Edema-en-la-pierna.svg" alt="Leg oedema" class="detail-icon" />
 
       <p>Swollen legs, or lower limb oedema, can have several origins. In cardiology, right-sided heart failure is a common cause: when the heart struggles to circulate blood, it accumulates in the veins, allowing fluid to seep into the tissues.</p>
@@ -22,7 +28,7 @@ import Layout from '../../../layouts/Layout.astro';
       <p>A cardiology consultation helps understand the origin and propose appropriate management, combining attentive listening, clinical examination and targeted investigations.</p>
 
       <div class="detail-cta">
-        <a href="/en/symptoms" class="btn btn--outline">&larr; All symptoms</a>
+        <a href="/en/symptoms" class="btn btn--outline-dark">&larr; All symptoms</a>
         <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
       </div>
     </div>
@@ -36,6 +42,7 @@ import Layout from '../../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
   @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }

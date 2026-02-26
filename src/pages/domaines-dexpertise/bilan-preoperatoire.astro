@@ -1,11 +1,17 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Bilan préopératoire — Dr Delhasse, Cardiologue" description="Évaluation cardiaque avant chirurgie cardiaque ou non cardiaque. Bilan préopératoire spécialisé par le Dr Delhasse." lang="fr">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[
+        { label: 'Accueil', href: '/' },
+        { label: "Domaines d'expertise", href: '/domaines-dexpertise' },
+        { label: 'Bilan préopératoire' }
+      ]} />
       <h1>Bilan <span class="text-primary">préopératoire</span></h1>
       <p class="hero-sub">Votre sécurité cardiaque avant toute intervention</p>
     </div>
@@ -13,6 +19,7 @@ import Layout from '../../layouts/Layout.astro';
 
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/bilan-preoperatoire.webp" alt="Bilan préopératoire" class="detail-hero-img" />
       <img src="/images/svg/expertise/Bilan-preoperatoire.svg" alt="Bilan préopératoire" class="detail-icon" />
 
       <p>L'implication du cardiologue dans un bilan préopératoire est différente selon le contexte envisagé.</p>
@@ -26,7 +33,7 @@ import Layout from '../../layouts/Layout.astro';
       <p>Le cardiologue discute des procédures avec les patients, évalue les alternatives et s'assure de la compréhension. Le consentement éclairé est fondamental pour que les patients prennent des décisions en toute connaissance de cause. La consultation aborde les risques de l'intervention. L'EUROSCORE est utilisé pour estimer le risque opératoire en chirurgie cardiaque, évaluant la balance risque-bénéfice.</p>
 
       <div class="detail-cta">
-        <a href="/domaines-dexpertise" class="btn btn--outline">&larr; Tous les domaines</a>
+        <a href="/domaines-dexpertise" class="btn btn--outline-dark">&larr; Tous les domaines</a>
         <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
       </div>
     </div>
@@ -40,6 +47,7 @@ import Layout from '../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }

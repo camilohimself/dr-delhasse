@@ -1,11 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Datenschutzerklärung — Dr. Sébastien Delhasse" description="Datenschutzerklärung und Schutz personenbezogener Daten der Website drdelhasse-cardiologue.ch" lang="de">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Startseite', href:'/de'}, {label:'Datenschutz'}]} />
       <h1><span class="text-primary">Datenschutzerklärung</span></h1>
     </div>
   </section>

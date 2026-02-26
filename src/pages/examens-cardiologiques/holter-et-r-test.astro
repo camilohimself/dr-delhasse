@@ -1,11 +1,17 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Holter et R-test — Dr Delhasse, Cardiologue" description="Holter ECG et R-Test : surveillance prolongée du rythme cardiaque pour détecter les troubles intermittents." lang="fr">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[
+        { label: 'Accueil', href: '/' },
+        { label: 'Examens cardiologiques', href: '/examens-cardiologiques' },
+        { label: 'Holter et R-test' }
+      ]} />
       <h1>Holter et <span class="text-primary">R-test</span></h1>
       <p class="hero-sub">Surveillance prolongée du rythme cardiaque</p>
     </div>
@@ -13,6 +19,7 @@ import Layout from '../../layouts/Layout.astro';
 
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/holter-et-r-test.webp" alt="Holter et R-test" class="detail-hero-img" />
       <img src="/images/svg/examens/Holter-y-prueba.svg" alt="Holter et R-test" class="detail-icon" />
 
       <p>L'ECG de longue durée, ou Holter ECG, consiste à enregistrer en continu l'activité électrique du cœur pendant 24 heures ou plus, grâce à un appareil portable porté par le patient.</p>
@@ -24,7 +31,7 @@ import Layout from '../../layouts/Layout.astro';
       <p>Contrairement au Holter, l'enregistrement n'est pas continu mais déclenché soit automatiquement par l'appareil en cas d'anomalie, soit manuellement par le patient lorsqu'il ressent des symptômes. Cette approche détecte les troubles du rythme plus espacés ou imprévisibles.</p>
 
       <div class="detail-cta">
-        <a href="/examens-cardiologiques" class="btn btn--outline">&larr; Tous les examens</a>
+        <a href="/examens-cardiologiques" class="btn btn--outline-dark">&larr; Tous les examens</a>
         <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
       </div>
     </div>
@@ -38,6 +45,7 @@ import Layout from '../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
   @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }

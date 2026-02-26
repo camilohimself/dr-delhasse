@@ -1,18 +1,26 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import EmergencyBanner from '../../components/EmergencyBanner.astro';
 ---
 
 <Layout title="Rythme cardiaque irrégulier — Dr Delhasse, Cardiologue" description="Un rythme cardiaque irrégulier peut signaler un trouble de la conduction. Découvrez quand consulter un cardiologue." lang="fr">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[
+        { label: 'Accueil', href: '/' },
+        { label: 'Symptômes', href: '/symptomes' },
+        { label: 'Rythme cardiaque irrégulier' }
+      ]} />
       <h1>Rythme cardiaque <span class="text-primary">irrégulier</span></h1>
       <p class="hero-sub">Quand votre montre connectée vous alerte</p>
     </div>
   </section>
-
+  <EmergencyBanner lang="fr" />
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/rythme-cardiaque-irregulier.webp" alt="Rythme cardiaque irrégulier" class="detail-hero-img" />
       <img src="/images/svg/symptomes/Arritmia-1.svg" alt="Rythme cardiaque irrégulier" class="detail-icon" />
 
       <p>Un rythme cardiaque irrégulier se caractérise par un cœur qui bat de manière désordonnée. Il peut être le signe d'un problème sous-jacent comme la fibrillation auriculaire ou un autre trouble de la conduction cardiaque. Bien que certains épisodes puissent être bénins, il est essentiel de consulter un cardiologue pour un diagnostic précis et déterminer la cause sous-jacente, surtout si vous ressentez des symptômes récurrents tels que des palpitations, des battements irréguliers ou des étourdissements.</p>
@@ -20,7 +28,7 @@ import Layout from '../../layouts/Layout.astro';
       <p>Dans un monde où les montres connectées et autres appareils de santé nous permettent de suivre en temps réel notre rythme cardiaque, il est devenu plus facile de détecter ces irrégularités, même avant de ressentir des symptômes significatifs. Cependant, bien que ces outils soient utiles, ils ne remplacent pas l'expertise médicale. L'évaluation chez un cardiologue reste indispensable pour évaluer correctement votre santé cardiaque.</p>
 
       <div class="detail-cta">
-        <a href="/symptomes" class="btn btn--outline">&larr; Tous les symptômes</a>
+        <a href="/symptomes" class="btn btn--outline-dark">&larr; Tous les symptômes</a>
         <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
       </div>
     </div>
@@ -34,6 +42,7 @@ import Layout from '../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
   @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }

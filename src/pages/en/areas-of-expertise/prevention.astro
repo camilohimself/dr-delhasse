@@ -1,11 +1,13 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Cardiovascular Prevention — Dr Delhasse" description="Obesity, cholesterol, diabetes, smoking: the 4 major cardiovascular risk factors and how to manage them." lang="en">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Home', href:'/en'}, {label:'Areas of Expertise', href:'/en/areas-of-expertise'}, {label:'Prevention'}]} />
       <h1><span class="text-primary">Prevention</span></h1>
       <p class="hero-sub">The best treatment is the one you avoid</p>
     </div>
@@ -13,6 +15,7 @@ import Layout from '../../../layouts/Layout.astro';
 
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/prevention.webp" alt="Cardiovascular prevention" class="detail-hero-img" />
       <img src="/images/svg/expertise/prevention.svg" alt="Prevention" class="detail-icon" />
 
       <p>Four major cardiovascular risk factors:</p>
@@ -30,7 +33,7 @@ import Layout from '../../../layouts/Layout.astro';
       <p>A major risk factor for heart attacks, strokes and cancers. Nicotine substitutes and medications can aid cessation.</p>
 
       <div class="detail-cta">
-        <a href="/en/areas-of-expertise" class="btn btn--outline">&larr; All areas</a>
+        <a href="/en/areas-of-expertise" class="btn btn--outline-dark">&larr; All areas</a>
         <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
       </div>
     </div>
@@ -44,6 +47,7 @@ import Layout from '../../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }

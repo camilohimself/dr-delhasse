@@ -1,11 +1,13 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Post Heart Attack Follow-up — Dr Delhasse" description="Recovery and cardiological follow-up after myocardial infarction. Recurrence prevention with Dr Delhasse." lang="en">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Home', href:'/en'}, {label:'Areas of Expertise', href:'/en/areas-of-expertise'}, {label:'Post Heart Attack Follow-up'}]} />
       <h1>Post Heart Attack <span class="text-primary">Follow-up</span></h1>
       <p class="hero-sub">Recovery starts here</p>
     </div>
@@ -13,6 +15,7 @@ import Layout from '../../../layouts/Layout.astro';
 
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/suivi-post-infarctus.webp" alt="Post heart attack follow-up" class="detail-hero-img" />
       <img src="/images/svg/expertise/Suivi-apres-infarctus.svg" alt="Post heart attack follow-up" class="detail-icon" />
 
       <p>After a heart attack, recovery depends on the extent of damage to the heart, particularly the left ventricle's ability to pump blood effectively.</p>
@@ -24,7 +27,7 @@ import Layout from '../../../layouts/Layout.astro';
       <p>Regular cardiology consultations allow follow-up and treatment adjustment. This follow-up combined with lifestyle changes reduces the risk of complications and improves quality of life.</p>
 
       <div class="detail-cta">
-        <a href="/en/areas-of-expertise" class="btn btn--outline">&larr; All areas</a>
+        <a href="/en/areas-of-expertise" class="btn btn--outline-dark">&larr; All areas</a>
         <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
       </div>
     </div>
@@ -38,6 +41,7 @@ import Layout from '../../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
   @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }

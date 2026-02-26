@@ -1,15 +1,19 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
 ---
 <Layout title="Kardiomyopathien — Dr. Delhasse" description="Diagnose von Kardiomyopathien: dilatiertes, rigides oder verdicktes Herz. Genetische Abklärung." lang="de">
-  <section class="hero-page"><div class="container"><h1><span class="text-primary">Kardiomyopathien</span></h1><p class="hero-sub">Erkrankungen des Herzmuskels</p></div></section>
+  <section class="hero-page"><div class="container">
+      <Breadcrumb items={[{label:'Startseite', href:'/de'}, {label:'Fachgebiete', href:'/de/fachgebiete'}, {label:'Kardiomyopathien'}]} />
+      <h1><span class="text-primary">Kardiomyopathien</span></h1><p class="hero-sub">Erkrankungen des Herzmuskels</p></div></section>
   <section class="section"><div class="container detail-content">
+    <img src="/images/detail/cardiomyopathies.webp" alt="Kardiomyopathien" class="detail-hero-img" />
     <img src="/images/svg/expertise/Cardiomyopathies.svg" alt="Kardiomyopathien" class="detail-icon" />
     <p>Die Kardiomyopathie ist eine Erkrankung des Herzmuskels, die seine Fähigkeit beeinträchtigt, Blut effizient zu pumpen, und zu einer Herzinsuffizienz führen kann.</p>
     <p>Kardiomyopathien treten in verschiedenen Formen auf: dilatiertes Herz, rigides Herz, verdicktes Herz oder Ersatz des Herzmuskels durch Fettgewebe. Diese Zustände treten in verschiedenen Altersstufen auf, auch bei jungen Menschen.</p>
     <p>Die Ursachen sind vielfältig, aber oft genetisch, weshalb ein familiäres Screening bei Fällen mit Familiengeschichte empfohlen wird. Kardiologen verwenden häufig fortgeschrittene Diagnostik, insbesondere die Magnetresonanztomographie.</p>
     <div class="detail-cta">
-      <a href="/de/fachgebiete" class="btn btn--outline">&larr; Alle Fachgebiete</a>
+      <a href="/de/fachgebiete" class="btn btn--outline-dark">&larr; Alle Fachgebiete</a>
       <a href="/de/kontakt" class="btn btn--primary">Termin vereinbaren</a>
     </div>
   </div></section>
@@ -20,6 +24,7 @@ import Layout from '../../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
   @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }

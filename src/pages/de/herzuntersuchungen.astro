@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 
 const untersuchungen = [
   { title: 'Elektrokardiogramm (EKG)', icon: '/images/svg/examens/Electrocardiogramme.svg', text: 'Eine schnelle, schmerzlose Untersuchung, die viel über die elektrische Aktivität Ihres Herzens verrät. Erfahren Sie, was ein einfaches EKG aufdecken kann.' },
@@ -16,6 +17,7 @@ const untersuchungen = [
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Startseite', href:'/de'}, {label:'Herzuntersuchungen'}]} />
       <h1><span class="text-primary">Herzuntersuchungen</span></h1>
     </div>
   </section>

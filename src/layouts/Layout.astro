@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import CookieConsent from '../components/CookieConsent.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -15,6 +16,17 @@ const htmlLang = lang === 'fr' ? 'fr-CH' : lang === 'en' ? 'en' : 'de-CH';
 const prefix = lang === 'fr' ? '' : `/${lang}`;
 const contactHref = lang === 'fr' ? '/contact' : lang === 'en' ? '/en/contact' : '/de/kontakt';
 const ctaLabel = lang === 'fr' ? 'Prendre rendez-vous' : lang === 'en' ? 'Book appointment' : 'Termin vereinbaren';
+
+// Dynamic canonical + hreflang
+const siteUrl = 'https://drdelhasse-cardiologue.ch';
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '';
+const canonicalUrl = `${siteUrl}${currentPath}`;
+
+// Build hreflang URLs — map current path to equivalent in each language
+const cleanPath = currentPath.replace(/^\/(en|de)/, '');
+const hreflangFr = `${siteUrl}${cleanPath || '/'}`;
+const hreflangEn = `${siteUrl}/en${cleanPath || '/'}`;
+const hreflangDe = `${siteUrl}/de${cleanPath || '/'}`;
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -59,6 +71,11 @@ const structuredData = {
     <link rel="icon" type="image/png" href="/images/red-iso.png" />
     <title>{title}</title>
 
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
     <!-- Preload critical images -->
     <link rel="preload" as="image" href="/images/logo-without-background.png" />
 
@@ -66,23 +83,34 @@ const structuredData = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:locale" content={htmlLang} />
     <meta property="og:image" content="https://drdelhasse-cardiologue.ch/images/dr-delhasse.jpeg" />
 
-    <!-- Canonical + hreflang -->
-    <link rel="alternate" hreflang="fr" href="https://drdelhasse-cardiologue.ch/" />
-    <link rel="alternate" hreflang="en" href="https://drdelhasse-cardiologue.ch/en/" />
-    <link rel="alternate" hreflang="de" href="https://drdelhasse-cardiologue.ch/de/" />
+    <!-- Canonical -->
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Hreflang (dynamic per page) -->
+    <link rel="alternate" hreflang="fr" href={hreflangFr} />
+    <link rel="alternate" hreflang="en" href={hreflangEn} />
+    <link rel="alternate" hreflang="de" href={hreflangDe} />
+    <link rel="alternate" hreflang="x-default" href={hreflangFr} />
 
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
   <body>
+    <!-- Skip link -->
+    <a href="#main-content" class="skip-link">
+      {lang === 'fr' ? 'Aller au contenu' : lang === 'en' ? 'Skip to content' : 'Zum Inhalt springen'}
+    </a>
+
     <Header lang={lang} />
-    <main class="main">
+    <main class="main" id="main-content">
       <slot />
     </main>
     <Footer lang={lang} />
+    <CookieConsent lang={lang} />
 
     <!-- Floating CTA + Back to top -->
     <div class="floating-cta">
@@ -134,6 +162,6 @@ const structuredData = {
 
 <style>
   .main {
-    margin-top: var(--header-height);
+    margin-top: var(--header-total);
   }
 </style>

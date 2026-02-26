@@ -1,16 +1,20 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
 ---
 <Layout title="Präoperative Abklärung — Dr. Delhasse" description="Kardiologische Abklärung vor Herzoperationen und nicht-kardialen Eingriffen." lang="de">
-  <section class="hero-page"><div class="container"><h1>Präoperative <span class="text-primary">Abklärung</span></h1><p class="hero-sub">Ihre kardiale Sicherheit vor jedem Eingriff</p></div></section>
+  <section class="hero-page"><div class="container">
+      <Breadcrumb items={[{label:'Startseite', href:'/de'}, {label:'Fachgebiete', href:'/de/fachgebiete'}, {label:'Präoperative Abklärung'}]} />
+      <h1>Präoperative <span class="text-primary">Abklärung</span></h1><p class="hero-sub">Ihre kardiale Sicherheit vor jedem Eingriff</p></div></section>
   <section class="section"><div class="container detail-content">
+    <img src="/images/detail/bilan-preoperatoire.webp" alt="Präoperative Abklärung" class="detail-hero-img" />
     <img src="/images/svg/expertise/Bilan-preoperatoire.svg" alt="Präoperative Abklärung" class="detail-icon" />
     <h2>Für nicht-kardiale Operationen</h2>
     <p>Die kardiologische Evaluation ist nicht systematisch vor jedem Eingriff erforderlich, wird aber notwendig, wenn kardiale Vulnerabilitäten bestehen. Sie liefert wesentliche Informationen für Chirurgen und Anästhesisten.</p>
     <h2>Für Herzoperationen</h2>
     <p>Wenn die Herzerkrankung schwer ist oder nicht auf die medikamentöse Behandlung anspricht, kann eine Herzoperation die einzige Alternative sein. Der Kardiologe evaluiert mit dem multidisziplinären Heart Team die Schwere, Risiken und Nutzen. Der EUROSCORE wird zur Einschätzung des Operationsrisikos verwendet.</p>
     <div class="detail-cta">
-      <a href="/de/fachgebiete" class="btn btn--outline">&larr; Alle Fachgebiete</a>
+      <a href="/de/fachgebiete" class="btn btn--outline-dark">&larr; Alle Fachgebiete</a>
       <a href="/de/kontakt" class="btn btn--primary">Termin vereinbaren</a>
     </div>
   </div></section>
@@ -21,6 +25,7 @@ import Layout from '../../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }

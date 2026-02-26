@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 
 const fachgebiete = [
   { title: 'Rhythmologie', icon: '/images/svg/expertise/Rythmologie.svg', text: 'Von einfachen Rhythmusstörungen bis zu komplexen Erkrankungen. Entdecken Sie unsere Expertise in der Diagnose und Behandlung der elektrischen Aktivität des Herzens.' },
@@ -19,6 +20,7 @@ const fachgebiete = [
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Startseite', href:'/de'}, {label:'Fachgebiete'}]} />
       <h1><span class="text-primary">Fachgebiete</span></h1>
     </div>
   </section>

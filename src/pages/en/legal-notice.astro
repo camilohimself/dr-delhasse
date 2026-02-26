@@ -1,11 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Legal Notice — Dr. Sébastien Delhasse" description="Legal notice for drdelhasse-cardiologue.ch" lang="en">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Home', href:'/en'}, {label:'Legal Notice'}]} />
       <h1>Legal <span class="text-primary">Notice</span></h1>
     </div>
   </section>

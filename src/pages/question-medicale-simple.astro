@@ -18,8 +18,7 @@ import Layout from '../layouts/Layout.astro';
         <a href="/collaboration-ou-autre" class="form-tab">Collaboration</a>
       </nav>
 
-      <form name="question-medicale" method="POST" data-netlify="true" class="contact-form">
-        <input type="hidden" name="form-name" value="question-medicale" />
+      <form name="question-medicale" id="contact-form" method="POST" action="mailto:sebastien.delhasse@hotmail.com" enctype="text/plain" class="contact-form">
         <div class="form-grid">
           <div class="form-group">
             <label for="prenom">Prénom</label>
@@ -60,7 +59,7 @@ import Layout from '../layouts/Layout.astro';
   .form-group { margin-bottom: 1.25rem; }
   .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem; color: var(--color-navy); }
   .form-group input, .form-group textarea { width: 100%; padding: 0.75rem 1rem; border: 1px solid #ddd; border-radius: 6px; font-size: 0.95rem; transition: border-color 0.3s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--color-primary); }
+  .form-group input:focus, .form-group textarea:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(220, 27, 26, 0.12); outline: 2px solid transparent; }
   .required { color: var(--color-primary); }
   @media (max-width: 768px) { .form-grid { grid-template-columns: 1fr; } .hero-page h1 { font-size: 2rem; } .form-tabs { flex-wrap: wrap; } .form-tab { font-size: 0.85rem; padding: 0.5rem 1rem; } }
 </style>

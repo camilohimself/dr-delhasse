@@ -1,18 +1,24 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import EmergencyBanner from '../../../components/EmergencyBanner.astro';
 ---
 
 <Layout title="Dyspnoea — Breathlessness and the Heart — Dr Delhasse" description="Breathlessness can have a cardiac origin. Discover when dyspnoea requires a cardiology consultation." lang="en">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Home', href:'/en'}, {label:'Symptoms', href:'/en/symptoms'}, {label:'Dyspnoea'}]} />
       <h1><span class="text-primary">Dyspnoea</span></h1>
       <p class="hero-sub">When breathlessness comes from the heart</p>
     </div>
   </section>
 
+  <EmergencyBanner lang="en" />
+
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/essoufflement.webp" alt="Dyspnoea consultation" class="detail-hero-img" />
       <img src="/images/svg/symptomes/Disnea.svg" alt="Dyspnoea" class="detail-icon" />
 
       <p>If you experience breathlessness without an obvious reason, such as without having exerted yourself, it is common to assume it comes from the lungs. Yet the possible causes are numerous, and the origin may be hidden. When the problem is mild, one sometimes chooses to live with it without consulting. This happens particularly in elderly people, whose reduced mobility delays the onset of symptoms.</p>
@@ -24,7 +30,7 @@ import Layout from '../../../layouts/Layout.astro';
       <p>Consulting your doctor allows early detection of these problems, improvement of your symptoms and protection of your long-term health.</p>
 
       <div class="detail-cta">
-        <a href="/en/symptoms" class="btn btn--outline">&larr; All symptoms</a>
+        <a href="/en/symptoms" class="btn btn--outline-dark">&larr; All symptoms</a>
         <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
       </div>
     </div>
@@ -38,6 +44,7 @@ import Layout from '../../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
   @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }

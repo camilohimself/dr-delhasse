@@ -1,11 +1,17 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Laboratoire — Analyses sanguines cardiologiques — Dr Delhasse" description="Analyses sanguines en cardiologie : cholestérol, glycémie, enzymes cardiaques, BNP. Bilan complet de santé cardiovasculaire." lang="fr">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[
+        { label: 'Accueil', href: '/' },
+        { label: 'Examens cardiologiques', href: '/examens-cardiologiques' },
+        { label: 'Laboratoire' }
+      ]} />
       <h1><span class="text-primary">Laboratoire</span></h1>
       <p class="hero-sub">L'analyse sanguine au service du cœur</p>
     </div>
@@ -13,6 +19,7 @@ import Layout from '../../layouts/Layout.astro';
 
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/laboratoire.webp" alt="Laboratoire" class="detail-hero-img" />
       <img src="/images/svg/examens/Laboratorio.svg" alt="Laboratoire" class="detail-icon" />
 
       <p>L'analyse sanguine est un élément clé du bilan cardiologique. La mesure des lipides sanguins (cholestérol, triglycérides) et de la glycémie permet d'identifier les facteurs de risque cardiovasculaires.</p>
@@ -24,7 +31,7 @@ import Layout from '../../layouts/Layout.astro';
       <p>Ces analyses permettent une évaluation globale de la santé cardiovasculaire et l'adaptation des traitements.</p>
 
       <div class="detail-cta">
-        <a href="/examens-cardiologiques" class="btn btn--outline">&larr; Tous les examens</a>
+        <a href="/examens-cardiologiques" class="btn btn--outline-dark">&larr; Tous les examens</a>
         <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
       </div>
     </div>
@@ -38,6 +45,7 @@ import Layout from '../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
   @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }

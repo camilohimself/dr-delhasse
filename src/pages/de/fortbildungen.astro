@@ -1,11 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Fortbildungen — Engagement von Dr. Delhasse in der Kardiologie" description="Dr. Delhasse nimmt aktiv an der medizinischen Fortbildung in der Kardiologie teil. Vorträge, Konferenzen und Austausch im ganzen Wallis." lang="de">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Startseite', href:'/de'}, {label:'Fortbildungen'}]} />
       <h1><span class="text-primary">Fortbildungen</span></h1>
       <p class="hero-sub">Dr. Delhasse nimmt aktiv an der medizinischen Fortbildung in der Kardiologie teil. Vorträge, Konferenzen und Austausch im ganzen Wallis.</p>
     </div>

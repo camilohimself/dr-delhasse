@@ -1,11 +1,13 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Rhythmologie — Herzrhythmusstörungen — Dr. Delhasse" description="Diagnose und Behandlung von Herzrhythmusstörungen: Bradykardie, Tachykardie, Vorhofflimmern." lang="de">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Startseite', href:'/de'}, {label:'Fachgebiete', href:'/de/fachgebiete'}, {label:'Rhythmologie'}]} />
       <h1><span class="text-primary">Rhythmologie</span></h1>
       <p class="hero-sub">Die elektrische Aktivität Ihres Herzens</p>
     </div>
@@ -13,6 +15,7 @@ import Layout from '../../../layouts/Layout.astro';
 
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/rythmologie.webp" alt="Rhythmologie" class="detail-hero-img" />
       <img src="/images/svg/expertise/Rythmologie.svg" alt="Rhythmologie" class="detail-icon" />
       <p>Das Herz schlägt normalerweise 60 bis 80 Mal pro Minute, etwa 100 000 Mal pro Tag. Bei Belastung kann es je nach Alter 140 bis 200 Schläge pro Minute erreichen.</p>
       <p>Herzrhythmusstörungen äussern sich entweder als Bradykardie (abnorm langsamer Puls) oder als Tachykardie (abnorm schneller Puls). Die Diagnose beruht auf Elektrokardiogrammen oder Holter-Aufzeichnungen.</p>
@@ -25,7 +28,7 @@ import Layout from '../../../layouts/Layout.astro';
       </ul>
       <p>Der Kardiologe hilft den Patienten, ihren Herzrhythmus zu verstehen und schlägt eine angepasste Behandlung für eine bessere Lebensqualität vor.</p>
       <div class="detail-cta">
-        <a href="/de/fachgebiete" class="btn btn--outline">&larr; Alle Fachgebiete</a>
+        <a href="/de/fachgebiete" class="btn btn--outline-dark">&larr; Alle Fachgebiete</a>
         <a href="/de/kontakt" class="btn btn--primary">Termin vereinbaren</a>
       </div>
     </div>
@@ -39,6 +42,7 @@ import Layout from '../../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
   .detail-content ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }

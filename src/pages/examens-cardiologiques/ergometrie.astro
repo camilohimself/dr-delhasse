@@ -1,11 +1,17 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Ergométrie — Test d'effort — Dr Delhasse" description="Le test d'effort sur vélo évalue la réponse de votre cœur à l'effort physique. Examen clé en cardiologie." lang="fr">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[
+        { label: 'Accueil', href: '/' },
+        { label: 'Examens cardiologiques', href: '/examens-cardiologiques' },
+        { label: 'Ergométrie' }
+      ]} />
       <h1><span class="text-primary">Ergométrie</span></h1>
       <p class="hero-sub">Le test d'effort cardiaque</p>
     </div>
@@ -13,6 +19,7 @@ import Layout from '../../layouts/Layout.astro';
 
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/ergometrie.webp" alt="Ergométrie" class="detail-hero-img" />
       <img src="/images/svg/examens/Ergometria.svg" alt="Ergométrie" class="detail-icon" />
 
       <p>Le test à l'effort, ou ergométrie, est un examen clé pour évaluer la réponse de votre cœur à l'effort physique.</p>
@@ -22,7 +29,7 @@ import Layout from '../../layouts/Layout.astro';
       <p>Au-delà du dépistage cardiovasculaire, le test d'effort fournit une évaluation complète de la fatigue, de l'évolution de la pression artérielle et du pouls, et du suivi des troubles du rythme.</p>
 
       <div class="detail-cta">
-        <a href="/examens-cardiologiques" class="btn btn--outline">&larr; Tous les examens</a>
+        <a href="/examens-cardiologiques" class="btn btn--outline-dark">&larr; Tous les examens</a>
         <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
       </div>
     </div>
@@ -36,6 +43,7 @@ import Layout from '../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
   @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }

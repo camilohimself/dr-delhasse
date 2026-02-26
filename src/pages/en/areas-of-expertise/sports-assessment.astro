@@ -1,11 +1,13 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Sports Cardiac Assessment — Dr Delhasse, Cardiologist" description="Sports cardiology assessment: stress test, cardiovascular evaluation for amateur and competitive athletes in Valais." lang="en">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Home', href:'/en'}, {label:'Areas of Expertise', href:'/en/areas-of-expertise'}, {label:'Sports Assessment'}]} />
       <h1>Sports <span class="text-primary">Assessment</span></h1>
       <p class="hero-sub">Practise your passion safely</p>
     </div>
@@ -13,6 +15,7 @@ import Layout from '../../../layouts/Layout.astro';
 
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/evaluation-sportif.webp" alt="Sports cardiac assessment" class="detail-hero-img" />
       <img src="/images/svg/expertise/Evaluation-a-la-pratique-sportive.svg" alt="Sports assessment" class="detail-icon" />
 
       <p>A sports assessment with a cardiologist is important for practising physical activity safely. A stress test is performed based on individual characteristics and the intensity of physical activity.</p>
@@ -31,7 +34,7 @@ import Layout from '../../../layouts/Layout.astro';
       <p>It helps prevent complications and maximise the benefits of sport on the heart, in a region like Valais where sport is an integral part of the lifestyle.</p>
 
       <div class="detail-cta">
-        <a href="/en/areas-of-expertise" class="btn btn--outline">&larr; All areas</a>
+        <a href="/en/areas-of-expertise" class="btn btn--outline-dark">&larr; All areas</a>
         <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
       </div>
     </div>
@@ -45,6 +48,7 @@ import Layout from '../../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
   .detail-content ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }

@@ -1,11 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Impressum — Dr. Sébastien Delhasse" description="Impressum der Website drdelhasse-cardiologue.ch" lang="de">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Startseite', href:'/de'}, {label:'Impressum'}]} />
       <h1><span class="text-primary">Impressum</span></h1>
     </div>
   </section>

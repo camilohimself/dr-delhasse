@@ -1,11 +1,17 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <Layout title="IRM cardiaque — Dr Delhasse, Cardiologue" description="L'IRM cardiaque offre une imagerie de précision inégalée pour le diagnostic des maladies du muscle cardiaque." lang="fr">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[
+        { label: 'Accueil', href: '/' },
+        { label: 'Examens cardiologiques', href: '/examens-cardiologiques' },
+        { label: 'IRM cardiaque' }
+      ]} />
       <h1>IRM <span class="text-primary">cardiaque</span></h1>
       <p class="hero-sub">L'imagerie de pointe pour votre cœur</p>
     </div>
@@ -13,6 +19,7 @@ import Layout from '../../layouts/Layout.astro';
 
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/irm-cardiaque.webp" alt="IRM cardiaque" class="detail-hero-img" />
       <img src="/images/svg/examens/Resonancia-magnetica.svg" alt="IRM cardiaque" class="detail-icon" />
 
       <p>L'IRM cardiaque est une technique d'imagerie avancée qui permet d'examiner le cœur avec une grande précision. C'est un examen non invasif et bien toléré par la majorité des patients.</p>
@@ -24,7 +31,7 @@ import Layout from '../../layouts/Layout.astro';
       <p>Le développement continu de la technologie et l'élargissement des indications soutiennent une intégration progressive dans la pratique clinique. À mesure que la couverture d'assurance augmente, l'utilisation pourrait se généraliser — facilitée par la collaboration entre cardiologues, radiologues et chirurgiens cardiaques.</p>
 
       <div class="detail-cta">
-        <a href="/examens-cardiologiques" class="btn btn--outline">&larr; Tous les examens</a>
+        <a href="/examens-cardiologiques" class="btn btn--outline-dark">&larr; Tous les examens</a>
         <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
       </div>
     </div>
@@ -38,6 +45,7 @@ import Layout from '../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
   @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://drdelhasse-cardiologue.ch/sitemap-index.xml

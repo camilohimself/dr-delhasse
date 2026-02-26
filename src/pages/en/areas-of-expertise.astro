@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 
 const areas = [
   { title: 'Rhythmology', icon: '/images/svg/expertise/Rythmologie.svg', text: 'From simple rhythm disorders to complex conditions. Explore our expertise in diagnosing and treating the electrical activity of the heart.' },
@@ -19,6 +20,7 @@ const areas = [
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Home', href:'/en'}, {label:'Areas of Expertise'}]} />
       <h1>Areas of <span class="text-primary">Expertise</span></h1>
     </div>
   </section>

@@ -1,17 +1,20 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Pacemaker & Defibrillator — Dr Delhasse" description="Pacemaker and implantable defibrillator: how they work, implantation and follow-up." lang="en">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Home', href:'/en'}, {label:'Cardiac Examinations', href:'/en/cardiac-examinations'}, {label:'Pacemaker & Defibrillator'}]} />
       <h1>Pacemaker & <span class="text-primary">Defibrillator</span></h1>
     </div>
   </section>
 
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/pacemaker.webp" alt="Pacemaker and defibrillator" class="detail-hero-img" />
       <img src="/images/svg/examens/Marcapasos.svg" alt="Pacemaker" class="detail-icon" />
 
       <h2>Pacemaker</h2>
@@ -25,7 +28,7 @@ import Layout from '../../../layouts/Layout.astro';
       <p>Regular follow-up (approximately every 6 months) is essential. Battery life varies between 5 and 7 years. Follow-up by a cardiologist also optimises programming to minimise shocks, improving patient comfort.</p>
 
       <div class="detail-cta">
-        <a href="/en/cardiac-examinations" class="btn btn--outline">&larr; All examinations</a>
+        <a href="/en/cardiac-examinations" class="btn btn--outline-dark">&larr; All examinations</a>
         <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
       </div>
     </div>
@@ -38,6 +41,7 @@ import Layout from '../../../layouts/Layout.astro';
   .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }

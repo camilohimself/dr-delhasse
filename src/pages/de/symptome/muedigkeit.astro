@@ -1,18 +1,23 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import EmergencyBanner from '../../../components/EmergencyBanner.astro';
 ---
 
 <Layout title="Unerklärliche Müdigkeit: Könnte das Herz die Ursache sein? — Dr. Delhasse" description="Anhaltende Müdigkeit kann mit einem Herzproblem zusammenhängen. Herzinsuffizienz, Rhythmusstörungen: Entdecken Sie die kardialen Ursachen." lang="de">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Startseite', href:'/de'}, {label:'Symptome', href:'/de/symptome'}, {label:'Müdigkeit'}]} />
       <h1>Unerklärliche <span class="text-primary">Müdigkeit</span></h1>
       <p class="hero-sub">Könnte das Herz die Ursache sein?</p>
     </div>
   </section>
+  <EmergencyBanner lang="de" />
 
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/fatigue.webp" alt="Müdigkeit" class="detail-hero-img" />
       <img src="/images/svg/symptomes/Fatiga.svg" alt="Müdigkeit" class="detail-icon" />
 
       <p>In der Kardiologie spiegelt Müdigkeit häufig ein Missverhältnis zwischen dem Sauerstoffbedarf und der Sauerstoffversorgung des Gewebes wider. Die Herzinsuffizienz verringert das Herzzeitvolumen, was zu einer mangelhaften Durchblutung von Organen wie Muskeln und Gehirn führt. Dies äussert sich als Energiemangel und kognitive Verlangsamung.</p>
@@ -22,7 +27,7 @@ import Layout from '../../../layouts/Layout.astro';
       <p>Bei unerklärlicher und anhaltender Müdigkeit ist eine kardiologische Abklärung sinnvoll.</p>
 
       <div class="detail-cta">
-        <a href="/de/symptome" class="btn btn--outline">&larr; Alle Symptome</a>
+        <a href="/de/symptome" class="btn btn--outline-dark">&larr; Alle Symptome</a>
         <a href="/de/kontakt" class="btn btn--primary">Termin vereinbaren</a>
       </div>
     </div>
@@ -36,6 +41,7 @@ import Layout from '../../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
   @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }

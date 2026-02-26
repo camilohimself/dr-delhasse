@@ -1,9 +1,13 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
 ---
 <Layout title="Herzklappenerkrankungen — Dr. Delhasse" description="Aortenstenose, Mitralinsuffizienz: Diagnose und Behandlung von Herzklappenerkrankungen." lang="de">
-  <section class="hero-page"><div class="container"><h1>Herzklappen<span class="text-primary">erkrankungen</span></h1></div></section>
+  <section class="hero-page"><div class="container">
+      <Breadcrumb items={[{label:'Startseite', href:'/de'}, {label:'Fachgebiete', href:'/de/fachgebiete'}, {label:'Herzklappenerkrankungen'}]} />
+      <h1>Herzklappen<span class="text-primary">erkrankungen</span></h1></div></section>
   <section class="section"><div class="container detail-content">
+    <img src="/images/detail/valvulopathies.webp" alt="Herzklappenerkrankungen" class="detail-hero-img" />
     <img src="/images/svg/expertise/Maladie-valvulaires.svg" alt="Herzklappenerkrankungen" class="detail-icon" />
     <p>Das menschliche Herz besitzt vier Herzklappen: die Aortenklappe, die Pulmonalklappe, die Mitralklappe und die Trikuspidalklappe. Sie funktionieren als Rückschlagventile und lenken den Blutfluss in eine einzige Richtung.</p>
     <p>Wenn eine Klappe defekt ist, verhindert sie eine korrekte Öffnung (Stenose) oder einen korrekten Verschluss (Insuffizienz). Die Echokardiographie bestätigt die Diagnose.</p>
@@ -12,7 +16,7 @@ import Layout from '../../../layouts/Layout.astro';
     <h2>Mitralinsuffizienz</h2>
     <p>Die zweithäufigste Erkrankung, verursacht Atemnot und Herzvergrösserung. Eine frühzeitige Diagnose ermöglicht eine chirurgische Reparatur oder Katheterrekonstruktion mit MitraClip.</p>
     <div class="detail-cta">
-      <a href="/de/fachgebiete" class="btn btn--outline">&larr; Alle Fachgebiete</a>
+      <a href="/de/fachgebiete" class="btn btn--outline-dark">&larr; Alle Fachgebiete</a>
       <a href="/de/kontakt" class="btn btn--primary">Termin vereinbaren</a>
     </div>
   </div></section>
@@ -22,6 +26,7 @@ import Layout from '../../../layouts/Layout.astro';
   .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }

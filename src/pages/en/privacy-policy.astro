@@ -1,11 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Privacy Policy — Dr. Sébastien Delhasse" description="Privacy policy and personal data protection for drdelhasse-cardiologue.ch" lang="en">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Home', href:'/en'}, {label:'Privacy Policy'}]} />
       <h1>Privacy <span class="text-primary">Policy</span></h1>
     </div>
   </section>

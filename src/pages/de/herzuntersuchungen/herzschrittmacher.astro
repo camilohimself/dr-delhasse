@@ -1,16 +1,20 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
 ---
 <Layout title="Herzschrittmacher & Defibrillator — Dr. Delhasse" description="Herzschrittmacher und implantierbarer Defibrillator: Funktionsweise, Implantation und Nachsorge." lang="de">
-  <section class="hero-page"><div class="container"><h1>Herzschrittmacher & <span class="text-primary">Defibrillator</span></h1></div></section>
+  <section class="hero-page"><div class="container">
+      <Breadcrumb items={[{label:'Startseite', href:'/de'}, {label:'Herzuntersuchungen', href:'/de/herzuntersuchungen'}, {label:'Herzschrittmacher'}]} />
+      <h1>Herzschrittmacher & <span class="text-primary">Defibrillator</span></h1></div></section>
   <section class="section"><div class="container detail-content">
+    <img src="/images/detail/pacemaker.webp" alt="Herzschrittmacher" class="detail-hero-img" />
     <img src="/images/svg/examens/Marcapasos.svg" alt="Herzschrittmacher" class="detail-icon" />
     <h2>Herzschrittmacher</h2>
     <p>Der Herzschrittmacher ist ein implantiertes Gerät zur Regulierung des Herzrhythmus bei zu langsamen Herzschlägen (Bradykardie). Er überwacht permanent die Herzaktivität und sendet bei Bedarf elektrische Impulse. Die Batterielebensdauer beträgt 6 bis 10 Jahre.</p>
     <h2>Defibrillator</h2>
     <p>Der Defibrillator behandelt schwere Rhythmusstörungen wie ventrikuläre Tachykardien und Kammerflimmern. Er überwacht das Herz permanent und greift bei Arrhythmie ein — durch schnelle Stimulation (oft schmerzfrei) oder einen Elektroschock. Batterielebensdauer: 5 bis 7 Jahre. Regelmässige Kontrollen (etwa alle 6 Monate) sind wichtig.</p>
     <div class="detail-cta">
-      <a href="/de/herzuntersuchungen" class="btn btn--outline">&larr; Alle Untersuchungen</a>
+      <a href="/de/herzuntersuchungen" class="btn btn--outline-dark">&larr; Alle Untersuchungen</a>
       <a href="/de/kontakt" class="btn btn--primary">Termin vereinbaren</a>
     </div>
   </div></section>
@@ -20,6 +24,7 @@ import Layout from '../../../layouts/Layout.astro';
   .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }

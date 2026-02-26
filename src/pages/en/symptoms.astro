@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 
 const symptoms = [
   {
@@ -44,6 +45,7 @@ const symptoms = [
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Home', href:'/en'}, {label:'Symptoms'}]} />
       <h1><span class="text-primary">Symptoms</span></h1>
     </div>
   </section>

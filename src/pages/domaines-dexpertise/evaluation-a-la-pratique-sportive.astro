@@ -1,11 +1,17 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Évaluation à la pratique sportive — Dr Delhasse, Cardiologue" description="Bilan cardiologique sportif : test d'effort, évaluation cardiovasculaire pour sportifs amateurs et confirmés en Valais." lang="fr">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[
+        { label: 'Accueil', href: '/' },
+        { label: "Domaines d'expertise", href: '/domaines-dexpertise' },
+        { label: 'Évaluation sportive' }
+      ]} />
       <h1>Évaluation à la <span class="text-primary">pratique sportive</span></h1>
       <p class="hero-sub">Pratiquez votre passion en toute sécurité</p>
     </div>
@@ -13,6 +19,7 @@ import Layout from '../../layouts/Layout.astro';
 
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/evaluation-a-la-pratique-sportive.webp" alt="Évaluation sportive" class="detail-hero-img" />
       <img src="/images/svg/expertise/Evaluation-a-la-pratique-sportive.svg" alt="Évaluation à la pratique sportive" class="detail-icon" />
 
       <p>Le bilan sportif chez un cardiologue est important pour pratiquer une activité physique en sécurité. Un test d'effort est réalisé en fonction des caractéristiques individuelles et de l'intensité de l'activité physique.</p>
@@ -31,7 +38,7 @@ import Layout from '../../layouts/Layout.astro';
       <p>Il permet de prévenir les complications et de maximiser les bienfaits du sport sur le cœur, dans une région comme le Valais, où le sport fait partie intégrante du mode de vie.</p>
 
       <div class="detail-cta">
-        <a href="/domaines-dexpertise" class="btn btn--outline">&larr; Tous les domaines</a>
+        <a href="/domaines-dexpertise" class="btn btn--outline-dark">&larr; Tous les domaines</a>
         <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
       </div>
     </div>
@@ -45,6 +52,7 @@ import Layout from '../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
   .detail-content ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }

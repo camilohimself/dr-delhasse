@@ -1,15 +1,19 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
 ---
 <Layout title="Elektrokardiogramm (EKG) — Dr. Delhasse" description="Das EKG ist eine wichtige Standarduntersuchung zur Aufzeichnung der elektrischen Herzaktivität." lang="de">
-  <section class="hero-page"><div class="container"><h1><span class="text-primary">Elektrokardiogramm</span> (EKG)</h1></div></section>
+  <section class="hero-page"><div class="container">
+      <Breadcrumb items={[{label:'Startseite', href:'/de'}, {label:'Herzuntersuchungen', href:'/de/herzuntersuchungen'}, {label:'Elektrokardiogramm'}]} />
+      <h1><span class="text-primary">Elektrokardiogramm</span> (EKG)</h1></div></section>
   <section class="section"><div class="container detail-content">
+    <img src="/images/detail/electrocardiogramme.webp" alt="Elektrokardiogramm" class="detail-hero-img" />
     <img src="/images/svg/examens/Electrocardiogramme.svg" alt="Elektrokardiogramm" class="detail-icon" />
     <p>Das EKG ist eine wichtige Standarduntersuchung, da es fast überall verfügbar und einfach durchzuführen ist. Das Ruhe-EKG wird in der Regel im Liegen durchgeführt.</p>
     <p>Das EKG zeichnet mit Hilfe von Elektroden auf der Körperoberfläche die elektrischen Ströme auf, die bei jedem Herzschlag das Herz durchlaufen, und ermöglicht so die Messung der elektrischen Aktivität der Vorhöfe und Kammern sowie des Herzrhythmus und der Herzfrequenz.</p>
     <p>Bestimmte Herz-Kreislauf-Erkrankungen gehen mit charakteristischen EKG-Veränderungen einher. Das EKG liefert jedoch nur indirekte Informationen über die Struktur und Funktion des Herzens.</p>
     <div class="detail-cta">
-      <a href="/de/herzuntersuchungen" class="btn btn--outline">&larr; Alle Untersuchungen</a>
+      <a href="/de/herzuntersuchungen" class="btn btn--outline-dark">&larr; Alle Untersuchungen</a>
       <a href="/de/kontakt" class="btn btn--primary">Termin vereinbaren</a>
     </div>
   </div></section>
@@ -19,6 +23,7 @@ import Layout from '../../../layouts/Layout.astro';
   .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
   @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }

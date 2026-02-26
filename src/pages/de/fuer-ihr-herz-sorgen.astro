@@ -1,24 +1,26 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Therapeutischer Ansatz — Dr. Delhasse" description="Entdecken Sie den personalisierten therapeutischen Ansatz von Dr. Delhasse: Begleitung, integrative Kardiologie und die emotionale Dimension des Herzens." lang="de">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Startseite', href:'/de'}, {label:'Für Ihr Herz sorgen'}]} />
       <h1>Für Ihr Herz sorgen — <span class="text-primary">in Ihrem Tempo</span></h1>
     </div>
   </section>
 
   <section class="section tabs-section">
     <div class="container">
-      <div class="tabs" role="tablist">
-        <button class="tab active" role="tab" aria-selected="true" data-tab="begleitung">Begleitung</button>
-        <button class="tab" role="tab" aria-selected="false" data-tab="kardiologie">Kardiologie und Innere Medizin</button>
-        <button class="tab" role="tab" aria-selected="false" data-tab="gruende">Das Herz hat seine Gründe</button>
+      <div class="tabs" role="tablist" aria-label="Therapeutischer Ansatz">
+        <button class="tab active" role="tab" id="tab-begleitung" aria-selected="true" aria-controls="panel-begleitung" data-tab="begleitung" tabindex="0">Begleitung</button>
+        <button class="tab" role="tab" id="tab-kardiologie" aria-selected="false" aria-controls="panel-kardiologie" data-tab="kardiologie" tabindex="-1">Kardiologie und Innere Medizin</button>
+        <button class="tab" role="tab" id="tab-gruende" aria-selected="false" aria-controls="panel-gruende" data-tab="gruende" tabindex="-1">Das Herz hat seine Gründe</button>
       </div>
 
-      <div class="tab-panel active" id="begleitung">
+      <div class="tab-panel active" id="panel-begleitung" role="tabpanel" aria-labelledby="tab-begleitung">
         <div class="tab-content">
           <div class="tab-content__text">
             <h2>Begleitung</h2>
@@ -36,7 +38,7 @@ import Layout from '../../layouts/Layout.astro';
         </div>
       </div>
 
-      <div class="tab-panel" id="kardiologie">
+      <div class="tab-panel" id="panel-kardiologie" role="tabpanel" aria-labelledby="tab-kardiologie">
         <div class="tab-content">
           <div class="tab-content__text">
             <h2>Kardiologie und Innere Medizin: ein integrativer Ansatz</h2>
@@ -52,7 +54,7 @@ import Layout from '../../layouts/Layout.astro';
         </div>
       </div>
 
-      <div class="tab-panel" id="gruende">
+      <div class="tab-panel" id="panel-gruende" role="tabpanel" aria-labelledby="tab-gruende">
         <div class="tab-content">
           <div class="tab-content__text">
             <h2>Das Herz hat seine Gründe, die der Verstand nicht kennt</h2>
@@ -95,16 +97,31 @@ import Layout from '../../layouts/Layout.astro';
 </style>
 
 <script>
-  const tabs = document.querySelectorAll('.tab');
+  const tabs = document.querySelectorAll<HTMLButtonElement>('.tab');
   const panels = document.querySelectorAll('.tab-panel');
+  function activateTab(tab: HTMLButtonElement) {
+    tabs.forEach((t) => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); t.setAttribute('tabindex', '-1'); });
+    panels.forEach((p) => p.classList.remove('active'));
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    tab.setAttribute('tabindex', '0');
+    tab.focus();
+    const target = tab.getAttribute('data-tab');
+    document.getElementById(`panel-${target}`)?.classList.add('active');
+  }
   tabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      tabs.forEach((t) => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
-      panels.forEach((p) => p.classList.remove('active'));
-      tab.classList.add('active');
-      tab.setAttribute('aria-selected', 'true');
-      const target = tab.getAttribute('data-tab');
-      document.getElementById(target!)?.classList.add('active');
+    tab.addEventListener('click', () => activateTab(tab));
+    tab.addEventListener('keydown', (e) => {
+      const tabArray = Array.from(tabs);
+      const index = tabArray.indexOf(tab);
+      let newIndex = index;
+      if (e.key === 'ArrowRight') newIndex = (index + 1) % tabArray.length;
+      else if (e.key === 'ArrowLeft') newIndex = (index - 1 + tabArray.length) % tabArray.length;
+      else if (e.key === 'Home') newIndex = 0;
+      else if (e.key === 'End') newIndex = tabArray.length - 1;
+      else return;
+      e.preventDefault();
+      activateTab(tabArray[newIndex]);
     });
   });
 </script>

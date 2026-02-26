@@ -1,11 +1,13 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Exercise Stress Test — Dr Delhasse" description="The exercise stress test on a bicycle evaluates your heart's response to physical exertion." lang="en">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Home', href:'/en'}, {label:'Cardiac Examinations', href:'/en/cardiac-examinations'}, {label:'Exercise Stress Test'}]} />
       <h1>Exercise <span class="text-primary">Stress Test</span></h1>
       <p class="hero-sub">Cardiac ergometry</p>
     </div>
@@ -13,6 +15,7 @@ import Layout from '../../../layouts/Layout.astro';
 
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/epreuve-effort.webp" alt="Exercise stress test" class="detail-hero-img" />
       <img src="/images/svg/examens/Ergometria.svg" alt="Exercise stress test" class="detail-icon" />
 
       <p>The exercise stress test, or ergometry, is a key examination for evaluating your heart's response to physical exertion.</p>
@@ -22,7 +25,7 @@ import Layout from '../../../layouts/Layout.astro';
       <p>Beyond cardiovascular screening, the stress test provides a comprehensive evaluation of fatigue, blood pressure and pulse evolution, and rhythm disorder monitoring.</p>
 
       <div class="detail-cta">
-        <a href="/en/cardiac-examinations" class="btn btn--outline">&larr; All examinations</a>
+        <a href="/en/cardiac-examinations" class="btn btn--outline-dark">&larr; All examinations</a>
         <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
       </div>
     </div>
@@ -36,6 +39,7 @@ import Layout from '../../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
   @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }

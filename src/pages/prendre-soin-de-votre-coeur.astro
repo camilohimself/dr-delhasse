@@ -13,14 +13,14 @@ import Layout from '../layouts/Layout.astro';
   <!-- Tabs -->
   <section class="section tabs-section">
     <div class="container">
-      <div class="tabs" role="tablist">
-        <button class="tab active" role="tab" aria-selected="true" data-tab="accompagnement">Accompagnement</button>
-        <button class="tab" role="tab" aria-selected="false" data-tab="cardiologie">Cardiologie et médecine interne</button>
-        <button class="tab" role="tab" aria-selected="false" data-tab="raisons">Le cœur a ses raisons</button>
+      <div class="tabs" role="tablist" aria-label="Approche thérapeutique">
+        <button class="tab active" role="tab" id="tab-accompagnement" aria-selected="true" aria-controls="panel-accompagnement" data-tab="accompagnement" tabindex="0">Accompagnement</button>
+        <button class="tab" role="tab" id="tab-cardiologie" aria-selected="false" aria-controls="panel-cardiologie" data-tab="cardiologie" tabindex="-1">Cardiologie et médecine interne</button>
+        <button class="tab" role="tab" id="tab-raisons" aria-selected="false" aria-controls="panel-raisons" data-tab="raisons" tabindex="-1">Le cœur a ses raisons</button>
       </div>
 
       <!-- Tab 1: Accompagnement -->
-      <div class="tab-panel active" id="accompagnement">
+      <div class="tab-panel active" id="panel-accompagnement" role="tabpanel" aria-labelledby="tab-accompagnement">
         <div class="tab-content">
           <div class="tab-content__text">
             <h2>Accompagnement</h2>
@@ -39,7 +39,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <!-- Tab 2: Cardiologie et médecine interne -->
-      <div class="tab-panel" id="cardiologie">
+      <div class="tab-panel" id="panel-cardiologie" role="tabpanel" aria-labelledby="tab-cardiologie">
         <div class="tab-content">
           <div class="tab-content__text">
             <h2>Cardiologie et médecine interne : une approche intégrative</h2>
@@ -56,7 +56,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <!-- Tab 3: Le cœur a ses raisons -->
-      <div class="tab-panel" id="raisons">
+      <div class="tab-panel" id="panel-raisons" role="tabpanel" aria-labelledby="tab-raisons">
         <div class="tab-content">
           <div class="tab-content__text">
             <h2>Le cœur a ses raisons que la raison ignore</h2>
@@ -171,18 +171,37 @@ import Layout from '../layouts/Layout.astro';
 </style>
 
 <script>
-  const tabs = document.querySelectorAll('.tab');
+  const tabs = document.querySelectorAll<HTMLButtonElement>('.tab');
   const panels = document.querySelectorAll('.tab-panel');
 
-  tabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      tabs.forEach((t) => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
-      panels.forEach((p) => p.classList.remove('active'));
+  function activateTab(tab: HTMLButtonElement) {
+    tabs.forEach((t) => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); t.setAttribute('tabindex', '-1'); });
+    panels.forEach((p) => p.classList.remove('active'));
 
-      tab.classList.add('active');
-      tab.setAttribute('aria-selected', 'true');
-      const target = tab.getAttribute('data-tab');
-      document.getElementById(target!)?.classList.add('active');
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    tab.setAttribute('tabindex', '0');
+    tab.focus();
+    const target = tab.getAttribute('data-tab');
+    document.getElementById(`panel-${target}`)?.classList.add('active');
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => activateTab(tab));
+
+    tab.addEventListener('keydown', (e) => {
+      const tabArray = Array.from(tabs);
+      const index = tabArray.indexOf(tab);
+      let newIndex = index;
+
+      if (e.key === 'ArrowRight') newIndex = (index + 1) % tabArray.length;
+      else if (e.key === 'ArrowLeft') newIndex = (index - 1 + tabArray.length) % tabArray.length;
+      else if (e.key === 'Home') newIndex = 0;
+      else if (e.key === 'End') newIndex = tabArray.length - 1;
+      else return;
+
+      e.preventDefault();
+      activateTab(tabArray[newIndex]);
     });
   });
 </script>

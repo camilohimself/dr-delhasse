@@ -1,11 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Über Dr. Delhasse — Kardiologe im Wallis" description="Werdegang, Ausbildung und Engagement von Dr. Sébastien Delhasse, FMH-Kardiologe in Saxon, Wallis." lang="de">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Startseite', href:'/de'}, {label:'Über mich'}]} />
       <h1>Ein Weg, geleitet vom <span class="text-primary">Herzen</span></h1>
     </div>
   </section>

@@ -1,11 +1,17 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Insuffisance cardiaque — Dr Delhasse, Cardiologue" description="Diagnostic et prise en charge de l'insuffisance cardiaque systolique et diastolique par le Dr Delhasse, cardiologue FMH." lang="fr">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[
+        { label: 'Accueil', href: '/' },
+        { label: "Domaines d'expertise", href: '/domaines-dexpertise' },
+        { label: 'Insuffisance cardiaque' }
+      ]} />
       <h1>Insuffisance <span class="text-primary">cardiaque</span></h1>
       <p class="hero-sub">Quand le cœur fatigue, chaque détail compte</p>
     </div>
@@ -13,6 +19,7 @@ import Layout from '../../layouts/Layout.astro';
 
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/insuffisance-cardiaque.webp" alt="Insuffisance cardiaque" class="detail-hero-img" />
       <img src="/images/svg/expertise/Insuffisance-cardiaque.svg" alt="Insuffisance cardiaque" class="detail-icon" />
 
       <p>L'insuffisance cardiaque est l'incapacité du cœur à pomper suffisamment de sang vers les organes, se manifestant à l'effort ou au repos. Elle provoque des difficultés respiratoires, un œdème pulmonaire et peut évoluer vers une défaillance cardiaque terminale.</p>
@@ -28,7 +35,7 @@ import Layout from '../../layouts/Layout.astro';
       <p>La prise en charge chronique repose sur une approche multidisciplinaire. Le cardiologue surveille les signes d'aggravation par échocardiographie, adapte le traitement, ou propose des alternatives comme des stimulateurs cardiaques spéciaux (DAI/CRT) pour améliorer la qualité de vie et prévenir les hospitalisations. Les cas complexes sont suivis avec les hôpitaux universitaires (HUG, CHUV, Inselspital).</p>
 
       <div class="detail-cta">
-        <a href="/domaines-dexpertise" class="btn btn--outline">&larr; Tous les domaines</a>
+        <a href="/domaines-dexpertise" class="btn btn--outline-dark">&larr; Tous les domaines</a>
         <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
       </div>
     </div>
@@ -42,6 +49,7 @@ import Layout from '../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
   .detail-content ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }

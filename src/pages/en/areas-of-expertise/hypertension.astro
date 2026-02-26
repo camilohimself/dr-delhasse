@@ -1,11 +1,13 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Arterial Hypertension — Dr Delhasse, Cardiologist" description="Hypertension, often silent, damages your organs. Specialist consultation with Dr Delhasse in Valais." lang="en">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Home', href:'/en'}, {label:'Areas of Expertise', href:'/en/areas-of-expertise'}, {label:'Hypertension'}]} />
       <h1>Arterial <span class="text-primary">Hypertension</span></h1>
       <p class="hero-sub">The silent killer</p>
     </div>
@@ -13,6 +15,7 @@ import Layout from '../../../layouts/Layout.astro';
 
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/hypertension-arterielle.webp" alt="Arterial hypertension" class="detail-hero-img" />
       <img src="/images/svg/expertise/Hypertension-arterielle.svg" alt="Hypertension" class="detail-icon" />
 
       <p>A blood pressure of 100/70 mmHg is generally sufficient under normal conditions to adequately supply the body's organs, but it is not uncommon for higher values to be necessary, particularly in the elderly. If blood pressure rises above 140/90 mmHg, it damages organs such as the heart, arteries, kidneys, eyes and brain, and can even lead to complications in some cases.</p>
@@ -22,7 +25,7 @@ import Layout from '../../../layouts/Layout.astro';
       <p>All these measures aim to control blood pressure effectively, prevent complications, protect your long-term health, and give your heart the peace it deserves.</p>
 
       <div class="detail-cta">
-        <a href="/en/areas-of-expertise" class="btn btn--outline">&larr; All areas</a>
+        <a href="/en/areas-of-expertise" class="btn btn--outline-dark">&larr; All areas</a>
         <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
       </div>
     </div>
@@ -36,6 +39,7 @@ import Layout from '../../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
   @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }

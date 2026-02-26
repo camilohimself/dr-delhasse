@@ -1,18 +1,23 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import EmergencyBanner from '../../../components/EmergencyBanner.astro';
 ---
 
 <Layout title="Atemnot — Dyspnoe und Herz — Dr. Delhasse" description="Atemnot kann einen kardialen Ursprung haben. Erfahren Sie, wann eine kardiologische Konsultation erforderlich ist." lang="de">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Startseite', href:'/de'}, {label:'Symptome', href:'/de/symptome'}, {label:'Atemnot'}]} />
       <h1><span class="text-primary">Atemnot</span></h1>
       <p class="hero-sub">Wenn die Atemnot vom Herzen kommt</p>
     </div>
   </section>
+  <EmergencyBanner lang="de" />
 
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/essoufflement.webp" alt="Atemnot" class="detail-hero-img" />
       <img src="/images/svg/symptomes/Disnea.svg" alt="Atemnot" class="detail-icon" />
 
       <p>Wenn Sie ohne offensichtlichen Grund Atemnot verspüren, ohne sich angestrengt zu haben, denkt man häufig, dass es von den Lungen kommt. Die möglichen Ursachen sind jedoch zahlreich, und der Ursprung kann verborgen sein. Wenn die Beschwerden leicht sind, entscheidet man sich manchmal, damit zu leben, ohne einen Arzt aufzusuchen.</p>
@@ -24,7 +29,7 @@ import Layout from '../../../layouts/Layout.astro';
       <p>Eine Konsultation bei Ihrem Arzt ermöglicht die frühzeitige Erkennung dieser Probleme, die Verbesserung Ihrer Symptome und den Schutz Ihrer langfristigen Gesundheit.</p>
 
       <div class="detail-cta">
-        <a href="/de/symptome" class="btn btn--outline">&larr; Alle Symptome</a>
+        <a href="/de/symptome" class="btn btn--outline-dark">&larr; Alle Symptome</a>
         <a href="/de/kontakt" class="btn btn--primary">Termin vereinbaren</a>
       </div>
     </div>
@@ -38,6 +43,7 @@ import Layout from '../../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
   @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }

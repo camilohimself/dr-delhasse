@@ -1,11 +1,13 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Preoperative Assessment — Dr Delhasse, Cardiologist" description="Cardiac evaluation before cardiac or non-cardiac surgery. Specialist preoperative assessment by Dr Delhasse." lang="en">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Home', href:'/en'}, {label:'Areas of Expertise', href:'/en/areas-of-expertise'}, {label:'Preoperative Assessment'}]} />
       <h1>Preoperative <span class="text-primary">Assessment</span></h1>
       <p class="hero-sub">Your cardiac safety before any procedure</p>
     </div>
@@ -13,6 +15,7 @@ import Layout from '../../../layouts/Layout.astro';
 
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/bilan-preoperatoire.webp" alt="Preoperative assessment" class="detail-hero-img" />
       <img src="/images/svg/expertise/Bilan-preoperatoire.svg" alt="Preoperative assessment" class="detail-icon" />
 
       <p>The cardiologist's involvement in a preoperative assessment varies depending on the planned procedure.</p>
@@ -26,7 +29,7 @@ import Layout from '../../../layouts/Layout.astro';
       <p>The cardiologist discusses procedures with patients, evaluates alternatives and ensures understanding. Informed consent is fundamental. The EUROSCORE is used to estimate operative risk in cardiac surgery, evaluating the risk-benefit balance.</p>
 
       <div class="detail-cta">
-        <a href="/en/areas-of-expertise" class="btn btn--outline">&larr; All areas</a>
+        <a href="/en/areas-of-expertise" class="btn btn--outline-dark">&larr; All areas</a>
         <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
       </div>
     </div>
@@ -40,6 +43,7 @@ import Layout from '../../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }

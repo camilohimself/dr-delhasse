@@ -1,11 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Your Heart & You — Cardiology Consultations" description="Symptoms, areas of expertise and cardiac examinations. A comprehensive approach to examining, diagnosing and treating heart conditions." lang="en">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[{label:'Home', href:'/en'}, {label:'Consultations'}]} />
       <h1>Your Heart <span class="text-primary">&</span> You</h1>
       <p class="hero-sub">A comprehensive approach to examining, diagnosing and treating cardiac conditions.</p>
     </div>

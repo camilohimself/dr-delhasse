@@ -1,11 +1,17 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <Layout title="Hypertension artérielle — Dr Delhasse, Cardiologue" description="L'hypertension artérielle, souvent silencieuse, endommage vos organes. Consultation spécialisée avec le Dr Delhasse en Valais." lang="fr">
 
   <section class="hero-page">
     <div class="container">
+      <Breadcrumb items={[
+        { label: 'Accueil', href: '/' },
+        { label: "Domaines d'expertise", href: '/domaines-dexpertise' },
+        { label: 'Hypertension artérielle' }
+      ]} />
       <h1>Hypertension <span class="text-primary">artérielle</span></h1>
       <p class="hero-sub">Le tueur silencieux</p>
     </div>
@@ -13,6 +19,7 @@ import Layout from '../../layouts/Layout.astro';
 
   <section class="section">
     <div class="container detail-content">
+      <img src="/images/detail/hypertension-arterielle.webp" alt="Hypertension artérielle" class="detail-hero-img" />
       <img src="/images/svg/expertise/Hypertension-arterielle.svg" alt="Hypertension artérielle" class="detail-icon" />
 
       <p>Une pression artérielle de 100/70 mmHg est en général suffisante dans des conditions normales pour alimenter normalement les organes du corps, mais il n'est pas rare que des valeurs plus élevées soient nécessaires, en particulier chez les personnes âgées. Si la pression artérielle devient trop grande et s'élève au-delà de 140/90 mmHg, cela abîme les organes comme le cœur, les artères, le rein, les yeux, le cerveau et peut même dans certains cas entraîner des complications.</p>
@@ -22,7 +29,7 @@ import Layout from '../../layouts/Layout.astro';
       <p>Toutes ces mesures visent à contrôler la tension artérielle de manière efficace et prévenir les complications et de protéger votre santé à long terme, et offrir à votre cœur la paix qu'il mérite.</p>
 
       <div class="detail-cta">
-        <a href="/domaines-dexpertise" class="btn btn--outline">&larr; Tous les domaines</a>
+        <a href="/domaines-dexpertise" class="btn btn--outline-dark">&larr; Tous les domaines</a>
         <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
       </div>
     </div>
@@ -36,6 +43,7 @@ import Layout from '../../layouts/Layout.astro';
   .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
   .detail-content { max-width: 800px; }
   .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
+  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
   .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
   .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
   @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
