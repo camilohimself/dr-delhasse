@@ -34,10 +34,59 @@ const nav = {
 const links = nav[lang];
 const homeHref = lang === 'fr' ? '/' : `/${lang}`;
 
+// Smart language switcher — maps current page path to equivalent in other languages
+const currentPath = Astro.url.pathname;
+
+const routeMap: Record<string, Record<string, string>> = {
+  // Top-level pages
+  '/a-propos': { fr: '/a-propos', en: '/en/about', de: '/de/ueber-mich' },
+  '/en/about': { fr: '/a-propos', en: '/en/about', de: '/de/ueber-mich' },
+  '/de/ueber-mich': { fr: '/a-propos', en: '/en/about', de: '/de/ueber-mich' },
+
+  '/prendre-soin-de-votre-coeur': { fr: '/prendre-soin-de-votre-coeur', en: '/en/caring-for-your-heart', de: '/de/fuer-ihr-herz-sorgen' },
+  '/en/caring-for-your-heart': { fr: '/prendre-soin-de-votre-coeur', en: '/en/caring-for-your-heart', de: '/de/fuer-ihr-herz-sorgen' },
+  '/de/fuer-ihr-herz-sorgen': { fr: '/prendre-soin-de-votre-coeur', en: '/en/caring-for-your-heart', de: '/de/fuer-ihr-herz-sorgen' },
+
+  '/contact': { fr: '/contact', en: '/en/contact', de: '/de/kontakt' },
+  '/en/contact': { fr: '/contact', en: '/en/contact', de: '/de/kontakt' },
+  '/de/kontakt': { fr: '/contact', en: '/en/contact', de: '/de/kontakt' },
+
+  '/consultations': { fr: '/consultations', en: '/en/consultations', de: '/de/sprechstunden' },
+  '/en/consultations': { fr: '/consultations', en: '/en/consultations', de: '/de/sprechstunden' },
+  '/de/sprechstunden': { fr: '/consultations', en: '/en/consultations', de: '/de/sprechstunden' },
+
+  '/formations': { fr: '/formations', en: '/en/training', de: '/de/fortbildungen' },
+  '/en/training': { fr: '/formations', en: '/en/training', de: '/de/fortbildungen' },
+  '/de/fortbildungen': { fr: '/formations', en: '/en/training', de: '/de/fortbildungen' },
+
+  '/symptomes': { fr: '/symptomes', en: '/en/symptoms', de: '/de/symptome' },
+  '/en/symptoms': { fr: '/symptomes', en: '/en/symptoms', de: '/de/symptome' },
+  '/de/symptome': { fr: '/symptomes', en: '/en/symptoms', de: '/de/symptome' },
+
+  '/domaines-dexpertise': { fr: '/domaines-dexpertise', en: '/en/areas-of-expertise', de: '/de/fachgebiete' },
+  '/en/areas-of-expertise': { fr: '/domaines-dexpertise', en: '/en/areas-of-expertise', de: '/de/fachgebiete' },
+  '/de/fachgebiete': { fr: '/domaines-dexpertise', en: '/en/areas-of-expertise', de: '/de/fachgebiete' },
+
+  '/examens-cardiologiques': { fr: '/examens-cardiologiques', en: '/en/cardiac-examinations', de: '/de/herzuntersuchungen' },
+  '/en/cardiac-examinations': { fr: '/examens-cardiologiques', en: '/en/cardiac-examinations', de: '/de/herzuntersuchungen' },
+  '/de/herzuntersuchungen': { fr: '/examens-cardiologiques', en: '/en/cardiac-examinations', de: '/de/herzuntersuchungen' },
+
+  '/mentions-legales': { fr: '/mentions-legales', en: '/en/legal-notice', de: '/de/impressum' },
+  '/en/legal-notice': { fr: '/mentions-legales', en: '/en/legal-notice', de: '/de/impressum' },
+  '/de/impressum': { fr: '/mentions-legales', en: '/en/legal-notice', de: '/de/impressum' },
+
+  '/politique-de-confidentialite': { fr: '/politique-de-confidentialite', en: '/en/privacy-policy', de: '/de/datenschutz' },
+  '/en/privacy-policy': { fr: '/politique-de-confidentialite', en: '/en/privacy-policy', de: '/de/datenschutz' },
+  '/de/datenschutz': { fr: '/politique-de-confidentialite', en: '/en/privacy-policy', de: '/de/datenschutz' },
+};
+
+const cleanPath = currentPath.replace(/\/$/, '') || '/';
+const mapped = routeMap[cleanPath];
+
 const langSwitch = [
-  { code: 'fr', label: 'FR', href: '/' },
-  { code: 'en', label: 'EN', href: '/en' },
-  { code: 'de', label: 'DE', href: '/de' },
+  { code: 'fr' as const, label: 'FR', href: mapped?.fr || '/' },
+  { code: 'en' as const, label: 'EN', href: mapped?.en || '/en' },
+  { code: 'de' as const, label: 'DE', href: mapped?.de || '/de' },
 ];
 ---
 

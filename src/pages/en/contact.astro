@@ -89,6 +89,20 @@ import Layout from '../../layouts/Layout.astro';
           <p>Monday – Friday<br />09:00 – 17:00</p>
         </div>
       </div>
+
+      <!-- Google Maps -->
+      <div class="map-wrapper">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2756.8!2d7.1847!3d46.1467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478edc8b0a0a0001%3A0x0!2sClinique%20CIC%20Saxon%2C%20Rte%20du%20L%C3%A9man%2029%2C%201907%20Saxon!5e0!3m2!1sen!2sch!4v1"
+          width="100%"
+          height="400"
+          style="border:0; border-radius: 8px;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="CIC Clinic Saxon — Dr. Delhasse"
+        ></iframe>
+      </div>
     </div>
   </section>
 
@@ -117,5 +131,6 @@ import Layout from '../../layouts/Layout.astro';
   .info-card h4 { margin-bottom: 0.75rem; color: var(--color-navy); }
   .info-card a { color: var(--color-primary); font-size: 1.15rem; font-weight: 600; }
   .info-card p { font-size: 0.95rem; }
+  .map-wrapper { margin-top: 3rem; }
   @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } .form-row { grid-template-columns: 1fr; } }
 </style>

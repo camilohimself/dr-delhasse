@@ -105,8 +105,8 @@ const year = new Date().getFullYear();
     <div class="container footer__bottom-inner">
       <p>&copy; {year} Dr. Sébastien Delhasse. {t.rights}.</p>
       <div class="footer__legal">
-        <a href={`${prefix}/mentions-legales`}>{t.legal}</a>
-        <a href={`${prefix}/politique-de-confidentialite`}>{t.privacy}</a>
+        <a href={lang === 'en' ? '/en/legal-notice' : lang === 'de' ? '/de/impressum' : '/mentions-legales'}>{t.legal}</a>
+        <a href={lang === 'en' ? '/en/privacy-policy' : lang === 'de' ? '/de/datenschutz' : '/politique-de-confidentialite'}>{t.privacy}</a>
       </div>
       <p class="footer__credit">{t.powered} <a href="https://osom.ch" target="_blank" rel="noopener">OSOM</a></p>
     </div>

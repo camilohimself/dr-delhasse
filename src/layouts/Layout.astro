@@ -12,6 +12,42 @@ interface Props {
 const { title, description = 'Dr. Sébastien Delhasse — Cardiologue FMH en Valais. Consultations en cardiologie et médecine interne à Saxon.', lang = 'fr' } = Astro.props;
 
 const htmlLang = lang === 'fr' ? 'fr-CH' : lang === 'en' ? 'en' : 'de-CH';
+const prefix = lang === 'fr' ? '' : `/${lang}`;
+const contactHref = lang === 'fr' ? '/contact' : lang === 'en' ? '/en/contact' : '/de/kontakt';
+const ctaLabel = lang === 'fr' ? 'Prendre rendez-vous' : lang === 'en' ? 'Book appointment' : 'Termin vereinbaren';
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  "name": "Dr. Sébastien Delhasse",
+  "description": "Cardiologue FMH et spécialiste en médecine interne, consultations à la Clinique CIC de Saxon, Valais.",
+  "url": "https://drdelhasse-cardiologue.ch",
+  "telephone": "+41277434059",
+  "email": "sebastien.delhasse@hotmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rte du Léman 29",
+    "addressLocality": "Saxon",
+    "postalCode": "1907",
+    "addressRegion": "Valais",
+    "addressCountry": "CH"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 46.1467,
+    "longitude": 7.1847
+  },
+  "medicalSpecialty": "Cardiology",
+  "availableLanguage": ["French", "English", "German"],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "09:00",
+    "closes": "17:00"
+  },
+  "image": "https://drdelhasse-cardiologue.ch/images/dr-delhasse.jpeg",
+  "sameAs": []
+};
 ---
 
 <!doctype html>
@@ -31,11 +67,15 @@ const htmlLang = lang === 'fr' ? 'fr-CH' : lang === 'en' ? 'en' : 'de-CH';
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content={htmlLang} />
+    <meta property="og:image" content="https://drdelhasse-cardiologue.ch/images/dr-delhasse.jpeg" />
 
     <!-- Canonical + hreflang -->
     <link rel="alternate" hreflang="fr" href="https://drdelhasse-cardiologue.ch/" />
     <link rel="alternate" hreflang="en" href="https://drdelhasse-cardiologue.ch/en/" />
     <link rel="alternate" hreflang="de" href="https://drdelhasse-cardiologue.ch/de/" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
   <body>
     <Header lang={lang} />
@@ -43,6 +83,52 @@ const htmlLang = lang === 'fr' ? 'fr-CH' : lang === 'en' ? 'en' : 'de-CH';
       <slot />
     </main>
     <Footer lang={lang} />
+
+    <!-- Floating CTA + Back to top -->
+    <div class="floating-cta">
+      <a href={contactHref} class="floating-cta__btn" id="floating-cta">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+        {ctaLabel}
+      </a>
+      <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+      </button>
+    </div>
+
+    <!-- Reveal animations + Floating CTA logic -->
+    <script>
+      // Reveal on scroll
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.section, .card, .process__card, .service-card, .hub-card, .formation-card, .cta-card, .engagement-card, .contact-card').forEach((el) => {
+        el.classList.add('reveal');
+        observer.observe(el);
+      });
+
+      // Floating CTA + Back to top visibility
+      const floatingCta = document.getElementById('floating-cta');
+      const backToTop = document.getElementById('back-to-top');
+
+      const toggleFloating = () => {
+        const scrolled = window.scrollY > 400;
+        floatingCta?.classList.toggle('visible', scrolled);
+        backToTop?.classList.toggle('visible', scrolled);
+      };
+
+      window.addEventListener('scroll', toggleFloating, { passive: true });
+      toggleFloating();
+
+      backToTop?.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    </script>
   </body>
 </html>
 
