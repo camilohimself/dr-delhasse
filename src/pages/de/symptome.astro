@@ -3,22 +3,24 @@ import Layout from '../../layouts/Layout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 
 const symptome = [
-  { title: 'Brustschmerzen', icon: '/images/svg/symptomes/Dolor-en-el-pecho.svg', text: 'Nicht alle Brustschmerzen sind kardialen Ursprungs, aber einige sind Warnsignale, die nie ignoriert werden sollten. Lernen Sie, sie zu erkennen.' },
-  { title: 'Ohnmacht / Schwindel', icon: '/images/svg/symptomes/Malestar.svg', text: 'Ein einfacher Schwindelanfall mag harmlos erscheinen, kann aber auch das erste Anzeichen einer Herzerkrankung sein. Unterschätzen Sie dieses Symptom nicht.' },
-  { title: 'Herzrasen', icon: '/images/svg/symptomes/Palpitaciones.svg', text: 'Ihr Herz rast? Erfahren Sie, wann einfaches Herzrasen eine Rhythmusstörung verbergen kann, die ärztliche Aufmerksamkeit erfordert.' },
-  { title: 'Müdigkeit', icon: '/images/svg/symptomes/Fatiga.svg', text: 'Anhaltende, unerklärliche Müdigkeit ist nicht normal. Sie kann direkt mit der Gesundheit Ihres Herzens zusammenhängen. Verstehen Sie warum.' },
-  { title: 'Dyspnoe', icon: '/images/svg/symptomes/Disnea.svg', text: 'Kurzatmigkeit ist nicht immer ein Lungenproblem. Erfahren Sie, wann Ihre Atmung Sie auf die Gesundheit Ihres Herzens aufmerksam macht.' },
-  { title: 'Unregelmässiger Herzrhythmus', icon: '/images/svg/symptomes/Arritmia-1.svg', text: 'Hat Ihre Smartwatch einen unregelmässigen Rhythmus erkannt? Erfahren Sie, was diese Warnungen bedeuten und wann die Meinung eines Kardiologen unverzichtbar ist.' },
-  { title: 'Beinödeme', icon: '/images/svg/symptomes/Edema-en-la-pierna.svg', text: 'Geschwollene Beine sind nicht nur ein Komfortproblem. Erfahren Sie, wie sie ein sichtbares Zeichen einer Herzinsuffizienz sein können.' },
+  { title: 'Brustschmerzen', icon: '/images/svg/symptomes/Dolor-en-el-pecho.svg', text: 'Nicht alle Brustschmerzen sind kardialen Ursprungs, aber einige sind Warnsignale, die nie ignoriert werden sollten. Lernen Sie, sie zu erkennen.', href: '/de/symptome/brustschmerzen' },
+  { title: 'Ohnmacht / Schwindel', icon: '/images/svg/symptomes/Malestar.svg', text: 'Ein einfacher Schwindelanfall mag harmlos erscheinen, kann aber auch das erste Anzeichen einer Herzerkrankung sein. Unterschätzen Sie dieses Symptom nicht.', href: '/de/symptome/ohnmacht' },
+  { title: 'Herzrasen', icon: '/images/svg/symptomes/Palpitaciones.svg', text: 'Ihr Herz rast? Erfahren Sie, wann einfaches Herzrasen eine Rhythmusstörung verbergen kann, die ärztliche Aufmerksamkeit erfordert.', href: '/de/symptome/herzrasen' },
+  { title: 'Müdigkeit', icon: '/images/svg/symptomes/Fatiga.svg', text: 'Anhaltende, unerklärliche Müdigkeit ist nicht normal. Sie kann direkt mit der Gesundheit Ihres Herzens zusammenhängen. Verstehen Sie warum.', href: '/de/symptome/muedigkeit' },
+  { title: 'Dyspnoe', icon: '/images/svg/symptomes/Disnea.svg', text: 'Kurzatmigkeit ist nicht immer ein Lungenproblem. Erfahren Sie, wann Ihre Atmung Sie auf die Gesundheit Ihres Herzens aufmerksam macht.', href: '/de/symptome/atemnot' },
+  { title: 'Unregelmässiger Herzrhythmus', icon: '/images/svg/symptomes/Arritmia-1.svg', text: 'Hat Ihre Smartwatch einen unregelmässigen Rhythmus erkannt? Erfahren Sie, was diese Warnungen bedeuten und wann die Meinung eines Kardiologen unverzichtbar ist.', href: '/de/symptome/unregelmaessiger-herzschlag' },
+  { title: 'Beinödeme', icon: '/images/svg/symptomes/Edema-en-la-pierna.svg', text: 'Geschwollene Beine sind nicht nur ein Komfortproblem. Erfahren Sie, wie sie ein sichtbares Zeichen einer Herzinsuffizienz sein können.', href: '/de/symptome/beinoedeme' },
 ];
 ---
 
 <Layout title="Häufige Herzsymptome — Dr. Delhasse" description="Brustschmerzen, Herzrasen, Müdigkeit, Dyspnoe: Entdecken Sie die Symptome, die eine kardiologische Konsultation erfordern." lang="de">
 
   <section class="hero-page">
-    <div class="container">
-      <Breadcrumb items={[{label:'Startseite', href:'/de'}, {label:'Symptome'}]} />
-      <h1><span class="text-primary">Symptome</span></h1>
+    <div class="hero-page__bg" aria-hidden="true"></div>
+    <div class="container hero-page__content">
+      <p class="hero-page__label">Herz & Sie</p>
+      <h1>Symptome</h1>
+      <p class="hero-page__sub">Erkennen Sie die Signale, die Ihr Herz Ihnen sendet</p>
     </div>
   </section>
 
@@ -26,14 +28,25 @@ const symptome = [
     <div class="container">
       <div class="card-grid">
         {symptome.map((s) => (
-          <div class="card">
-            <img src={s.icon} alt={s.title} class="card__icon" loading="lazy" />
-            <h3>{s.title}</h3>
-            <p>{s.text}</p>
-          </div>
+          <a href={s.href} class="card">
+            <div class="card__icon-wrap">
+              <img src={s.icon} alt={s.title} class="card__icon" loading="lazy" />
+            </div>
+            <h3 class="card__title">{s.title}</h3>
+            <p class="card__text">{s.text}</p>
+            <span class="card__link">
+              Mehr erfahren
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 16 16 12 12 8"/><line x1="8" x2="16" y1="12" y2="12"/></svg>
+            </span>
+          </a>
         ))}
       </div>
-      <div class="text-center" style="margin-top: 3rem;">
+
+      <div class="cta-banner">
+        <div class="cta-banner__text">
+          <h2>Ein Symptom beunruhigt Sie?</h2>
+          <p>Warten Sie nicht. Vereinbaren Sie einen Termin für eine kardiologische Konsultation.</p>
+        </div>
         <a href="/de/kontakt" class="btn btn--primary">Termin vereinbaren</a>
       </div>
     </div>
@@ -42,12 +55,25 @@ const symptome = [
 </Layout>
 
 <style>
-  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
-  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
-  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
-  .card { background: var(--color-white); border-radius: 8px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: all 0.3s ease; border-left: 3px solid transparent; }
-  .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); border-left-color: var(--color-primary); }
-  .card__icon { width: 56px; height: 56px; margin-bottom: 1.25rem; }
-  .card h3 { margin-bottom: 0.75rem; font-size: 1.15rem; }
-  .card p { font-size: 0.95rem; line-height: 1.6; }
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #0e2240 50%, #1a3d6d 100%); padding: 7rem 0 4rem; color: var(--color-white); position: relative; overflow: hidden; }
+  .hero-page__bg { position: absolute; inset: 0; background-image: url('/images/cardiologie-med-interne.webp'); background-size: cover; background-position: center; opacity: 0.12; }
+  .hero-page__content { position: relative; z-index: 2; }
+  .hero-page__label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--color-primary); font-weight: 600; margin-bottom: 0.75rem; }
+  .hero-page h1 { color: var(--color-white); font-size: 3rem; margin-bottom: 0.75rem; }
+  .hero-page__sub { color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; max-width: 500px; }
+  .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .card { display: flex; flex-direction: column; background: var(--color-white); border-radius: var(--radius-md); padding: 2rem; box-shadow: var(--shadow-sm); transition: all 0.3s ease; text-decoration: none; border: 1px solid transparent; }
+  .card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: rgba(220, 27, 26, 0.15); }
+  .card__icon-wrap { width: 72px; height: 72px; background: var(--color-gray-light); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; transition: all 0.3s ease; }
+  .card:hover .card__icon-wrap { background: var(--color-primary-light); }
+  .card__icon { width: 40px; height: 40px; }
+  .card__title { font-size: 1.1rem; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.3px; font-weight: 700; }
+  .card__text { font-size: 0.9rem; line-height: 1.6; color: var(--color-gray); flex: 1; }
+  .card__link { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.25rem; padding: 0.5rem 1rem; background: var(--color-primary); color: var(--color-white); border-radius: 50px; font-size: 0.8rem; font-weight: 600; transition: all 0.3s ease; align-self: flex-start; }
+  .card:hover .card__link { background: var(--color-primary-dark); transform: translateX(4px); }
+  .cta-banner { margin-top: 4rem; background: var(--color-navy); border-radius: var(--radius-lg); padding: 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+  .cta-banner h2 { color: var(--color-white); font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .cta-banner p { color: rgba(255, 255, 255, 0.7); margin: 0; font-size: 0.95rem; }
+  @media (max-width: 1024px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2.25rem; } .card-grid { grid-template-columns: 1fr; } .cta-banner { flex-direction: column; text-align: center; padding: 2rem; } }
 </style>

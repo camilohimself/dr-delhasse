@@ -3,25 +3,27 @@ import Layout from '../../layouts/Layout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 
 const areas = [
-  { title: 'Rhythmology', icon: '/images/svg/expertise/Rythmologie.svg', text: 'From simple rhythm disorders to complex conditions. Explore our expertise in diagnosing and treating the electrical activity of the heart.' },
-  { title: 'Valvular diseases', icon: '/images/svg/expertise/Maladie-valvulaires.svg', text: 'Stenosis or insufficiency — your heart valves are at the centre of our attention. Discover modern solutions, from monitoring to cutting-edge interventions.' },
-  { title: 'Prevention', icon: '/images/svg/expertise/prevention.svg', text: 'The best treatment is the one you avoid. Learn to control your risk factors (cholesterol, blood pressure) to protect your cardiovascular future.' },
-  { title: 'Arterial hypertension', icon: '/images/svg/expertise/Hypertension-arterielle.svg', text: 'Often silent, hypertension damages your arteries. Specialised management is essential to control your blood pressure and protect your organs.' },
-  { title: 'Coronary artery disease', icon: '/images/svg/expertise/Maladie-coronarienne.svg', text: 'Angina is the alarm signal from your arteries. Understand this disease to act before it leads to more serious complications.' },
-  { title: 'Post-infarction follow-up', icon: '/images/svg/expertise/Suivi-apres-infarctus.svg', text: 'Surviving a heart attack is the first step. Discover the importance of personalised follow-up for optimal recovery and recurrence prevention.' },
-  { title: 'Heart failure', icon: '/images/svg/expertise/Insuffisance-cardiaque.svg', text: 'When the heart tires, every detail matters. Explore modern approaches to managing heart failure and improving your quality of life.' },
-  { title: 'Pre-operative assessment', icon: '/images/svg/expertise/Bilan-preoperatoire.svg', text: 'Every surgery is a stress on the heart. Our pre-operative evaluation aims to ensure your safety, whatever the planned procedure.' },
-  { title: 'Cardiomyopathies', icon: '/images/svg/expertise/Cardiomyopathies.svg', text: 'Heart muscle diseases are complex and often genetic. Discover how a precise diagnosis is the key to effective management.' },
-  { title: 'Sports fitness assessment', icon: '/images/svg/expertise/Evaluation-a-la-pratique-sportive.svg', text: 'Amateur or seasoned athlete? A cardiological assessment lets you practise your passion safely and optimise your performance.' },
+  { title: 'Rhythmology', icon: '/images/svg/expertise/Rythmologie.svg', text: 'From simple rhythm disorders to complex conditions. Explore our expertise in diagnosing and treating the electrical activity of the heart.', href: '/en/areas-of-expertise/rhythmology' },
+  { title: 'Valvular diseases', icon: '/images/svg/expertise/Maladie-valvulaires.svg', text: 'Stenosis or insufficiency — your heart valves are at the centre of our attention. Discover modern solutions, from monitoring to cutting-edge interventions.', href: '/en/areas-of-expertise/valvular-disease' },
+  { title: 'Prevention', icon: '/images/svg/expertise/prevention.svg', text: 'The best treatment is the one you avoid. Learn to control your risk factors (cholesterol, blood pressure) to protect your cardiovascular future.', href: '/en/areas-of-expertise/prevention' },
+  { title: 'Arterial hypertension', icon: '/images/svg/expertise/Hypertension-arterielle.svg', text: 'Often silent, hypertension damages your arteries. Specialised management is essential to control your blood pressure and protect your organs.', href: '/en/areas-of-expertise/hypertension' },
+  { title: 'Coronary artery disease', icon: '/images/svg/expertise/Maladie-coronarienne.svg', text: 'Angina is the alarm signal from your arteries. Understand this disease to act before it leads to more serious complications.', href: '/en/areas-of-expertise/coronary-artery-disease' },
+  { title: 'Post-infarction follow-up', icon: '/images/svg/expertise/Suivi-apres-infarctus.svg', text: 'Surviving a heart attack is the first step. Discover the importance of personalised follow-up for optimal recovery and recurrence prevention.', href: '/en/areas-of-expertise/post-heart-attack-follow-up' },
+  { title: 'Heart failure', icon: '/images/svg/expertise/Insuffisance-cardiaque.svg', text: 'When the heart tires, every detail matters. Explore modern approaches to managing heart failure and improving your quality of life.', href: '/en/areas-of-expertise/heart-failure' },
+  { title: 'Pre-operative assessment', icon: '/images/svg/expertise/Bilan-preoperatoire.svg', text: 'Every surgery is a stress on the heart. Our pre-operative evaluation aims to ensure your safety, whatever the planned procedure.', href: '/en/areas-of-expertise/preoperative-assessment' },
+  { title: 'Cardiomyopathies', icon: '/images/svg/expertise/Cardiomyopathies.svg', text: 'Heart muscle diseases are complex and often genetic. Discover how a precise diagnosis is the key to effective management.', href: '/en/areas-of-expertise/cardiomyopathies' },
+  { title: 'Sports fitness assessment', icon: '/images/svg/expertise/Evaluation-a-la-pratique-sportive.svg', text: 'Amateur or seasoned athlete? A cardiological assessment lets you practise your passion safely and optimise your performance.', href: '/en/areas-of-expertise/sports-assessment' },
 ];
 ---
 
 <Layout title="Areas of Expertise — Cardiology in Valais" description="Rhythmology, prevention, hypertension, coronary disease, heart failure and more. Dr Delhasse, FMH cardiologist." lang="en">
 
   <section class="hero-page">
-    <div class="container">
-      <Breadcrumb items={[{label:'Home', href:'/en'}, {label:'Areas of Expertise'}]} />
+    <div class="hero-page__bg" aria-hidden="true"></div>
+    <div class="container hero-page__content">
+      <p class="hero-page__label">Heart & You</p>
       <h1>Areas of <span class="text-primary">Expertise</span></h1>
+      <p class="hero-page__sub">Comprehensive care for your cardiovascular health</p>
     </div>
   </section>
 
@@ -29,14 +31,18 @@ const areas = [
     <div class="container">
       <div class="card-grid">
         {areas.map((d) => (
-          <div class="card">
-            <img src={d.icon} alt={d.title} class="card__icon" loading="lazy" />
-            <h3>{d.title}</h3>
-            <p>{d.text}</p>
-          </div>
+          <a href={d.href} class="card">
+            <div class="card__icon-wrap">
+              <img src={d.icon} alt={d.title} class="card__icon" loading="lazy" />
+            </div>
+            <h3 class="card__title">{d.title}</h3>
+            <p class="card__text">{d.text}</p>
+            <span class="card__link">Learn more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 16 16 12 12 8"/><line x1="8" x2="16" y1="12" y2="12"/></svg></span>
+          </a>
         ))}
       </div>
-      <div class="text-center" style="margin-top: 3rem;">
+      <div class="cta-banner">
+        <div class="cta-banner__text"><h2>Need a specialist opinion?</h2><p>Book an appointment for a comprehensive cardiology consultation.</p></div>
         <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
       </div>
     </div>
@@ -45,12 +51,25 @@ const areas = [
 </Layout>
 
 <style>
-  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
-  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
-  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
-  .card { background: var(--color-white); border-radius: 8px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: all 0.3s ease; border-left: 3px solid transparent; }
-  .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); border-left-color: var(--color-primary); }
-  .card__icon { width: 56px; height: 56px; margin-bottom: 1.25rem; }
-  .card h3 { margin-bottom: 0.75rem; font-size: 1.15rem; }
-  .card p { font-size: 0.95rem; line-height: 1.6; }
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #0e2240 50%, #1a3d6d 100%); padding: 7rem 0 4rem; color: var(--color-white); position: relative; overflow: hidden; }
+  .hero-page__bg { position: absolute; inset: 0; background-image: url('/images/accompagnement.webp'); background-size: cover; background-position: center; opacity: 0.12; }
+  .hero-page__content { position: relative; z-index: 2; }
+  .hero-page__label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--color-primary); font-weight: 600; margin-bottom: 0.75rem; }
+  .hero-page h1 { color: var(--color-white); font-size: 3rem; margin-bottom: 0.75rem; }
+  .hero-page__sub { color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; max-width: 500px; }
+  .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .card { display: flex; flex-direction: column; background: var(--color-white); border-radius: var(--radius-md); padding: 2rem; box-shadow: var(--shadow-sm); transition: all 0.3s ease; text-decoration: none; border: 1px solid transparent; }
+  .card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: rgba(220, 27, 26, 0.15); }
+  .card__icon-wrap { width: 72px; height: 72px; background: var(--color-gray-light); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; transition: all 0.3s ease; }
+  .card:hover .card__icon-wrap { background: var(--color-primary-light); }
+  .card__icon { width: 40px; height: 40px; }
+  .card__title { font-size: 1.1rem; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.3px; font-weight: 700; }
+  .card__text { font-size: 0.9rem; line-height: 1.6; color: var(--color-gray); flex: 1; }
+  .card__link { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.25rem; padding: 0.5rem 1rem; background: var(--color-primary); color: var(--color-white); border-radius: 50px; font-size: 0.8rem; font-weight: 600; transition: all 0.3s ease; align-self: flex-start; }
+  .card:hover .card__link { background: var(--color-primary-dark); transform: translateX(4px); }
+  .cta-banner { margin-top: 4rem; background: var(--color-navy); border-radius: var(--radius-lg); padding: 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+  .cta-banner h2 { color: var(--color-white); font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .cta-banner p { color: rgba(255, 255, 255, 0.7); margin: 0; font-size: 0.95rem; }
+  @media (max-width: 1024px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2.25rem; } .card-grid { grid-template-columns: 1fr; } .cta-banner { flex-direction: column; text-align: center; padding: 2rem; } }
 </style>

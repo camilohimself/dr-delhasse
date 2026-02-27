@@ -3,25 +3,27 @@ import Layout from '../../layouts/Layout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 
 const fachgebiete = [
-  { title: 'Rhythmologie', icon: '/images/svg/expertise/Rythmologie.svg', text: 'Von einfachen Rhythmusstörungen bis zu komplexen Erkrankungen. Entdecken Sie unsere Expertise in der Diagnose und Behandlung der elektrischen Aktivität des Herzens.' },
-  { title: 'Herzklappenerkrankungen', icon: '/images/svg/expertise/Maladie-valvulaires.svg', text: 'Stenose oder Insuffizienz — Ihre Herzklappen stehen im Mittelpunkt unserer Aufmerksamkeit. Entdecken Sie moderne Lösungen, von der Überwachung bis zu Spitzeninterventionen.' },
-  { title: 'Prävention', icon: '/images/svg/expertise/prevention.svg', text: 'Die beste Behandlung ist die, die man vermeidet. Lernen Sie, Ihre Risikofaktoren (Cholesterin, Blutdruck) zu kontrollieren, um Ihre kardiovaskuläre Zukunft zu schützen.' },
-  { title: 'Arterielle Hypertonie', icon: '/images/svg/expertise/Hypertension-arterielle.svg', text: 'Oft still, schädigt Bluthochdruck Ihre Arterien. Eine spezialisierte Behandlung ist unerlässlich, um Ihren Blutdruck zu kontrollieren und Ihre Organe zu schützen.' },
-  { title: 'Koronare Herzkrankheit', icon: '/images/svg/expertise/Maladie-coronarienne.svg', text: 'Angina pectoris ist das Warnsignal Ihrer Arterien. Verstehen Sie diese Krankheit, um zu handeln, bevor sie zu ernsteren Komplikationen führt.' },
-  { title: 'Nachsorge nach Herzinfarkt', icon: '/images/svg/expertise/Suivi-apres-infarctus.svg', text: 'Einen Herzinfarkt zu überleben ist der erste Schritt. Entdecken Sie die Bedeutung einer personalisierten Nachsorge für eine optimale Erholung und Rückfallprävention.' },
-  { title: 'Herzinsuffizienz', icon: '/images/svg/expertise/Insuffisance-cardiaque.svg', text: 'Wenn das Herz ermüdet, zählt jedes Detail. Entdecken Sie moderne Ansätze zur Behandlung der Herzinsuffizienz und zur Verbesserung Ihrer Lebensqualität.' },
-  { title: 'Präoperative Beurteilung', icon: '/images/svg/expertise/Bilan-preoperatoire.svg', text: 'Jede Operation ist eine Belastung für das Herz. Unsere präoperative Beurteilung zielt darauf ab, Ihre Sicherheit zu gewährleisten, unabhängig vom geplanten Eingriff.' },
-  { title: 'Kardiomyopathien', icon: '/images/svg/expertise/Cardiomyopathies.svg', text: 'Herzmuskelerkrankungen sind komplex und oft genetisch bedingt. Erfahren Sie, wie eine präzise Diagnose der Schlüssel zu einer wirksamen Behandlung ist.' },
-  { title: 'Sporteignungsbeurteilung', icon: '/images/svg/expertise/Evaluation-a-la-pratique-sportive.svg', text: 'Amateur- oder Leistungssportler? Eine kardiologische Beurteilung ermöglicht es Ihnen, Ihre Leidenschaft sicher auszuüben und Ihre Leistung zu optimieren.' },
+  { title: 'Rhythmologie', icon: '/images/svg/expertise/Rythmologie.svg', text: 'Von einfachen Rhythmusstörungen bis zu komplexen Erkrankungen. Entdecken Sie unsere Expertise in der Diagnose und Behandlung der elektrischen Aktivität des Herzens.', href: '/de/fachgebiete/rhythmologie' },
+  { title: 'Herzklappenerkrankungen', icon: '/images/svg/expertise/Maladie-valvulaires.svg', text: 'Stenose oder Insuffizienz — Ihre Herzklappen stehen im Mittelpunkt unserer Aufmerksamkeit.', href: '/de/fachgebiete/herzklappenerkrankungen' },
+  { title: 'Prävention', icon: '/images/svg/expertise/prevention.svg', text: 'Die beste Behandlung ist die, die man vermeidet. Lernen Sie, Ihre Risikofaktoren zu kontrollieren, um Ihre kardiovaskuläre Zukunft zu schützen.', href: '/de/fachgebiete/praevention' },
+  { title: 'Arterielle Hypertonie', icon: '/images/svg/expertise/Hypertension-arterielle.svg', text: 'Oft still, schädigt Bluthochdruck Ihre Arterien. Eine spezialisierte Behandlung ist unerlässlich.', href: '/de/fachgebiete/bluthochdruck' },
+  { title: 'Koronare Herzkrankheit', icon: '/images/svg/expertise/Maladie-coronarienne.svg', text: 'Angina pectoris ist das Warnsignal Ihrer Arterien. Verstehen Sie diese Krankheit, um rechtzeitig zu handeln.', href: '/de/fachgebiete/koronare-herzkrankheit' },
+  { title: 'Nachsorge nach Herzinfarkt', icon: '/images/svg/expertise/Suivi-apres-infarctus.svg', text: 'Einen Herzinfarkt zu überleben ist der erste Schritt. Entdecken Sie die Bedeutung einer personalisierten Nachsorge.', href: '/de/fachgebiete/nachsorge-nach-herzinfarkt' },
+  { title: 'Herzinsuffizienz', icon: '/images/svg/expertise/Insuffisance-cardiaque.svg', text: 'Wenn das Herz ermüdet, zählt jedes Detail. Entdecken Sie moderne Ansätze zur Verbesserung Ihrer Lebensqualität.', href: '/de/fachgebiete/herzinsuffizienz' },
+  { title: 'Präoperative Beurteilung', icon: '/images/svg/expertise/Bilan-preoperatoire.svg', text: 'Jede Operation ist eine Belastung für das Herz. Unsere Beurteilung gewährleistet Ihre Sicherheit.', href: '/de/fachgebiete/praeoperative-abklaerung' },
+  { title: 'Kardiomyopathien', icon: '/images/svg/expertise/Cardiomyopathies.svg', text: 'Herzmuskelerkrankungen sind komplex und oft genetisch bedingt. Eine präzise Diagnose ist der Schlüssel.', href: '/de/fachgebiete/kardiomyopathien' },
+  { title: 'Sporteignungsbeurteilung', icon: '/images/svg/expertise/Evaluation-a-la-pratique-sportive.svg', text: 'Amateur- oder Leistungssportler? Eine kardiologische Beurteilung für sichere Sportausübung.', href: '/de/fachgebiete/sportkardiologie' },
 ];
 ---
 
 <Layout title="Fachgebiete — Kardiologie im Wallis" description="Rhythmologie, Prävention, Hypertonie, koronare Herzkrankheit, Herzinsuffizienz und mehr. Dr. Delhasse, FMH-Kardiologe." lang="de">
 
   <section class="hero-page">
-    <div class="container">
-      <Breadcrumb items={[{label:'Startseite', href:'/de'}, {label:'Fachgebiete'}]} />
+    <div class="hero-page__bg" aria-hidden="true"></div>
+    <div class="container hero-page__content">
+      <p class="hero-page__label">Herz & Sie</p>
       <h1><span class="text-primary">Fachgebiete</span></h1>
+      <p class="hero-page__sub">Umfassende Betreuung für Ihre Herz-Kreislauf-Gesundheit</p>
     </div>
   </section>
 
@@ -29,14 +31,18 @@ const fachgebiete = [
     <div class="container">
       <div class="card-grid">
         {fachgebiete.map((d) => (
-          <div class="card">
-            <img src={d.icon} alt={d.title} class="card__icon" loading="lazy" />
-            <h3>{d.title}</h3>
-            <p>{d.text}</p>
-          </div>
+          <a href={d.href} class="card">
+            <div class="card__icon-wrap">
+              <img src={d.icon} alt={d.title} class="card__icon" loading="lazy" />
+            </div>
+            <h3 class="card__title">{d.title}</h3>
+            <p class="card__text">{d.text}</p>
+            <span class="card__link">Mehr erfahren <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 16 16 12 12 8"/><line x1="8" x2="16" y1="12" y2="12"/></svg></span>
+          </a>
         ))}
       </div>
-      <div class="text-center" style="margin-top: 3rem;">
+      <div class="cta-banner">
+        <div class="cta-banner__text"><h2>Brauchen Sie eine Expertenmeinung?</h2><p>Vereinbaren Sie einen Termin für eine umfassende kardiologische Konsultation.</p></div>
         <a href="/de/kontakt" class="btn btn--primary">Termin vereinbaren</a>
       </div>
     </div>
@@ -45,12 +51,25 @@ const fachgebiete = [
 </Layout>
 
 <style>
-  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
-  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
-  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
-  .card { background: var(--color-white); border-radius: 8px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: all 0.3s ease; border-left: 3px solid transparent; }
-  .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); border-left-color: var(--color-primary); }
-  .card__icon { width: 56px; height: 56px; margin-bottom: 1.25rem; }
-  .card h3 { margin-bottom: 0.75rem; font-size: 1.15rem; }
-  .card p { font-size: 0.95rem; line-height: 1.6; }
+  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #0e2240 50%, #1a3d6d 100%); padding: 7rem 0 4rem; color: var(--color-white); position: relative; overflow: hidden; }
+  .hero-page__bg { position: absolute; inset: 0; background-image: url('/images/accompagnement.webp'); background-size: cover; background-position: center; opacity: 0.12; }
+  .hero-page__content { position: relative; z-index: 2; }
+  .hero-page__label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--color-primary); font-weight: 600; margin-bottom: 0.75rem; }
+  .hero-page h1 { color: var(--color-white); font-size: 3rem; margin-bottom: 0.75rem; }
+  .hero-page__sub { color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; max-width: 500px; }
+  .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .card { display: flex; flex-direction: column; background: var(--color-white); border-radius: var(--radius-md); padding: 2rem; box-shadow: var(--shadow-sm); transition: all 0.3s ease; text-decoration: none; border: 1px solid transparent; }
+  .card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: rgba(220, 27, 26, 0.15); }
+  .card__icon-wrap { width: 72px; height: 72px; background: var(--color-gray-light); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; transition: all 0.3s ease; }
+  .card:hover .card__icon-wrap { background: var(--color-primary-light); }
+  .card__icon { width: 40px; height: 40px; }
+  .card__title { font-size: 1.1rem; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.3px; font-weight: 700; }
+  .card__text { font-size: 0.9rem; line-height: 1.6; color: var(--color-gray); flex: 1; }
+  .card__link { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.25rem; padding: 0.5rem 1rem; background: var(--color-primary); color: var(--color-white); border-radius: 50px; font-size: 0.8rem; font-weight: 600; transition: all 0.3s ease; align-self: flex-start; }
+  .card:hover .card__link { background: var(--color-primary-dark); transform: translateX(4px); }
+  .cta-banner { margin-top: 4rem; background: var(--color-navy); border-radius: var(--radius-lg); padding: 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+  .cta-banner h2 { color: var(--color-white); font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .cta-banner p { color: rgba(255, 255, 255, 0.7); margin: 0; font-size: 0.95rem; }
+  @media (max-width: 1024px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 768px) { .hero-page h1 { font-size: 2.25rem; } .card-grid { grid-template-columns: 1fr; } .cta-banner { flex-direction: column; text-align: center; padding: 2rem; } }
 </style>

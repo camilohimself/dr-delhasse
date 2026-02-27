@@ -50,25 +50,37 @@ const symptomes = [
 <Layout title="Symptômes cardiaques fréquents — Dr Delhasse" description="Douleurs thoraciques, palpitations, fatigue, dyspnée : découvrez les symptômes qui nécessitent une consultation cardiologique." lang="fr">
 
   <section class="hero-page">
-    <div class="container">
-      <h1><span class="text-primary">Symptômes</span></h1>
+    <div class="hero-page__bg" aria-hidden="true"></div>
+    <div class="container hero-page__content">
+      <p class="hero-page__label">Le Cœur & vous</p>
+      <h1>Symptômes</h1>
+      <p class="hero-page__sub">Reconnaître les signaux que votre cœur vous envoie</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
       <div class="card-grid">
-        {symptomes.map((s) => (
-          <div class="card">
-            <img src={s.icon} alt={s.title} class="card__icon" loading="lazy" />
-            <h3>{s.title}</h3>
-            <p>{s.text}</p>
-            <a href={s.href} class="card__link">En savoir plus &rarr;</a>
-          </div>
+        {symptomes.map((s, i) => (
+          <a href={s.href} class="card">
+            <div class="card__icon-wrap">
+              <img src={s.icon} alt={s.title} class="card__icon" loading="lazy" />
+            </div>
+            <h3 class="card__title">{s.title}</h3>
+            <p class="card__text">{s.text}</p>
+            <span class="card__link">
+              En savoir plus
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 16 16 12 12 8"/><line x1="8" x2="16" y1="12" y2="12"/></svg>
+            </span>
+          </a>
         ))}
       </div>
 
-      <div class="text-center" style="margin-top: 3rem;">
+      <div class="cta-banner">
+        <div class="cta-banner__text">
+          <h2>Un symptôme vous inquiète ?</h2>
+          <p>N'attendez pas. Prenez rendez-vous pour une consultation cardiologique.</p>
+        </div>
         <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
       </div>
     </div>
@@ -78,61 +90,164 @@ const symptomes = [
 
 <style>
   .hero-page {
-    background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%);
-    padding: 6rem 0 4rem;
+    background: linear-gradient(135deg, var(--color-navy) 0%, #0e2240 50%, #1a3d6d 100%);
+    padding: 7rem 0 4rem;
     color: var(--color-white);
+    position: relative;
+    overflow: hidden;
   }
 
-  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .hero-page__bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/images/cardiologie-med-interne.webp');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.12;
+  }
+
+  .hero-page__content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-page__label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-page h1 {
+    color: var(--color-white);
+    font-size: 3rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-page__sub {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    max-width: 500px;
+  }
 
   .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
 
   .card {
+    display: flex;
+    flex-direction: column;
     background: var(--color-white);
-    border-radius: 8px;
+    border-radius: var(--radius-md);
     padding: 2rem;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--shadow-sm);
     transition: all 0.3s ease;
-    border-left: 3px solid transparent;
+    text-decoration: none;
+    border: 1px solid transparent;
+    position: relative;
   }
 
   .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    border-left-color: var(--color-primary);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(220, 27, 26, 0.15);
+  }
+
+  .card__icon-wrap {
+    width: 72px;
+    height: 72px;
+    background: var(--color-gray-light);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    transition: all 0.3s ease;
+  }
+
+  .card:hover .card__icon-wrap {
+    background: var(--color-primary-light);
   }
 
   .card__icon {
-    width: 56px;
-    height: 56px;
-    margin-bottom: 1.25rem;
+    width: 40px;
+    height: 40px;
   }
 
-  .card h3 {
+  .card__title {
+    font-size: 1.1rem;
     margin-bottom: 0.75rem;
-    font-size: 1.15rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    font-weight: 700;
   }
 
-  .card p {
-    font-size: 0.95rem;
+  .card__text {
+    font-size: 0.9rem;
     line-height: 1.6;
+    color: var(--color-gray);
+    flex: 1;
   }
 
   .card__link {
-    display: inline-block;
-    margin-top: 0.75rem;
-    color: var(--color-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+    padding: 0.5rem 1rem;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 50px;
+    font-size: 0.8rem;
     font-weight: 600;
-    font-size: 0.9rem;
-    text-decoration: none;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
+    align-self: flex-start;
   }
 
-  .card__link:hover {
-    color: var(--color-navy);
+  .card:hover .card__link {
+    background: var(--color-primary-dark);
+    transform: translateX(4px);
+  }
+
+  /* CTA Banner */
+  .cta-banner {
+    margin-top: 4rem;
+    background: var(--color-navy);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .cta-banner h2 {
+    color: var(--color-white);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-banner p {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 1024px) {
+    .card-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .hero-page h1 { font-size: 2.25rem; }
+    .card-grid { grid-template-columns: 1fr; }
+    .cta-banner {
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem;
+    }
   }
 </style>

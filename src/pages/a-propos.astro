@@ -5,8 +5,11 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="À propos du Dr Delhasse — Cardiologue en Valais" description="Parcours, formation et engagement du Dr Sébastien Delhasse, cardiologue FMH à Saxon, Valais." lang="fr">
 
   <section class="hero-page">
-    <div class="container">
+    <div class="hero-page__bg" aria-hidden="true"></div>
+    <div class="container hero-page__content">
+      <p class="hero-page__label">Présentation</p>
       <h1>Un parcours guidé par le <span class="text-primary">cœur</span></h1>
+      <p class="hero-page__sub">Cardiologue FMH, membre de la Société Européenne de Cardiologie</p>
     </div>
   </section>
 
@@ -66,14 +69,42 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
   .hero-page {
-    background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%);
-    padding: 6rem 0 4rem;
+    background: linear-gradient(135deg, var(--color-navy) 0%, #0e2240 50%, #1a3d6d 100%);
+    padding: 7rem 0 4rem;
     color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-page__bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/images/dr-delhasse-hero.jpeg');
+    background-size: cover;
+    background-position: center top;
+    opacity: 0.1;
+  }
+
+  .hero-page__content { position: relative; z-index: 2; }
+
+  .hero-page__label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
   }
 
   .hero-page h1 {
     color: var(--color-white);
-    font-size: 2.75rem;
+    font-size: 3rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-page__sub {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
   }
 
   .about-grid {

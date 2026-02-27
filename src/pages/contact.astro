@@ -5,9 +5,11 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Contactez-nous — Dr. Sébastien Delhasse" description="Prenez rendez-vous pour une consultation en cardiologie à la Clinique CIC de Saxon. Contact par téléphone ou formulaire." lang="fr">
 
   <section class="hero-page">
-    <div class="container">
+    <div class="hero-page__bg" aria-hidden="true"></div>
+    <div class="container hero-page__content">
+      <p class="hero-page__label">Rendez-vous</p>
       <h1>Contactez-<span class="text-primary">nous</span></h1>
-      <p class="hero-sub">Prenez rendez-vous facilement pour une consultation en cabinet ou en téléconsultation.</p>
+      <p class="hero-page__sub">Prenez rendez-vous facilement pour une consultation en cabinet ou en téléconsultation.</p>
     </div>
   </section>
 
@@ -122,13 +124,35 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
   .hero-page {
-    background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%);
-    padding: 6rem 0 4rem;
+    background: linear-gradient(135deg, var(--color-navy) 0%, #0e2240 50%, #1a3d6d 100%);
+    padding: 7rem 0 4rem;
     color: var(--color-white);
+    position: relative;
+    overflow: hidden;
   }
 
-  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
-  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
+  .hero-page__bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/images/demande-rdv.webp');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.12;
+  }
+
+  .hero-page__content { position: relative; z-index: 2; }
+
+  .hero-page__label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-page h1 { color: var(--color-white); font-size: 3rem; margin-bottom: 0.75rem; }
+  .hero-page__sub { color: rgba(255,255,255,0.7); font-size: 1.1rem; max-width: 500px; }
 
   .contact-cards { margin-bottom: 4rem; }
 

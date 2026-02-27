@@ -217,6 +217,7 @@ import Layout from '../layouts/Layout.astro';
     margin-bottom: 1.5rem;
     line-height: 1.1;
     letter-spacing: -0.02em;
+    animation: fadeInUp 0.8s ease-out both;
   }
 
   .hero__quote {
@@ -225,6 +226,7 @@ import Layout from '../layouts/Layout.astro';
     margin-bottom: 2.5rem;
     max-width: 480px;
     line-height: 1.6;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
   }
 
   .hero__quote em {
@@ -236,6 +238,12 @@ import Layout from '../layouts/Layout.astro';
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   /* Process */
@@ -404,13 +412,6 @@ import Layout from '../layouts/Layout.astro';
       min-height: 60vh;
     }
 
-    .trust-bar__grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-  }
-
-  @media (max-width: 768px) {
     .hero__video {
       object-position: 65% center;
     }
@@ -422,6 +423,11 @@ import Layout from '../layouts/Layout.astro';
     .hero__ecg-line {
       width: 40px;
       margin-bottom: 1.5rem;
+    }
+
+    .trust-bar__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
     }
 
     .about-cta__inner {
