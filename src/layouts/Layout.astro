@@ -81,13 +81,15 @@ const structuredData = {
     <meta name="theme-color" content="#153259" />
     <title>{title}</title>
 
-    <!-- Inter font -->
+    <!-- Inter font — non-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
 
-    <!-- Preload critical images -->
-    <link rel="preload" as="image" href="/images/logo-without-background.png" />
+    <!-- Preload critical hero assets on homepage -->
+    <link rel="preload" as="image" href="/images/ecg-poster.jpg" />
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
