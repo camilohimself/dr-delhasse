@@ -1,50 +1,26 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Breadcrumb from '../../components/Breadcrumb.astro';
+import DetailLayout from '../../layouts/DetailLayout.astro';
 ---
 
-<Layout title="Échocardiographie — Dr Delhasse, Cardiologue" description="L'échocardiographie permet de visualiser le cœur en temps réel. Examen réalisé par le Dr Delhasse en consultation." lang="fr">
+<DetailLayout
+  title="Échocardiographie — Dr Delhasse, Cardiologue"
+  description="L'échocardiographie permet de visualiser le cœur en temps réel. Examen réalisé par le Dr Delhasse en consultation."
+  lang="fr"
+  alternates={{ fr: '/examens-cardiologiques/echocardiographie', en: '/en/cardiac-examinations/echocardiography', de: '/de/herzuntersuchungen/echokardiographie' }}
+  pageTitleHtml="<span class='text-primary'>Échocardiographie</span>"
+  subtitle="L'ultrason du cœur"
+  heroBg="/images/demande-rdv.webp"
+  heroImage="/images/detail/echocardiographie.webp"
+  heroImageAlt="Échocardiographie"
+  icon="/images/svg/examens/Ecocardiografia.svg"
+  iconAlt="Échocardiographie"
+  breadcrumb={[{label:'Accueil', href:'/'}, {label:'Examens cardiologiques', href:'/examens-cardiologiques'}, {label:'Échocardiographie'}]}
+  backHref="/examens-cardiologiques"
+  backLabel="Tous les examens"
+>
+  <p>L'échocardiographie est un examen réalisé par le cardiologue, qui a les compétences pour acquérir des images précises du cœur, mais surtout de les interpréter dans le bon contexte clinique.</p>
 
-  <section class="hero-page">
-    <div class="container">
-      <Breadcrumb items={[
-        { label: 'Accueil', href: '/' },
-        { label: 'Examens cardiologiques', href: '/examens-cardiologiques' },
-        { label: 'Échocardiographie' }
-      ]} />
-      <h1><span class="text-primary">Échocardiographie</span></h1>
-      <p class="hero-sub">L'ultrason du cœur</p>
-    </div>
-  </section>
+  <p>L'examen est pratique et accessible en consultation, offrant une analyse immédiate. Il évalue des paramètres dont la fonction du ventricule gauche, aide à clarifier l'origine des problèmes, détermine les niveaux de soins nécessaires et guide les décisions thérapeutiques tout en fournissant des informations pronostiques.</p>
 
-  <section class="section">
-    <div class="container detail-content">
-      <img src="/images/detail/echocardiographie.webp" alt="Échocardiographie" class="detail-hero-img" />
-      <img src="/images/svg/examens/Ecocardiografia.svg" alt="Échocardiographie" class="detail-icon" />
-
-      <p>L'échocardiographie est un examen réalisé par le cardiologue, qui a les compétences pour acquérir des images précises du cœur, mais surtout de les interpréter dans le bon contexte clinique.</p>
-
-      <p>L'examen est pratique et accessible en consultation, offrant une analyse immédiate. Il évalue des paramètres dont la fonction du ventricule gauche, aide à clarifier l'origine des problèmes, détermine les niveaux de soins nécessaires et guide les décisions thérapeutiques tout en fournissant des informations pronostiques.</p>
-
-      <p>L'examen analyse également la structure cardiaque incluant les valves, le péricarde, le muscle cardiaque et les gros vaisseaux. Les applications s'étendent au suivi des maladies cardiaques diagnostiquées, des patients recevant des traitements affectant le cœur, et des patients à risque.</p>
-
-      <div class="detail-cta">
-        <a href="/examens-cardiologiques" class="btn btn--outline-dark">&larr; Tous les examens</a>
-        <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
-      </div>
-    </div>
-  </section>
-
-</Layout>
-
-<style>
-  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
-  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
-  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
-  .detail-content { max-width: 800px; }
-  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
-  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
-  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
-  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
-  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
-</style>
+  <p>L'examen analyse également la structure cardiaque incluant les valves, le péricarde, le muscle cardiaque et les gros vaisseaux. Les applications s'étendent au suivi des maladies cardiaques diagnostiquées, des patients recevant des traitements affectant le cœur, et des patients à risque.</p>
+</DetailLayout>

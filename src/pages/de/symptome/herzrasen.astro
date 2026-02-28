@@ -1,46 +1,25 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
-import Breadcrumb from '../../../components/Breadcrumb.astro';
-import EmergencyBanner from '../../../components/EmergencyBanner.astro';
+import DetailLayout from '../../../layouts/DetailLayout.astro';
 ---
 
-<Layout title="Herzrasen — Dr. Delhasse, Kardiologe" description="Herzrasen: Wann zum Kardiologen? Ursachen und Behandlung von Herzrhythmusstörungen." lang="de">
+<DetailLayout
+  title="Herzrasen — Dr. Delhasse, Kardiologe"
+  description="Herzrasen: Wann zum Kardiologen? Ursachen und Behandlung von Herzrhythmusstörungen."
+  lang="de"
+  alternates={{ fr: '/symptomes/palpitations', en: '/en/symptoms/palpitations', de: '/de/symptome/herzrasen' }}
+  pageTitleHtml="<span class='text-primary'>Herzrasen</span>"
+  subtitle="Wenn Ihr Herz zu schnell schlägt"
+  heroBg="/images/cardiologie-med-interne.webp"
+  heroImage="/images/detail/palpitations.webp"
+  heroImageAlt="Herzrasen"
+  icon="/images/svg/symptomes/Palpitaciones.svg"
+  iconAlt="Herzrasen"
+  breadcrumb={[{label:'Startseite', href:'/de'}, {label:'Symptome', href:'/de/symptome'}, {label:'Herzrasen'}]}
+  backHref="/de/symptome"
+  backLabel="Alle Symptome"
+  showEmergencyBanner={true}
+>
+  <p>Ein Herz, das zu stark schlägt, ist nicht immer ein Zeichen von Emotion. Stress, Müdigkeit, Koffein oder Alkohol können die Ursache sein. Manchmal steckt jedoch eine Herzrhythmusstörung oder eine Grunderkrankung dahinter. Wenn diese Empfindungen häufig, störend oder mit Schmerzen, Ohnmacht oder Atemnot verbunden sind, ist eine kardiologische Abklärung unerlässlich. Eine frühzeitige Diagnose ermöglicht es, die Ursache des Problems zu identifizieren und eine angepasste Behandlung einzuleiten, um den Herzrhythmus zu kontrollieren und eine optimale Lebensqualität zu gewährleisten.</p>
 
-  <section class="hero-page">
-    <div class="container">
-      <Breadcrumb items={[{label:'Startseite', href:'/de'}, {label:'Symptome', href:'/de/symptome'}, {label:'Herzrasen'}]} />
-      <h1><span class="text-primary">Herzrasen</span></h1>
-      <p class="hero-sub">Wenn Ihr Herz zu schnell schlägt</p>
-    </div>
-  </section>
-  <EmergencyBanner lang="de" />
-
-  <section class="section">
-    <div class="container detail-content">
-      <img src="/images/detail/palpitations.webp" alt="Herzrasen" class="detail-hero-img" />
-      <img src="/images/svg/symptomes/Palpitaciones.svg" alt="Herzrasen" class="detail-icon" />
-
-      <p>Ein Herz, das zu stark schlägt, ist nicht immer ein Zeichen von Emotion. Stress, Müdigkeit, Koffein oder Alkohol können die Ursache sein. Manchmal steckt jedoch eine Herzrhythmusstörung oder eine Grunderkrankung dahinter. Wenn diese Empfindungen häufig, störend oder mit Schmerzen, Ohnmacht oder Atemnot verbunden sind, ist eine kardiologische Abklärung unerlässlich. Eine frühzeitige Diagnose ermöglicht es, die Ursache des Problems zu identifizieren und eine angepasste Behandlung einzuleiten, um den Herzrhythmus zu kontrollieren und eine optimale Lebensqualität zu gewährleisten.</p>
-
-      <p>Im Zweifelsfall oder bei beunruhigenden Symptomen ist es besser, nicht zu warten und sofort einen Arzt aufzusuchen.</p>
-
-      <div class="detail-cta">
-        <a href="/de/symptome" class="btn btn--outline-dark">&larr; Alle Symptome</a>
-        <a href="/de/kontakt" class="btn btn--primary">Termin vereinbaren</a>
-      </div>
-    </div>
-  </section>
-
-</Layout>
-
-<style>
-  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
-  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
-  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
-  .detail-content { max-width: 800px; }
-  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
-  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
-  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
-  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
-  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
-</style>
+  <p>Im Zweifelsfall oder bei beunruhigenden Symptomen ist es besser, nicht zu warten und sofort einen Arzt aufzusuchen.</p>
+</DetailLayout>

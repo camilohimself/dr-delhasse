@@ -1,49 +1,27 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
-import Breadcrumb from '../../../components/Breadcrumb.astro';
-import EmergencyBanner from '../../../components/EmergencyBanner.astro';
+import DetailLayout from '../../../layouts/DetailLayout.astro';
 ---
 
-<Layout title="Unexplained Fatigue: Could Your Heart Be the Cause? — Dr Delhasse" description="Persistent fatigue may be linked to a heart condition. Heart failure, rhythm disorders: discover the cardiac causes of fatigue." lang="en">
+<DetailLayout
+  title="Unexplained Fatigue: Could Your Heart Be the Cause? — Dr Delhasse"
+  description="Persistent fatigue may be linked to a heart condition. Heart failure, rhythm disorders: discover the cardiac causes of fatigue."
+  lang="en"
+  alternates={{ fr: '/symptomes/fatigue', en: '/en/symptoms/fatigue', de: '/de/symptome/muedigkeit' }}
+  pageTitleHtml="Unexplained <span class='text-primary'>Fatigue</span>"
+  subtitle="Could your heart be the cause?"
+  heroBg="/images/cardiologie-med-interne.webp"
+  heroImage="/images/detail/fatigue.webp"
+  heroImageAlt="Fatigue consultation"
+  icon="/images/svg/symptomes/Fatiga.svg"
+  iconAlt="Fatigue"
+  breadcrumb={[{label:'Home', href:'/en'}, {label:'Symptoms', href:'/en/symptoms'}, {label:'Fatigue'}]}
+  backHref="/en/symptoms"
+  backLabel="All symptoms"
+  showEmergencyBanner={true}
+>
+  <p>In cardiology, fatigue often reflects a mismatch between the body's oxygen needs and supply. Heart failure reduces cardiac output, leading to poor perfusion of organs such as muscles and the brain. This results in a lack of energy and cognitive slowing.</p>
 
-  <section class="hero-page">
-    <div class="container">
-      <Breadcrumb items={[{label:'Home', href:'/en'}, {label:'Symptoms', href:'/en/symptoms'}, {label:'Fatigue'}]} />
-      <h1>Unexplained <span class="text-primary">Fatigue</span></h1>
-      <p class="hero-sub">Could your heart be the cause?</p>
-    </div>
-  </section>
+  <p>Rhythm disorders impair ventricular function and reduce haemodynamic efficiency, causing fluctuating fatigue, sometimes associated with dizziness. Myocardial ischaemia limits the heart's energy reserves, worsening the sensation of exhaustion during exertion.</p>
 
-  <EmergencyBanner lang="en" />
-
-  <section class="section">
-    <div class="container detail-content">
-      <img src="/images/detail/fatigue.webp" alt="Fatigue consultation" class="detail-hero-img" />
-      <img src="/images/svg/symptomes/Fatiga.svg" alt="Fatigue" class="detail-icon" />
-
-      <p>In cardiology, fatigue often reflects a mismatch between the body's oxygen needs and supply. Heart failure reduces cardiac output, leading to poor perfusion of organs such as muscles and the brain. This results in a lack of energy and cognitive slowing.</p>
-
-      <p>Rhythm disorders impair ventricular function and reduce haemodynamic efficiency, causing fluctuating fatigue, sometimes associated with dizziness. Myocardial ischaemia limits the heart's energy reserves, worsening the sensation of exhaustion during exertion.</p>
-
-      <p>When faced with unexplained and persistent fatigue, a cardiac evaluation is recommended.</p>
-
-      <div class="detail-cta">
-        <a href="/en/symptoms" class="btn btn--outline-dark">&larr; All symptoms</a>
-        <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
-      </div>
-    </div>
-  </section>
-
-</Layout>
-
-<style>
-  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
-  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
-  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
-  .detail-content { max-width: 800px; }
-  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
-  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
-  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
-  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
-  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
-</style>
+  <p>When faced with unexplained and persistent fatigue, a cardiac evaluation is recommended.</p>
+</DetailLayout>

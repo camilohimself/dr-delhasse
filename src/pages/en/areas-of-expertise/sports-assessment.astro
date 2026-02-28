@@ -1,58 +1,26 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
-import Breadcrumb from '../../../components/Breadcrumb.astro';
+import DetailLayout from '../../../layouts/DetailLayout.astro';
 ---
 
-<Layout title="Sports Cardiac Assessment — Dr Delhasse, Cardiologist" description="Sports cardiology assessment: stress test, cardiovascular evaluation for amateur and competitive athletes in Valais." lang="en">
+<DetailLayout
+  title="Sports Cardiac Assessment — Dr Delhasse, Cardiologist"
+  description="Sports cardiology assessment: stress test, cardiovascular evaluation for amateur and competitive athletes in Valais."
+  lang="en"
+  alternates={{ fr: '/domaines-dexpertise/evaluation-a-la-pratique-sportive', en: '/en/areas-of-expertise/sports-assessment', de: '/de/fachgebiete/sportkardiologie' }}
+  pageTitleHtml="Sports <span class='text-primary'>Assessment</span>"
+  subtitle="Practise your passion safely"
+  heroBg="/images/collaboration.webp"
+  heroImage="/images/detail/evaluation-sportif.webp"
+  heroImageAlt="Sports cardiac assessment"
+  icon="/images/svg/expertise/Evaluation-a-la-pratique-sportive.svg"
+  iconAlt="Sports assessment"
+  breadcrumb={[{label:'Home', href:'/en'}, {label:'Areas of Expertise', href:'/en/areas-of-expertise'}, {label:'Sports Assessment'}]}
+  backHref="/en/areas-of-expertise"
+  backLabel="All areas of expertise"
+>
+  <p>A sports assessment with a cardiologist is important for practising physical activity safely. A stress test is performed based on individual characteristics and the intensity of physical activity.</p>
 
-  <section class="hero-page">
-    <div class="container">
-      <Breadcrumb items={[{label:'Home', href:'/en'}, {label:'Areas of Expertise', href:'/en/areas-of-expertise'}, {label:'Sports Assessment'}]} />
-      <h1>Sports <span class="text-primary">Assessment</span></h1>
-      <p class="hero-sub">Practise your passion safely</p>
-    </div>
-  </section>
+  <p>A sports evaluation is recommended when resuming sport after a prolonged break, for competitors or practitioners of intense disciplines such as marathons or diving, in case of a family history of cardiovascular disease, with symptoms such as chest pain or palpitations, with cardiac conditions such as hypertension or after a heart attack, after cardiac events such as surgery or stent placement, and for seniors and at-risk individuals with diabetes or obesity wishing to stay active.</p>
 
-  <section class="section">
-    <div class="container detail-content">
-      <img src="/images/detail/evaluation-sportif.webp" alt="Sports cardiac assessment" class="detail-hero-img" />
-      <img src="/images/svg/expertise/Evaluation-a-la-pratique-sportive.svg" alt="Sports assessment" class="detail-icon" />
-
-      <p>A sports assessment with a cardiologist is important for practising physical activity safely. A stress test is performed based on individual characteristics and the intensity of physical activity.</p>
-
-      <h2>When is a sports evaluation recommended?</h2>
-      <ul>
-        <li>When resuming sport after a prolonged break</li>
-        <li>For competitors or practitioners of intense disciplines such as marathons or diving</li>
-        <li>In case of a family history of cardiovascular disease</li>
-        <li>With symptoms (chest pain, palpitations)</li>
-        <li>With cardiac conditions such as hypertension or after a heart attack</li>
-        <li>After cardiac events (surgery, stent)</li>
-        <li>For seniors and at-risk individuals (diabetes, obesity) wishing to stay active</li>
-      </ul>
-
-      <p>It helps prevent complications and maximise the benefits of sport on the heart, in a region like Valais where sport is an integral part of the lifestyle.</p>
-
-      <div class="detail-cta">
-        <a href="/en/areas-of-expertise" class="btn btn--outline-dark">&larr; All areas</a>
-        <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
-      </div>
-    </div>
-  </section>
-
-</Layout>
-
-<style>
-  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
-  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
-  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
-  .detail-content { max-width: 800px; }
-  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
-  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
-  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
-  .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
-  .detail-content ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
-  .detail-content li { list-style: disc; margin-bottom: 0.5rem; color: var(--color-gray); font-size: 1rem; line-height: 1.7; }
-  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
-  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
-</style>
+  <p>It helps prevent complications and maximise the benefits of sport on the heart, in a region like Valais where sport is an integral part of the lifestyle.</p>
+</DetailLayout>

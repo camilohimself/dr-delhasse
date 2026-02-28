@@ -1,52 +1,34 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Breadcrumb from '../../components/Breadcrumb.astro';
+import DetailLayout from '../../layouts/DetailLayout.astro';
 ---
 
-<Layout title="Maladie coronarienne — Dr Delhasse, Cardiologue" description="Angine de poitrine, infarctus : comprendre la maladie coronarienne et sa prise en charge par le Dr Delhasse." lang="fr">
+<DetailLayout
+  title="Maladie coronarienne — Dr Delhasse, Cardiologue"
+  description="Angine de poitrine, infarctus : comprendre la maladie coronarienne et sa prise en charge par le Dr Delhasse."
+  lang="fr"
+  alternates={{ fr: '/domaines-dexpertise/maladie-coronarienne', en: '/en/areas-of-expertise/coronary-artery-disease', de: '/de/fachgebiete/koronare-herzkrankheit' }}
+  pageTitleHtml="Maladie <span class='text-primary'>coronarienne</span>"
+  subtitle="L'angine de poitrine, signal d'alarme de vos artères"
+  heroBg="/images/collaboration.webp"
+  heroImage="/images/detail/maladie-coronarienne.webp"
+  heroImageAlt="Maladie coronarienne"
+  icon="/images/svg/expertise/Maladie-coronarienne.svg"
+  iconAlt="Maladie coronarienne"
+  breadcrumb={[
+    { label: 'Accueil', href: '/' },
+    { label: "Domaines d'expertise", href: '/domaines-dexpertise' },
+    { label: 'Maladie coronarienne' }
+  ]}
+  backHref="/domaines-dexpertise"
+  backLabel="Tous les domaines"
+>
 
-  <section class="hero-page">
-    <div class="container">
-      <Breadcrumb items={[
-        { label: 'Accueil', href: '/' },
-        { label: "Domaines d'expertise", href: '/domaines-dexpertise' },
-        { label: 'Maladie coronarienne' }
-      ]} />
-      <h1>Maladie <span class="text-primary">coronarienne</span></h1>
-      <p class="hero-sub">L'angine de poitrine, signal d'alarme de vos artères</p>
-    </div>
-  </section>
+  <p>La maladie coronarienne se manifeste par une angine de poitrine (oppression thoracique à l'effort) ou un infarctus, résultant du rétrécissement des artères coronaires par des plaques de cholestérol, ce qui perturbe la circulation sanguine du cœur.</p>
 
-  <section class="section">
-    <div class="container detail-content">
-      <img src="/images/detail/maladie-coronarienne.webp" alt="Maladie coronarienne" class="detail-hero-img" />
-      <img src="/images/svg/expertise/Maladie-coronarienne.svg" alt="Maladie coronarienne" class="detail-icon" />
+  <p>Les manifestations comprennent l'oppression thoracique à l'effort ou l'infarctus résultant du rétrécissement artériel dû aux plaques de cholestérol perturbant la circulation sanguine cardiaque. Peut provoquer des douleurs thoraciques, des troubles du rythme, ou dans les cas graves, un infarctus. Le rétrécissement progressif peut être ralenti ou prévenu par des approches préventives. Identifier les facteurs de risque avec votre médecin permet de prendre les mesures de protection appropriées.</p>
 
-      <p>La maladie coronarienne se manifeste par une angine de poitrine (oppression thoracique à l'effort) ou un infarctus, résultant du rétrécissement des artères coronaires par des plaques de cholestérol, ce qui perturbe la circulation sanguine du cœur.</p>
+  <p>Lorsque les patients présentent des symptômes d'angine persistante et que l'ECG n'est pas concluant, une coronarographie doit être réalisée rapidement. L'angine, indiquant souvent une ischémie myocardique, survient lorsque les besoins en oxygène du cœur dépassent l'apport sanguin en raison d'un rétrécissement (athérosclérose) ou d'un spasme artériel, typiquement à l'effort et lors d'activités similaires.</p>
 
-      <p>Les manifestations comprennent l'oppression thoracique à l'effort ou l'infarctus résultant du rétrécissement artériel dû aux plaques de cholestérol perturbant la circulation sanguine cardiaque. Peut provoquer des douleurs thoraciques, des troubles du rythme, ou dans les cas graves, un infarctus. Le rétrécissement progressif peut être ralenti ou prévenu par des approches préventives. Identifier les facteurs de risque avec votre médecin permet de prendre les mesures de protection appropriées.</p>
+  <p>Il est important de vivre avec les symptômes tout en prenant les médicaments anti-angineux prescrits. Le cardiologue vérifiera l'absence d'autres complications vasculaires par un bilan vasculaire complet pour une prise en charge optimale.</p>
 
-      <p>Lorsque les patients présentent des symptômes d'angine persistante et que l'ECG n'est pas concluant, une coronarographie doit être réalisée rapidement. L'angine, indiquant souvent une ischémie myocardique, survient lorsque les besoins en oxygène du cœur dépassent l'apport sanguin en raison d'un rétrécissement (athérosclérose) ou d'un spasme artériel, typiquement à l'effort et lors d'activités similaires.</p>
-
-      <p>Il est important de vivre avec les symptômes tout en prenant les médicaments anti-angineux prescrits. Le cardiologue vérifiera l'absence d'autres complications vasculaires par un bilan vasculaire complet pour une prise en charge optimale.</p>
-
-      <div class="detail-cta">
-        <a href="/domaines-dexpertise" class="btn btn--outline-dark">&larr; Tous les domaines</a>
-        <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
-      </div>
-    </div>
-  </section>
-
-</Layout>
-
-<style>
-  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
-  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
-  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
-  .detail-content { max-width: 800px; }
-  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
-  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
-  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
-  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
-  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
-</style>
+</DetailLayout>

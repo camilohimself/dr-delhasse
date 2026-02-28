@@ -1,49 +1,28 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
-import Breadcrumb from '../../../components/Breadcrumb.astro';
+import DetailLayout from '../../../layouts/DetailLayout.astro';
 ---
 
-<Layout title="Pacemaker & Defibrillator — Dr Delhasse" description="Pacemaker and implantable defibrillator: how they work, implantation and follow-up." lang="en">
+<DetailLayout
+  title="Pacemaker & Defibrillator — Dr Delhasse"
+  description="Pacemaker and implantable defibrillator: how they work, implantation and follow-up."
+  lang="en"
+  alternates={{ fr: '/examens-cardiologiques/stimulateur-cardiaque', en: '/en/cardiac-examinations/pacemaker-defibrillator', de: '/de/herzuntersuchungen/herzschrittmacher' }}
+  pageTitleHtml="Pacemaker & <span class='text-primary'>Defibrillator</span>"
+  subtitle=""
+  heroBg="/images/demande-rdv.webp"
+  heroImage="/images/detail/pacemaker.webp"
+  heroImageAlt="Pacemaker and defibrillator"
+  icon="/images/svg/examens/Marcapasos.svg"
+  iconAlt="Pacemaker"
+  breadcrumb={[{label:'Home', href:'/en'}, {label:'Cardiac Examinations', href:'/en/cardiac-examinations'}, {label:'Pacemaker & Defibrillator'}]}
+  backHref="/en/cardiac-examinations"
+  backLabel="All examinations"
+>
+  <p>The pacemaker is an implanted device that regulates heart rhythm when beats are too slow (bradycardia). It continuously monitors the heart's activity and sends electrical impulses when necessary. Modern and adaptable, it adjusts heart rate according to the patient's physical activity.</p>
 
-  <section class="hero-page">
-    <div class="container">
-      <Breadcrumb items={[{label:'Home', href:'/en'}, {label:'Cardiac Examinations', href:'/en/cardiac-examinations'}, {label:'Pacemaker & Defibrillator'}]} />
-      <h1>Pacemaker & <span class="text-primary">Defibrillator</span></h1>
-    </div>
-  </section>
+  <p>Implantation is performed under local anaesthesia, usually below the collarbone, with leads placed in the heart via a vein. Battery life varies between 6 and 10 years, requiring replacement when depleted.</p>
 
-  <section class="section">
-    <div class="container detail-content">
-      <img src="/images/detail/pacemaker.webp" alt="Pacemaker and defibrillator" class="detail-hero-img" />
-      <img src="/images/svg/examens/Marcapasos.svg" alt="Pacemaker" class="detail-icon" />
+  <p>The defibrillator is designed to treat serious heart rhythm disorders, such as ventricular tachycardia and fibrillation. It continuously monitors the heart and intervenes with rapid pacing (often painless) or an electric shock to restore normal rhythm.</p>
 
-      <h2>Pacemaker</h2>
-      <p>The pacemaker is an implanted device that regulates heart rhythm when beats are too slow (bradycardia). It continuously monitors the heart's activity and sends electrical impulses when necessary. Modern and adaptable, it adjusts heart rate according to the patient's physical activity.</p>
-
-      <p>Implantation is performed under local anaesthesia, usually below the collarbone, with leads placed in the heart via a vein. Battery life varies between 6 and 10 years, requiring replacement when depleted.</p>
-
-      <h2>Defibrillator</h2>
-      <p>The defibrillator is designed to treat serious heart rhythm disorders, such as ventricular tachycardia and fibrillation. It continuously monitors the heart and intervenes with rapid pacing (often painless) or an electric shock to restore normal rhythm.</p>
-
-      <p>Regular follow-up (approximately every 6 months) is essential. Battery life varies between 5 and 7 years. Follow-up by a cardiologist also optimises programming to minimise shocks, improving patient comfort.</p>
-
-      <div class="detail-cta">
-        <a href="/en/cardiac-examinations" class="btn btn--outline-dark">&larr; All examinations</a>
-        <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
-      </div>
-    </div>
-  </section>
-
-</Layout>
-
-<style>
-  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
-  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
-  .detail-content { max-width: 800px; }
-  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
-  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
-  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
-  .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
-  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
-  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
-</style>
+  <p>Regular follow-up (approximately every 6 months) is essential. Battery life varies between 5 and 7 years. Follow-up by a cardiologist also optimises programming to minimise shocks, improving patient comfort.</p>
+</DetailLayout>

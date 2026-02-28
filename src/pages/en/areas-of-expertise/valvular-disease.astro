@@ -1,53 +1,30 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
-import Breadcrumb from '../../../components/Breadcrumb.astro';
+import DetailLayout from '../../../layouts/DetailLayout.astro';
 ---
 
-<Layout title="Valvular Heart Disease — Dr Delhasse, Cardiologist" description="Aortic stenosis, mitral regurgitation: diagnosis and treatment of valvular heart disease by Dr Delhasse." lang="en">
+<DetailLayout
+  title="Valvular Heart Disease — Dr Delhasse, Cardiologist"
+  description="Aortic stenosis, mitral regurgitation: diagnosis and treatment of valvular heart disease by Dr Delhasse."
+  lang="en"
+  alternates={{ fr: '/domaines-dexpertise/maladie-valvulaires', en: '/en/areas-of-expertise/valvular-disease', de: '/de/fachgebiete/herzklappenerkrankungen' }}
+  pageTitleHtml="Valvular <span class='text-primary'>Heart Disease</span>"
+  subtitle="The heart's valves under surveillance"
+  heroBg="/images/collaboration.webp"
+  heroImage="/images/detail/valvulopathies.webp"
+  heroImageAlt="Valvular heart disease"
+  icon="/images/svg/expertise/Maladie-valvulaires.svg"
+  iconAlt="Valvular disease"
+  breadcrumb={[{label:'Home', href:'/en'}, {label:'Areas of Expertise', href:'/en/areas-of-expertise'}, {label:'Valvular Disease'}]}
+  backHref="/en/areas-of-expertise"
+  backLabel="All areas of expertise"
+>
+  <p>The human heart has four cardiac valves: the aortic valve, pulmonary valve, mitral valve and tricuspid valve. They function as non-return valves in a pump, directing blood flow in one direction only.</p>
 
-  <section class="hero-page">
-    <div class="container">
-      <Breadcrumb items={[{label:'Home', href:'/en'}, {label:'Areas of Expertise', href:'/en/areas-of-expertise'}, {label:'Valvular Disease'}]} />
-      <h1>Valvular <span class="text-primary">Heart Disease</span></h1>
-      <p class="hero-sub">The heart's valves under surveillance</p>
-    </div>
-  </section>
+  <p>When a valve is faulty due to a congenital abnormality, disease or significant wear, it prevents proper opening (stenosis) or closing (regurgitation). These abnormalities can produce a heart murmur detected during clinical examination. Echocardiography confirms the diagnosis.</p>
 
-  <section class="section">
-    <div class="container detail-content">
-      <img src="/images/detail/valvulopathies.webp" alt="Valvular heart disease" class="detail-hero-img" />
-      <img src="/images/svg/expertise/Maladie-valvulaires.svg" alt="Valvular disease" class="detail-icon" />
+  <p>Aortic stenosis is the most common valvular disease. It reduces physical capacity and can cause breathlessness, chest pain and syncope. Severe cases require valve replacement by catheterisation (TAVI) or surgery.</p>
 
-      <p>The human heart has four cardiac valves: the aortic valve, pulmonary valve, mitral valve and tricuspid valve. They function as non-return valves in a pump, directing blood flow in one direction only.</p>
+  <p>Mitral regurgitation, the second most common condition, causes breathlessness, pulmonary fluid accumulation and cardiac dilation. Early diagnosis allows surgical repair. In patients with a dilated and weakened heart, the valve can be reconstructed by catheterisation using a MitraClip device.</p>
 
-      <p>When a valve is faulty due to a congenital abnormality, disease or significant wear, it prevents proper opening (stenosis) or closing (regurgitation). These abnormalities can produce a heart murmur detected during clinical examination. Echocardiography confirms the diagnosis.</p>
-
-      <h2>Aortic Stenosis</h2>
-      <p>Aortic stenosis is the most common valvular disease. It reduces physical capacity and can cause breathlessness, chest pain and syncope. Severe cases require valve replacement by catheterisation (TAVI) or surgery.</p>
-
-      <h2>Mitral Regurgitation</h2>
-      <p>Mitral regurgitation, the second most common condition, causes breathlessness, pulmonary fluid accumulation and cardiac dilation. Early diagnosis allows surgical repair. In patients with a dilated and weakened heart, the valve can be reconstructed by catheterisation using a MitraClip device.</p>
-
-      <p>These valvular diseases must be detected and treated early to prevent symptom worsening and preserve cardiac function.</p>
-
-      <div class="detail-cta">
-        <a href="/en/areas-of-expertise" class="btn btn--outline-dark">&larr; All areas</a>
-        <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
-      </div>
-    </div>
-  </section>
-
-</Layout>
-
-<style>
-  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
-  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
-  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
-  .detail-content { max-width: 800px; }
-  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
-  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
-  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
-  .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
-  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
-  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
-</style>
+  <p>These valvular diseases must be detected and treated early to prevent symptom worsening and preserve cardiac function.</p>
+</DetailLayout>

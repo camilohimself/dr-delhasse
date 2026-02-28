@@ -8,9 +8,10 @@ interface Props {
   title: string;
   description?: string;
   lang?: 'fr' | 'en' | 'de';
+  alternates?: { fr: string; en: string; de: string };
 }
 
-const { title, description = 'Dr. Sébastien Delhasse — Cardiologue FMH en Valais. Consultations en cardiologie et médecine interne à Saxon.', lang = 'fr' } = Astro.props;
+const { title, description = 'Dr. Sébastien Delhasse — Cardiologue FMH en Valais. Consultations en cardiologie et médecine interne à Saxon.', lang = 'fr', alternates } = Astro.props;
 
 const htmlLang = lang === 'fr' ? 'fr-CH' : lang === 'en' ? 'en' : 'de-CH';
 const prefix = lang === 'fr' ? '' : `/${lang}`;
@@ -22,17 +23,23 @@ const siteUrl = 'https://drdelhasse-cardiologue.ch';
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '';
 const canonicalUrl = `${siteUrl}${currentPath}`;
 
-// Build hreflang URLs — map current path to equivalent in each language
-const cleanPath = currentPath.replace(/^\/(en|de)/, '');
-const hreflangFr = `${siteUrl}${cleanPath || '/'}`;
-const hreflangEn = `${siteUrl}/en${cleanPath || '/'}`;
-const hreflangDe = `${siteUrl}/de${cleanPath || '/'}`;
+// Build hreflang URLs — use alternates prop if provided (for sub-pages with different slugs)
+const hreflangFr = alternates ? `${siteUrl}${alternates.fr}` : `${siteUrl}${currentPath.replace(/^\/(en|de)/, '') || '/'}`;
+const hreflangEn = alternates ? `${siteUrl}${alternates.en}` : `${siteUrl}/en${currentPath.replace(/^\/(en|de)/, '') || '/'}`;
+const hreflangDe = alternates ? `${siteUrl}${alternates.de}` : `${siteUrl}/de${currentPath.replace(/^\/(en|de)/, '') || '/'}`;
+
+// Localized structured data description
+const structuredDescriptions = {
+  fr: 'Cardiologue FMH et spécialiste en médecine interne, consultations à la Clinique CIC de Saxon, Valais.',
+  en: 'FMH cardiologist and internal medicine specialist, consultations at the CIC Clinic in Saxon, Valais.',
+  de: 'FMH-Kardiologe und Facharzt für Innere Medizin, Sprechstunden in der Klinik CIC Saxon, Wallis.',
+};
 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Physician",
   "name": "Dr. Sébastien Delhasse",
-  "description": "Cardiologue FMH et spécialiste en médecine interne, consultations à la Clinique CIC de Saxon, Valais.",
+  "description": structuredDescriptions[lang],
   "url": "https://drdelhasse-cardiologue.ch",
   "telephone": "+41277434059",
   "email": "sebastien.delhasse@hotmail.com",
@@ -66,7 +73,7 @@ const structuredData = {
 <html lang={htmlLang}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/png" href="/images/red-iso.png" />
     <title>{title}</title>
@@ -86,6 +93,15 @@ const structuredData = {
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:locale" content={htmlLang} />
     <meta property="og:image" content="https://drdelhasse-cardiologue.ch/images/dr-delhasse.jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Dr. Sébastien Delhasse — Cardiologue FMH" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://drdelhasse-cardiologue.ch/images/dr-delhasse.jpeg" />
 
     <!-- Canonical -->
     <link rel="canonical" href={canonicalUrl} />
@@ -115,10 +131,10 @@ const structuredData = {
     <!-- Floating CTA + Back to top -->
     <div class="floating-cta">
       <a href={contactHref} class="floating-cta__btn" id="floating-cta">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
         {ctaLabel}
       </a>
-      <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+      <button class="back-to-top" id="back-to-top" aria-label={lang === 'fr' ? 'Retour en haut' : lang === 'en' ? 'Back to top' : 'Nach oben'}>
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
       </button>
     </div>

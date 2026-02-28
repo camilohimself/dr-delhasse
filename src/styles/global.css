@@ -339,7 +339,7 @@ p {
 
 .floating-cta {
   position: fixed;
-  bottom: 2rem;
+  bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
   right: 2rem;
   z-index: 900;
   display: flex;
@@ -409,6 +409,10 @@ p {
 /* ─── Responsive ────────────────────────────── */
 
 @media (max-width: 1024px) {
+  .grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .grid--4 {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -435,7 +439,7 @@ p {
   }
 
   .floating-cta {
-    bottom: 1.25rem;
+    bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
     right: 1.25rem;
   }
 

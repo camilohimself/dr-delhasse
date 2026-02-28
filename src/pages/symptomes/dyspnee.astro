@@ -1,53 +1,29 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Breadcrumb from '../../components/Breadcrumb.astro';
-import EmergencyBanner from '../../components/EmergencyBanner.astro';
+import DetailLayout from '../../layouts/DetailLayout.astro';
 ---
 
-<Layout title="Dyspnée — Essoufflement et cœur — Dr Delhasse" description="L'essoufflement peut avoir une origine cardiaque. Découvrez quand la dyspnée nécessite une consultation cardiologique." lang="fr">
+<DetailLayout
+  title="Dyspnée — Essoufflement et cœur — Dr Delhasse"
+  description="L'essoufflement peut avoir une origine cardiaque. Découvrez quand la dyspnée nécessite une consultation cardiologique."
+  lang="fr"
+  alternates={{ fr: '/symptomes/dyspnee', en: '/en/symptoms/dyspnoea', de: '/de/symptome/atemnot' }}
+  pageTitleHtml='<span class="text-primary">Dyspnée</span>'
+  subtitle="Quand l'essoufflement vient du cœur"
+  heroBg="/images/cardiologie-med-interne.webp"
+  heroImage="/images/detail/dyspnee.webp"
+  heroImageAlt="Dyspnée"
+  icon="/images/svg/symptomes/Disnea.svg"
+  iconAlt="Dyspnée"
+  breadcrumb={[{ label: 'Accueil', href: '/' }, { label: 'Symptômes', href: '/symptomes' }, { label: 'Dyspnée' }]}
+  backHref="/symptomes"
+  backLabel="Tous les symptômes"
+  showEmergencyBanner
+>
+  <p>Si vous ressentez un essoufflement sans raison évidente, comme sans avoir fourni d'effort, il est courant de penser que cela provient des poumons. Pourtant, les causes possibles sont nombreuses, et l'origine peut être dissimulée. Lorsque le trouble est léger, on choisit parfois de vivre avec, sans consulter. Cela arrive particulièrement chez les personnes âgées, dont la mobilité réduite retarde l'apparition des symptômes.</p>
 
-  <section class="hero-page">
-    <div class="container">
-      <Breadcrumb items={[
-        { label: 'Accueil', href: '/' },
-        { label: 'Symptômes', href: '/symptomes' },
-        { label: 'Dyspnée' }
-      ]} />
-      <h1><span class="text-primary">Dyspnée</span></h1>
-      <p class="hero-sub">Quand l'essoufflement vient du cœur</p>
-    </div>
-  </section>
-  <EmergencyBanner lang="fr" />
-  <section class="section">
-    <div class="container detail-content">
-      <img src="/images/detail/dyspnee.webp" alt="Dyspnée" class="detail-hero-img" />
-      <img src="/images/svg/symptomes/Disnea.svg" alt="Dyspnée" class="detail-icon" />
+  <p>Dans ces situations, l'essoufflement anormal peut passer inaperçu, repoussant la mise en place d'examens ou de traitements. Ce n'est souvent que lorsque le problème s'aggrave au point de devenir une urgence que la cause est identifiée.</p>
 
-      <p>Si vous ressentez un essoufflement sans raison évidente, comme sans avoir fourni d'effort, il est courant de penser que cela provient des poumons. Pourtant, les causes possibles sont nombreuses, et l'origine peut être dissimulée. Lorsque le trouble est léger, on choisit parfois de vivre avec, sans consulter. Cela arrive particulièrement chez les personnes âgées, dont la mobilité réduite retarde l'apparition des symptômes.</p>
+  <p>Le cœur — chargé de faire circuler le sang dans l'organisme — peut être impliqué. Son fonctionnement peut être altéré par un muscle affaibli, des valves endommagées ou des troubles du rythme, entraînant une insuffisance cardiaque. Cette affection se manifeste fréquemment par une sensation d'essoufflement, même lors d'activités minimes.</p>
 
-      <p>Dans ces situations, l'essoufflement anormal peut passer inaperçu, repoussant la mise en place d'examens ou de traitements. Ce n'est souvent que lorsque le problème s'aggrave au point de devenir une urgence que la cause est identifiée.</p>
-
-      <p>Le cœur — chargé de faire circuler le sang dans l'organisme — peut être impliqué. Son fonctionnement peut être altéré par un muscle affaibli, des valves endommagées ou des troubles du rythme, entraînant une insuffisance cardiaque. Cette affection se manifeste fréquemment par une sensation d'essoufflement, même lors d'activités minimes.</p>
-
-      <p>Consulter votre médecin permet de détecter ces problèmes tôt, d'améliorer vos symptômes et de protéger votre santé à long terme.</p>
-
-      <div class="detail-cta">
-        <a href="/symptomes" class="btn btn--outline-dark">&larr; Tous les symptômes</a>
-        <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
-      </div>
-    </div>
-  </section>
-
-</Layout>
-
-<style>
-  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
-  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
-  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
-  .detail-content { max-width: 800px; }
-  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
-  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
-  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
-  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
-  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
-</style>
+  <p>Consulter votre médecin permet de détecter ces problèmes tôt, d'améliorer vos symptômes et de protéger votre santé à long terme.</p>
+</DetailLayout>

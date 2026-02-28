@@ -1,55 +1,28 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
-import Breadcrumb from '../../../components/Breadcrumb.astro';
+import DetailLayout from '../../../layouts/DetailLayout.astro';
 ---
 
-<Layout title="Heart Failure — Dr Delhasse, Cardiologist" description="Diagnosis and management of systolic and diastolic heart failure by Dr Delhasse, FMH cardiologist." lang="en">
+<DetailLayout
+  title="Heart Failure — Dr Delhasse, Cardiologist"
+  description="Diagnosis and management of systolic and diastolic heart failure by Dr Delhasse, FMH cardiologist."
+  lang="en"
+  alternates={{ fr: '/domaines-dexpertise/insuffisance-cardiaque', en: '/en/areas-of-expertise/heart-failure', de: '/de/fachgebiete/herzinsuffizienz' }}
+  pageTitleHtml="Heart <span class='text-primary'>Failure</span>"
+  subtitle="When the heart tires, every detail matters"
+  heroBg="/images/collaboration.webp"
+  heroImage="/images/detail/insuffisance-cardiaque.webp"
+  heroImageAlt="Heart failure"
+  icon="/images/svg/expertise/Insuffisance-cardiaque.svg"
+  iconAlt="Heart failure"
+  breadcrumb={[{label:'Home', href:'/en'}, {label:'Areas of Expertise', href:'/en/areas-of-expertise'}, {label:'Heart Failure'}]}
+  backHref="/en/areas-of-expertise"
+  backLabel="All areas of expertise"
+>
+  <p>Heart failure is the heart's inability to pump enough blood to the organs, manifesting during exertion or at rest. It causes breathing difficulties, pulmonary oedema and can progress to terminal cardiac failure.</p>
 
-  <section class="hero-page">
-    <div class="container">
-      <Breadcrumb items={[{label:'Home', href:'/en'}, {label:'Areas of Expertise', href:'/en/areas-of-expertise'}, {label:'Heart Failure'}]} />
-      <h1>Heart <span class="text-primary">Failure</span></h1>
-      <p class="hero-sub">When the heart tires, every detail matters</p>
-    </div>
-  </section>
+  <p>There are two types: systolic failure, which is the inability to eject blood, and diastolic failure, which is the inability of the heart muscle to relax after contraction, characterised by cardiac stiffness preventing proper filling.</p>
 
-  <section class="section">
-    <div class="container detail-content">
-      <img src="/images/detail/insuffisance-cardiaque.webp" alt="Heart failure" class="detail-hero-img" />
-      <img src="/images/svg/expertise/Insuffisance-cardiaque.svg" alt="Heart failure" class="detail-icon" />
+  <p>Both types produce similar symptoms and are treated with medications to improve quality of life and life expectancy. The cardiologist helps patients understand medication use and monitor side effects.</p>
 
-      <p>Heart failure is the heart's inability to pump enough blood to the organs, manifesting during exertion or at rest. It causes breathing difficulties, pulmonary oedema and can progress to terminal cardiac failure.</p>
-
-      <h2>Two Types</h2>
-      <ul>
-        <li><strong>Systolic failure:</strong> inability to eject blood</li>
-        <li><strong>Diastolic failure:</strong> inability of the heart muscle to relax after contraction, characterised by cardiac stiffness preventing proper filling</li>
-      </ul>
-
-      <p>Both types produce similar symptoms and are treated with medications to improve quality of life and life expectancy. The cardiologist helps patients understand medication use and monitor side effects.</p>
-
-      <p>Chronic management relies on a multidisciplinary approach. The cardiologist monitors signs of worsening via echocardiography, adjusts treatment, or proposes alternatives such as special cardiac stimulators (ICD/CRT) to improve quality of life and prevent hospitalisations. Complex cases are followed up with university hospitals (HUG, CHUV, Inselspital).</p>
-
-      <div class="detail-cta">
-        <a href="/en/areas-of-expertise" class="btn btn--outline-dark">&larr; All areas</a>
-        <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
-      </div>
-    </div>
-  </section>
-
-</Layout>
-
-<style>
-  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
-  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
-  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
-  .detail-content { max-width: 800px; }
-  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
-  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
-  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
-  .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
-  .detail-content ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
-  .detail-content li { list-style: disc; margin-bottom: 0.5rem; color: var(--color-gray); font-size: 1rem; line-height: 1.7; }
-  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
-  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
-</style>
+  <p>Chronic management relies on a multidisciplinary approach. The cardiologist monitors signs of worsening via echocardiography, adjusts treatment, or proposes alternatives such as special cardiac stimulators (ICD/CRT) to improve quality of life and prevent hospitalisations. Complex cases are followed up with university hospitals (HUG, CHUV, Inselspital).</p>
+</DetailLayout>

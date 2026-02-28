@@ -1,0 +1,149 @@
+---
+import Layout from './Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import EmergencyBanner from '../components/EmergencyBanner.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  lang: 'fr' | 'en' | 'de';
+  alternates?: { fr: string; en: string; de: string };
+  pageTitleHtml: string;
+  subtitle: string;
+  eyebrow?: string;
+  heroBg?: string;
+  heroImage: string;
+  heroImageAlt: string;
+  icon: string;
+  iconAlt: string;
+  breadcrumb: { label: string; href?: string }[];
+  backHref: string;
+  backLabel: string;
+  ctaHref?: string;
+  ctaLabel?: string;
+  showEmergencyBanner?: boolean;
+}
+
+const {
+  title, description, lang, alternates,
+  pageTitleHtml, subtitle, eyebrow, heroBg,
+  heroImage, heroImageAlt, icon, iconAlt,
+  breadcrumb, backHref, backLabel,
+  ctaHref, ctaLabel, showEmergencyBanner = false,
+} = Astro.props;
+
+const contactHref = ctaHref || (lang === 'fr' ? '/contact' : lang === 'en' ? '/en/contact' : '/de/kontakt');
+const contactLabel = ctaLabel || (lang === 'fr' ? 'Prendre rendez-vous' : lang === 'en' ? 'Book an appointment' : 'Termin vereinbaren');
+---
+
+<Layout title={title} description={description} lang={lang} alternates={alternates}>
+
+  <section class="detail-hero">
+    {heroBg && <div class="detail-hero__bg" style={`background-image: url('${heroBg}')`} aria-hidden="true"></div>}
+    <div class="container detail-hero__content">
+      <Breadcrumb items={breadcrumb} />
+      {eyebrow && <p class="detail-hero__eyebrow">{eyebrow}</p>}
+      <h1 set:html={pageTitleHtml} />
+      <p class="detail-hero__sub">{subtitle}</p>
+    </div>
+  </section>
+
+  {showEmergencyBanner && <EmergencyBanner lang={lang} />}
+
+  <section class="section">
+    <div class="container detail-content">
+      <img src={heroImage} alt={heroImageAlt} class="detail-hero-img" loading="lazy" width="800" height="300" />
+      <img src={icon} alt={iconAlt} class="detail-icon" loading="lazy" width="80" height="80" />
+
+      <slot />
+
+      <div class="detail-cta">
+        <a href={backHref} class="btn btn--outline-dark">&larr; {backLabel}</a>
+        <a href={contactHref} class="btn btn--primary">{contactLabel}</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .detail-hero {
+    background: linear-gradient(135deg, var(--color-navy) 0%, #0e2240 50%, #1a3d6d 100%);
+    padding: 7rem 0 4rem;
+    color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .detail-hero__bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.12;
+  }
+
+  .detail-hero__content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .detail-hero__eyebrow {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .detail-hero h1 {
+    color: var(--color-white);
+    font-size: 2.75rem;
+    margin-bottom: 0;
+  }
+
+  .detail-hero__sub {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.15rem;
+    margin-top: 1rem;
+  }
+
+  .detail-content {
+    max-width: 800px;
+  }
+
+  .detail-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 2rem;
+  }
+
+  .detail-hero-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+
+  .detail-content :global(p) {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--color-gray);
+  }
+
+  .detail-cta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .detail-hero h1 {
+      font-size: 2rem;
+    }
+  }
+</style>

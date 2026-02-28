@@ -1,52 +1,30 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
-import Breadcrumb from '../../../components/Breadcrumb.astro';
+import DetailLayout from '../../../layouts/DetailLayout.astro';
 ---
 
-<Layout title="Rhythmologie — Herzrhythmusstörungen — Dr. Delhasse" description="Diagnose und Behandlung von Herzrhythmusstörungen: Bradykardie, Tachykardie, Vorhofflimmern." lang="de">
+<DetailLayout
+  title="Rhythmologie — Herzrhythmusstörungen — Dr. Delhasse"
+  description="Diagnose und Behandlung von Herzrhythmusstörungen: Bradykardie, Tachykardie, Vorhofflimmern."
+  lang="de"
+  alternates={{ fr: '/domaines-dexpertise/rythmologie', en: '/en/areas-of-expertise/rhythmology', de: '/de/fachgebiete/rhythmologie' }}
+  pageTitleHtml="<span class='text-primary'>Rhythmologie</span>"
+  subtitle="Die elektrische Aktivität Ihres Herzens"
+  heroBg="/images/collaboration.webp"
+  heroImage="/images/detail/rythmologie.webp"
+  heroImageAlt="Rhythmologie"
+  icon="/images/svg/expertise/Rythmologie.svg"
+  iconAlt="Rhythmologie"
+  breadcrumb={[{label:'Startseite', href:'/de'}, {label:'Fachgebiete', href:'/de/fachgebiete'}, {label:'Rhythmologie'}]}
+  backHref="/de/fachgebiete"
+  backLabel="Alle Fachgebiete"
+>
+  <p>Das Herz schlägt normalerweise 60 bis 80 Mal pro Minute, etwa 100 000 Mal pro Tag. Bei Belastung kann es je nach Alter 140 bis 200 Schläge pro Minute erreichen.</p>
 
-  <section class="hero-page">
-    <div class="container">
-      <Breadcrumb items={[{label:'Startseite', href:'/de'}, {label:'Fachgebiete', href:'/de/fachgebiete'}, {label:'Rhythmologie'}]} />
-      <h1><span class="text-primary">Rhythmologie</span></h1>
-      <p class="hero-sub">Die elektrische Aktivität Ihres Herzens</p>
-    </div>
-  </section>
+  <p>Herzrhythmusstörungen äussern sich entweder als Bradykardie (abnorm langsamer Puls) oder als Tachykardie (abnorm schneller Puls). Die Diagnose beruht auf Elektrokardiogrammen oder Holter-Aufzeichnungen.</p>
 
-  <section class="section">
-    <div class="container detail-content">
-      <img src="/images/detail/rythmologie.webp" alt="Rhythmologie" class="detail-hero-img" />
-      <img src="/images/svg/expertise/Rythmologie.svg" alt="Rhythmologie" class="detail-icon" />
-      <p>Das Herz schlägt normalerweise 60 bis 80 Mal pro Minute, etwa 100 000 Mal pro Tag. Bei Belastung kann es je nach Alter 140 bis 200 Schläge pro Minute erreichen.</p>
-      <p>Herzrhythmusstörungen äussern sich entweder als Bradykardie (abnorm langsamer Puls) oder als Tachykardie (abnorm schneller Puls). Die Diagnose beruht auf Elektrokardiogrammen oder Holter-Aufzeichnungen.</p>
-      <p>Atriale Arrhythmien sind generell gutartig, während ventrikuläre Arrhythmien (Tachykardien oder Flimmern) Synkopen verursachen und ohne Behandlung potenziell tödlich sein können.</p>
-      <h2>Behandlungen</h2>
-      <ul>
-        <li><strong>Bradykardie:</strong> behandelt mit Herzschrittmachern</li>
-        <li><strong>Tachykardie:</strong> kontrolliert durch Medikamente (Betablocker, Kalziumantagonisten, Amiodaron), Katheterablation oder implantierbare Defibrillatoren (ICD)</li>
-        <li><strong>Vorhofflimmern:</strong> die häufigste Arrhythmie; kann durch Elektrokardioversion oder Medikamente gestoppt werden, mit Ablation bei Bedarf</li>
-      </ul>
-      <p>Der Kardiologe hilft den Patienten, ihren Herzrhythmus zu verstehen und schlägt eine angepasste Behandlung für eine bessere Lebensqualität vor.</p>
-      <div class="detail-cta">
-        <a href="/de/fachgebiete" class="btn btn--outline-dark">&larr; Alle Fachgebiete</a>
-        <a href="/de/kontakt" class="btn btn--primary">Termin vereinbaren</a>
-      </div>
-    </div>
-  </section>
+  <p>Atriale Arrhythmien sind generell gutartig, während ventrikuläre Arrhythmien (Tachykardien oder Flimmern) Synkopen verursachen und ohne Behandlung potenziell tödlich sein können.</p>
 
-</Layout>
+  <p>Bradykardie wird mit Herzschrittmachern behandelt. Tachykardie wird durch Medikamente wie Betablocker, Kalziumantagonisten und Amiodaron, Katheterablation oder implantierbare Defibrillatoren (ICD) kontrolliert. Vorhofflimmern, die häufigste Arrhythmie, kann durch Elektrokardioversion oder Medikamente gestoppt werden, mit Ablation bei Bedarf.</p>
 
-<style>
-  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
-  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
-  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
-  .detail-content { max-width: 800px; }
-  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
-  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
-  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
-  .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
-  .detail-content ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
-  .detail-content li { list-style: disc; margin-bottom: 0.5rem; color: var(--color-gray); font-size: 1rem; line-height: 1.7; }
-  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
-  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
-</style>
+  <p>Der Kardiologe hilft den Patienten, ihren Herzrhythmus zu verstehen und schlägt eine angepasste Behandlung für eine bessere Lebensqualität vor.</p>
+</DetailLayout>

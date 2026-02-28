@@ -1,52 +1,34 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Breadcrumb from '../../components/Breadcrumb.astro';
+import DetailLayout from '../../layouts/DetailLayout.astro';
 ---
 
-<Layout title="Suivi après infarctus — Dr Delhasse, Cardiologue" description="Récupération et suivi cardiologique après un infarctus du myocarde. Prévention des récidives avec le Dr Delhasse." lang="fr">
+<DetailLayout
+  title="Suivi après infarctus — Dr Delhasse, Cardiologue"
+  description="Récupération et suivi cardiologique après un infarctus du myocarde. Prévention des récidives avec le Dr Delhasse."
+  lang="fr"
+  alternates={{ fr: '/domaines-dexpertise/suivi-apres-infarctus', en: '/en/areas-of-expertise/post-heart-attack-follow-up', de: '/de/fachgebiete/nachsorge-nach-herzinfarkt' }}
+  pageTitleHtml="Suivi après <span class='text-primary'>infarctus</span>"
+  subtitle="La récupération commence ici"
+  heroBg="/images/collaboration.webp"
+  heroImage="/images/detail/suivi-apres-infarctus.webp"
+  heroImageAlt="Suivi après infarctus"
+  icon="/images/svg/expertise/Suivi-apres-infarctus.svg"
+  iconAlt="Suivi après infarctus"
+  breadcrumb={[
+    { label: 'Accueil', href: '/' },
+    { label: "Domaines d'expertise", href: '/domaines-dexpertise' },
+    { label: 'Suivi après infarctus' }
+  ]}
+  backHref="/domaines-dexpertise"
+  backLabel="Tous les domaines"
+>
 
-  <section class="hero-page">
-    <div class="container">
-      <Breadcrumb items={[
-        { label: 'Accueil', href: '/' },
-        { label: "Domaines d'expertise", href: '/domaines-dexpertise' },
-        { label: 'Suivi après infarctus' }
-      ]} />
-      <h1>Suivi après <span class="text-primary">infarctus</span></h1>
-      <p class="hero-sub">La récupération commence ici</p>
-    </div>
-  </section>
+  <p>Après un infarctus, la récupération dépend de l'étendue des lésions au cœur, notamment de la capacité du ventricule gauche à pomper efficacement le sang.</p>
 
-  <section class="section">
-    <div class="container detail-content">
-      <img src="/images/detail/suivi-apres-infarctus.webp" alt="Suivi après infarctus" class="detail-hero-img" />
-      <img src="/images/svg/expertise/Suivi-apres-infarctus.svg" alt="Suivi après infarctus" class="detail-icon" />
+  <p>La coronarographie réalisée en urgence améliore la survie immédiate mais ne traite pas la maladie sous-jacente, nécessitant un traitement au long cours. Les médicaments mentionnés comprennent l'aspirine pour la fluidification du sang, les antihypertenseurs et les traitements de la glycémie si nécessaire.</p>
 
-      <p>Après un infarctus, la récupération dépend de l'étendue des lésions au cœur, notamment de la capacité du ventricule gauche à pomper efficacement le sang.</p>
+  <p>Les modifications du mode de vie sont essentielles : une alimentation adaptée, une activité physique régulière, l'arrêt du tabac et une gestion optimale de l'hypertension, du diabète et du cholestérol.</p>
 
-      <p>La coronarographie réalisée en urgence améliore la survie immédiate mais ne traite pas la maladie sous-jacente, nécessitant un traitement au long cours. Les médicaments mentionnés comprennent l'aspirine pour la fluidification du sang, les antihypertenseurs et les traitements de la glycémie si nécessaire.</p>
+  <p>Des consultations cardiologiques régulières permettent le suivi et l'adaptation du traitement. Ce suivi combiné aux changements de mode de vie réduit les risques de complications et améliore la qualité de vie.</p>
 
-      <p>Les modifications du mode de vie sont essentielles : une alimentation adaptée, une activité physique régulière, l'arrêt du tabac et une gestion optimale de l'hypertension, du diabète et du cholestérol.</p>
-
-      <p>Des consultations cardiologiques régulières permettent le suivi et l'adaptation du traitement. Ce suivi combiné aux changements de mode de vie réduit les risques de complications et améliore la qualité de vie.</p>
-
-      <div class="detail-cta">
-        <a href="/domaines-dexpertise" class="btn btn--outline-dark">&larr; Tous les domaines</a>
-        <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
-      </div>
-    </div>
-  </section>
-
-</Layout>
-
-<style>
-  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
-  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
-  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
-  .detail-content { max-width: 800px; }
-  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
-  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
-  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
-  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
-  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
-</style>
+</DetailLayout>

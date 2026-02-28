@@ -1,43 +1,26 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
-import Breadcrumb from '../../../components/Breadcrumb.astro';
+import DetailLayout from '../../../layouts/DetailLayout.astro';
 ---
-<Layout title="Sportkardiologische Abklärung — Dr. Delhasse" description="Sportkardiologische Abklärung: Belastungstest, kardiovaskuläre Evaluation für Sportler im Wallis." lang="de">
-  <section class="hero-page"><div class="container">
-      <Breadcrumb items={[{label:'Startseite', href:'/de'}, {label:'Fachgebiete', href:'/de/fachgebiete'}, {label:'Sportkardiologie'}]} />
-      <h1>Sport<span class="text-primary">kardiologie</span></h1><p class="hero-sub">Ihre Leidenschaft sicher ausüben</p></div></section>
-  <section class="section"><div class="container detail-content">
-    <img src="/images/detail/evaluation-sportif.webp" alt="Sportkardiologie" class="detail-hero-img" />
-    <img src="/images/svg/expertise/Evaluation-a-la-pratique-sportive.svg" alt="Sportkardiologie" class="detail-icon" />
-    <p>Die sportkardiologische Abklärung ist wichtig für eine sichere körperliche Aktivität. Ein Belastungstest wird je nach individuellen Merkmalen und Intensität der Aktivität durchgeführt.</p>
-    <h2>Wann ist eine sportliche Evaluation empfohlen?</h2>
-    <ul>
-      <li>Bei Wiederaufnahme des Sports nach längerer Pause</li>
-      <li>Für Wettkämpfer oder Sportler intensiver Disziplinen wie Marathon oder Tauchen</li>
-      <li>Bei familiärer kardiovaskulärer Vorgeschichte</li>
-      <li>Bei Symptomen (Brustschmerzen, Herzrasen)</li>
-      <li>Bei Herzerkrankungen wie Bluthochdruck oder nach Herzinfarkt</li>
-      <li>Nach kardialen Ereignissen (Operation, Stent)</li>
-      <li>Für Senioren und Risikopersonen (Diabetes, Adipositas)</li>
-    </ul>
-    <p>Sie hilft, Komplikationen vorzubeugen und die Vorteile des Sports für das Herz zu maximieren — in einer Region wie dem Wallis, wo Sport zum Lebensstil gehört.</p>
-    <div class="detail-cta">
-      <a href="/de/fachgebiete" class="btn btn--outline-dark">&larr; Alle Fachgebiete</a>
-      <a href="/de/kontakt" class="btn btn--primary">Termin vereinbaren</a>
-    </div>
-  </div></section>
-</Layout>
-<style>
-  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
-  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
-  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
-  .detail-content { max-width: 800px; }
-  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
-  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
-  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
-  .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
-  .detail-content ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
-  .detail-content li { list-style: disc; margin-bottom: 0.5rem; color: var(--color-gray); font-size: 1rem; line-height: 1.7; }
-  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
-  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
-</style>
+
+<DetailLayout
+  title="Sportkardiologische Abklärung — Dr. Delhasse"
+  description="Sportkardiologische Abklärung: Belastungstest, kardiovaskuläre Evaluation für Sportler im Wallis."
+  lang="de"
+  alternates={{ fr: '/domaines-dexpertise/evaluation-a-la-pratique-sportive', en: '/en/areas-of-expertise/sports-assessment', de: '/de/fachgebiete/sportkardiologie' }}
+  pageTitleHtml="Sport<span class='text-primary'>kardiologie</span>"
+  subtitle="Ihre Leidenschaft sicher ausüben"
+  heroBg="/images/collaboration.webp"
+  heroImage="/images/detail/evaluation-sportif.webp"
+  heroImageAlt="Sportkardiologie"
+  icon="/images/svg/expertise/Evaluation-a-la-pratique-sportive.svg"
+  iconAlt="Sportkardiologie"
+  breadcrumb={[{label:'Startseite', href:'/de'}, {label:'Fachgebiete', href:'/de/fachgebiete'}, {label:'Sportkardiologie'}]}
+  backHref="/de/fachgebiete"
+  backLabel="Alle Fachgebiete"
+>
+  <p>Die sportkardiologische Abklärung ist wichtig für eine sichere körperliche Aktivität. Ein Belastungstest wird je nach individuellen Merkmalen und Intensität der Aktivität durchgeführt.</p>
+
+  <p>Eine sportliche Evaluation wird empfohlen bei Wiederaufnahme des Sports nach längerer Pause, für Wettkämpfer oder Sportler intensiver Disziplinen wie Marathon oder Tauchen, bei familiärer kardiovaskulärer Vorgeschichte, bei Symptomen wie Brustschmerzen oder Herzrasen, bei Herzerkrankungen wie Bluthochdruck oder nach Herzinfarkt, nach kardialen Ereignissen wie Operation oder Stent, sowie für Senioren und Risikopersonen mit Diabetes oder Adipositas.</p>
+
+  <p>Sie hilft, Komplikationen vorzubeugen und die Vorteile des Sports für das Herz zu maximieren — in einer Region wie dem Wallis, wo Sport zum Lebensstil gehört.</p>
+</DetailLayout>

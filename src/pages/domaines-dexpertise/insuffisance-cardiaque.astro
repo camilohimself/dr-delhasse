@@ -1,59 +1,38 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Breadcrumb from '../../components/Breadcrumb.astro';
+import DetailLayout from '../../layouts/DetailLayout.astro';
 ---
 
-<Layout title="Insuffisance cardiaque — Dr Delhasse, Cardiologue" description="Diagnostic et prise en charge de l'insuffisance cardiaque systolique et diastolique par le Dr Delhasse, cardiologue FMH." lang="fr">
+<DetailLayout
+  title="Insuffisance cardiaque — Dr Delhasse, Cardiologue"
+  description="Diagnostic et prise en charge de l'insuffisance cardiaque systolique et diastolique par le Dr Delhasse, cardiologue FMH."
+  lang="fr"
+  alternates={{ fr: '/domaines-dexpertise/insuffisance-cardiaque', en: '/en/areas-of-expertise/heart-failure', de: '/de/fachgebiete/herzinsuffizienz' }}
+  pageTitleHtml="Insuffisance <span class='text-primary'>cardiaque</span>"
+  subtitle="Quand le cœur fatigue, chaque détail compte"
+  heroBg="/images/collaboration.webp"
+  heroImage="/images/detail/insuffisance-cardiaque.webp"
+  heroImageAlt="Insuffisance cardiaque"
+  icon="/images/svg/expertise/Insuffisance-cardiaque.svg"
+  iconAlt="Insuffisance cardiaque"
+  breadcrumb={[
+    { label: 'Accueil', href: '/' },
+    { label: "Domaines d'expertise", href: '/domaines-dexpertise' },
+    { label: 'Insuffisance cardiaque' }
+  ]}
+  backHref="/domaines-dexpertise"
+  backLabel="Tous les domaines"
+>
 
-  <section class="hero-page">
-    <div class="container">
-      <Breadcrumb items={[
-        { label: 'Accueil', href: '/' },
-        { label: "Domaines d'expertise", href: '/domaines-dexpertise' },
-        { label: 'Insuffisance cardiaque' }
-      ]} />
-      <h1>Insuffisance <span class="text-primary">cardiaque</span></h1>
-      <p class="hero-sub">Quand le cœur fatigue, chaque détail compte</p>
-    </div>
-  </section>
+  <p>L'insuffisance cardiaque est l'incapacité du cœur à pomper suffisamment de sang vers les organes, se manifestant à l'effort ou au repos. Elle provoque des difficultés respiratoires, un œdème pulmonaire et peut évoluer vers une défaillance cardiaque terminale.</p>
 
-  <section class="section">
-    <div class="container detail-content">
-      <img src="/images/detail/insuffisance-cardiaque.webp" alt="Insuffisance cardiaque" class="detail-hero-img" />
-      <img src="/images/svg/expertise/Insuffisance-cardiaque.svg" alt="Insuffisance cardiaque" class="detail-icon" />
+  <h2>Deux types</h2>
+  <ul>
+    <li><strong>Insuffisance systolique :</strong> incapacité à éjecter le sang</li>
+    <li><strong>Insuffisance diastolique :</strong> incapacité du muscle cardiaque à se relâcher après contraction, caractérisée par une rigidité cardiaque empêchant un remplissage correct</li>
+  </ul>
 
-      <p>L'insuffisance cardiaque est l'incapacité du cœur à pomper suffisamment de sang vers les organes, se manifestant à l'effort ou au repos. Elle provoque des difficultés respiratoires, un œdème pulmonaire et peut évoluer vers une défaillance cardiaque terminale.</p>
+  <p>Les deux types produisent des symptômes similaires et sont traités par des médicaments pour améliorer la qualité de vie et l'espérance de vie. Le cardiologue aide les patients à comprendre l'utilisation des médicaments et à surveiller les effets secondaires.</p>
 
-      <h2>Deux types</h2>
-      <ul>
-        <li><strong>Insuffisance systolique :</strong> incapacité à éjecter le sang</li>
-        <li><strong>Insuffisance diastolique :</strong> incapacité du muscle cardiaque à se relâcher après contraction, caractérisée par une rigidité cardiaque empêchant un remplissage correct</li>
-      </ul>
+  <p>La prise en charge chronique repose sur une approche multidisciplinaire. Le cardiologue surveille les signes d'aggravation par échocardiographie, adapte le traitement, ou propose des alternatives comme des stimulateurs cardiaques spéciaux (DAI/CRT) pour améliorer la qualité de vie et prévenir les hospitalisations. Les cas complexes sont suivis avec les hôpitaux universitaires (HUG, CHUV, Inselspital).</p>
 
-      <p>Les deux types produisent des symptômes similaires et sont traités par des médicaments pour améliorer la qualité de vie et l'espérance de vie. Le cardiologue aide les patients à comprendre l'utilisation des médicaments et à surveiller les effets secondaires.</p>
-
-      <p>La prise en charge chronique repose sur une approche multidisciplinaire. Le cardiologue surveille les signes d'aggravation par échocardiographie, adapte le traitement, ou propose des alternatives comme des stimulateurs cardiaques spéciaux (DAI/CRT) pour améliorer la qualité de vie et prévenir les hospitalisations. Les cas complexes sont suivis avec les hôpitaux universitaires (HUG, CHUV, Inselspital).</p>
-
-      <div class="detail-cta">
-        <a href="/domaines-dexpertise" class="btn btn--outline-dark">&larr; Tous les domaines</a>
-        <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
-      </div>
-    </div>
-  </section>
-
-</Layout>
-
-<style>
-  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
-  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
-  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
-  .detail-content { max-width: 800px; }
-  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
-  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
-  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
-  .detail-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.25rem; }
-  .detail-content ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
-  .detail-content li { list-style: disc; margin-bottom: 0.5rem; color: var(--color-gray); font-size: 1rem; line-height: 1.7; }
-  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
-  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
-</style>
+</DetailLayout>

@@ -1,49 +1,25 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Breadcrumb from '../../components/Breadcrumb.astro';
-import EmergencyBanner from '../../components/EmergencyBanner.astro';
+import DetailLayout from '../../layouts/DetailLayout.astro';
 ---
 
-<Layout title="Palpitations — Dr Delhasse, Cardiologue" description="Palpitations : quand consulter un cardiologue ? Découvrez les causes et la prise en charge des troubles du rythme cardiaque." lang="fr">
+<DetailLayout
+  title="Palpitations — Dr Delhasse, Cardiologue"
+  description="Palpitations : quand consulter un cardiologue ? Découvrez les causes et la prise en charge des troubles du rythme cardiaque."
+  lang="fr"
+  alternates={{ fr: '/symptomes/palpitations', en: '/en/symptoms/palpitations', de: '/de/symptome/herzrasen' }}
+  pageTitleHtml='<span class="text-primary">Palpitations</span>'
+  subtitle="Quand votre cœur s'emballe"
+  heroBg="/images/cardiologie-med-interne.webp"
+  heroImage="/images/detail/palpitations.webp"
+  heroImageAlt="Palpitations"
+  icon="/images/svg/symptomes/Palpitaciones.svg"
+  iconAlt="Palpitations"
+  breadcrumb={[{ label: 'Accueil', href: '/' }, { label: 'Symptômes', href: '/symptomes' }, { label: 'Palpitations' }]}
+  backHref="/symptomes"
+  backLabel="Tous les symptômes"
+  showEmergencyBanner
+>
+  <p>Un cœur qui bat trop fort n'est pas toujours un signe d'émotion. Le stress, la fatigue, la caféine ou l'alcool peuvent en être la cause. Mais parfois, un trouble du rythme cardiaque ou une maladie sous-jacente est en jeu. Si ces sensations sont fréquentes, gênantes ou associées à des douleurs, des malaises ou un essoufflement, un bilan cardiologique s'impose. Un diagnostic précoce permet d'identifier l'origine du problème et d'instaurer une prise en charge adaptée pour contrôler le rythme cardiaque et ainsi assurer une qualité de vie optimale.</p>
 
-  <section class="hero-page">
-    <div class="container">
-      <Breadcrumb items={[
-        { label: 'Accueil', href: '/' },
-        { label: 'Symptômes', href: '/symptomes' },
-        { label: 'Palpitations' }
-      ]} />
-      <h1><span class="text-primary">Palpitations</span></h1>
-      <p class="hero-sub">Quand votre cœur s'emballe</p>
-    </div>
-  </section>
-  <EmergencyBanner lang="fr" />
-  <section class="section">
-    <div class="container detail-content">
-      <img src="/images/detail/palpitations.webp" alt="Palpitations" class="detail-hero-img" />
-      <img src="/images/svg/symptomes/Palpitaciones.svg" alt="Palpitations" class="detail-icon" />
-
-      <p>Un cœur qui bat trop fort n'est pas toujours un signe d'émotion. Le stress, la fatigue, la caféine ou l'alcool peuvent en être la cause. Mais parfois, un trouble du rythme cardiaque ou une maladie sous-jacente est en jeu. Si ces sensations sont fréquentes, gênantes ou associées à des douleurs, des malaises ou un essoufflement, un bilan cardiologique s'impose. Un diagnostic précoce permet d'identifier l'origine du problème et d'instaurer une prise en charge adaptée pour contrôler le rythme cardiaque et ainsi assurer une qualité de vie optimale.</p>
-
-      <p>En cas de doute ou de symptôme inquiétant, mieux vaut ne pas attendre et consulter immédiatement.</p>
-
-      <div class="detail-cta">
-        <a href="/symptomes" class="btn btn--outline-dark">&larr; Tous les symptômes</a>
-        <a href="/contact" class="btn btn--primary">Prendre rendez-vous</a>
-      </div>
-    </div>
-  </section>
-
-</Layout>
-
-<style>
-  .hero-page { background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%); padding: 6rem 0 4rem; color: var(--color-white); }
-  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
-  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1.15rem; margin-top: 1rem; }
-  .detail-content { max-width: 800px; }
-  .detail-icon { width: 80px; height: 80px; margin-bottom: 2rem; }
-  .detail-hero-img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem; }
-  .detail-content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-gray); }
-  .detail-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
-  @media (max-width: 768px) { .hero-page h1 { font-size: 2rem; } }
-</style>
+  <p>En cas de doute ou de symptôme inquiétant, mieux vaut ne pas attendre et consulter immédiatement.</p>
+</DetailLayout>
