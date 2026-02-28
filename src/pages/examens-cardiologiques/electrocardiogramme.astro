@@ -17,6 +17,11 @@ import DetailLayout from '../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Accueil', href:'/'}, {label:'Examens cardiologiques', href:'/examens-cardiologiques'}, {label:'Électrocardiogramme'}]}
   backHref="/examens-cardiologiques"
   backLabel="Tous les examens"
+  relatedLinks={[
+    { href: '/symptomes/palpitations', label: 'Symptôme : palpitations' },
+    { href: '/domaines-dexpertise/rythmologie', label: 'Explorer la rythmologie' },
+    { href: '/examens-cardiologiques/holter-et-r-test', label: 'Le Holter et R-Test' },
+  ]}
 >
   <p>L'ECG est un examen standard important, car il est disponible presque partout et facile à réaliser. L'ECG de repos est généralement réalisé en position couchée.</p>
 

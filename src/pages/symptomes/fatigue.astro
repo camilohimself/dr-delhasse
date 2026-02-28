@@ -18,6 +18,11 @@ import DetailLayout from '../../layouts/DetailLayout.astro';
   backHref="/symptomes"
   backLabel="Tous les symptômes"
   showEmergencyBanner
+  relatedLinks={[
+    { href: '/domaines-dexpertise/insuffisance-cardiaque', label: "L'insuffisance cardiaque" },
+    { href: '/examens-cardiologiques/laboratoire', label: 'Le bilan sanguin' },
+    { href: '/domaines-dexpertise/prevention', label: 'Prévention cardiovasculaire' },
+  ]}
 >
   <p>La fatigue en cardiologie traduit souvent une inadéquation entre les besoins et l'apport en oxygène des tissus. L'insuffisance cardiaque réduit le débit cardiaque, entraînant une hypoperfusion des organes comme les muscles et le cerveau. Cela se traduit par un manque d'énergie et un ralentissement cognitif.</p>
 

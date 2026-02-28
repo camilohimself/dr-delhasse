@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Startseite', href:'/de'}, {label:'Fachgebiete', href:'/de/fachgebiete'}, {label:'Prävention'}]}
   backHref="/de/fachgebiete"
   backLabel="Alle Fachgebiete"
+  relatedLinks={[
+    { href: '/de/fachgebiete/bluthochdruck', label: 'Bluthochdruck' },
+    { href: '/de/herzuntersuchungen/labor', label: 'Die Blutuntersuchung' },
+    { href: '/de/fachgebiete/sportkardiologie', label: 'Sportkardiologie' },
+  ]}
 >
   <p>Vier grosse kardiovaskuläre Risikofaktoren bedrohen Ihre Herzgesundheit.</p>
 

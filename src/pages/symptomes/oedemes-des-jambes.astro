@@ -18,6 +18,11 @@ import DetailLayout from '../../layouts/DetailLayout.astro';
   backHref="/symptomes"
   backLabel="Tous les symptômes"
   showEmergencyBanner
+  relatedLinks={[
+    { href: '/domaines-dexpertise/insuffisance-cardiaque', label: "L'insuffisance cardiaque" },
+    { href: '/examens-cardiologiques/echocardiographie', label: "L'échocardiographie" },
+    { href: '/examens-cardiologiques/laboratoire', label: 'Le bilan sanguin' },
+  ]}
 >
   <p>Les jambes gonflées, ou œdèmes des membres inférieurs peuvent avoir plusieurs origines. En cardiologie, l'insuffisance cardiaque droite est une cause fréquente : lorsque le cœur peine à faire circuler le sang, celui-ci s'accumule dans les veines, laissant l'eau s'infiltrer dans les tissus.</p>
 

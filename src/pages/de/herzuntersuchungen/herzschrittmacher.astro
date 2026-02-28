@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Startseite', href:'/de'}, {label:'Herzuntersuchungen', href:'/de/herzuntersuchungen'}, {label:'Herzschrittmacher'}]}
   backHref="/de/herzuntersuchungen"
   backLabel="Alle Untersuchungen"
+  relatedLinks={[
+    { href: '/de/fachgebiete/rhythmologie', label: 'Rhythmologie entdecken' },
+    { href: '/de/symptome/ohnmacht', label: 'Symptom: Ohnmacht' },
+    { href: '/de/herzuntersuchungen/elektrokardiogramm', label: 'Das EKG im Detail' },
+  ]}
 >
   <p>Der Herzschrittmacher ist ein implantiertes Gerät zur Regulierung des Herzrhythmus bei zu langsamen Herzschlägen (Bradykardie). Er überwacht permanent die Herzaktivität und sendet bei Bedarf elektrische Impulse. Die Batterielebensdauer beträgt 6 bis 10 Jahre.</p>
 

@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Home', href:'/en'}, {label:'Areas of Expertise', href:'/en/areas-of-expertise'}, {label:'Cardiomyopathies'}]}
   backHref="/en/areas-of-expertise"
   backLabel="All areas of expertise"
+  relatedLinks={[
+    { href: '/en/cardiac-examinations/cardiac-mri', label: 'Cardiac MRI' },
+    { href: '/en/cardiac-examinations/echocardiography', label: 'Echocardiography' },
+    { href: '/en/symptoms/dyspnoea', label: 'Symptom: shortness of breath' },
+  ]}
 >
   <p>Cardiomyopathy is a disease of the heart muscle that impairs its ability to pump blood effectively, potentially leading to heart failure.</p>
 

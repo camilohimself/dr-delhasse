@@ -6,9 +6,12 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 <Layout title="About Dr Delhasse — Cardiologist in Valais" description="Background, training and commitment of Dr Sébastien Delhasse, FMH cardiologist in Saxon, Valais." lang="en">
 
   <section class="hero-page">
-    <div class="container">
+    <div class="hero-page__bg" aria-hidden="true"></div>
+    <div class="container hero-page__content">
       <Breadcrumb items={[{label:'Home', href:'/en'}, {label:'About'}]} />
+      <p class="hero-page__label">About</p>
       <h1>A journey guided by the <span class="text-primary">heart</span></h1>
+      <p class="hero-page__sub">FMH Cardiologist, Member of the European Society of Cardiology</p>
     </div>
   </section>
 
@@ -26,7 +29,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
         <a href="/en/contact" class="btn btn--primary">Book an appointment</a>
       </div>
       <div class="about-image">
-        <img src="/images/dr-delhasse.jpeg" alt="Dr. Sébastien Delhasse" loading="lazy" />
+        <img src="/images/dr-delhasse.jpeg" alt="Dr. Sébastien Delhasse" width="500" height="600" />
       </div>
     </div>
   </section>
@@ -68,11 +71,31 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 
 <style>
   .hero-page {
-    background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d6d 100%);
-    padding: 6rem 0 4rem;
+    background: linear-gradient(135deg, var(--color-navy) 0%, #0e2240 50%, #1a3d6d 100%);
+    padding: 7rem 0 4rem;
     color: var(--color-white);
+    position: relative;
+    overflow: hidden;
   }
-  .hero-page h1 { color: var(--color-white); font-size: 2.75rem; }
+  .hero-page__bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/images/dr-delhasse-hero.jpeg');
+    background-size: cover;
+    background-position: center top;
+    opacity: 0.1;
+  }
+  .hero-page__content { position: relative; z-index: 2; }
+  .hero-page__label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  .hero-page h1 { color: var(--color-white); font-size: 3rem; margin-bottom: 0.75rem; }
+  .hero-page__sub { color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; }
   .about-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: start; }
   .about-image img { border-radius: 8px; width: 100%; position: sticky; top: calc(var(--header-height) + 2rem); }
   .engagement-grid { margin-top: 2rem; }

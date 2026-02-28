@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Home', href:'/en'}, {label:'Areas of Expertise', href:'/en/areas-of-expertise'}, {label:'Coronary Artery Disease'}]}
   backHref="/en/areas-of-expertise"
   backLabel="All areas of expertise"
+  relatedLinks={[
+    { href: '/en/symptoms/chest-pain', label: 'Symptom: chest pain' },
+    { href: '/en/cardiac-examinations/exercise-stress-test', label: 'The stress test' },
+    { href: '/en/areas-of-expertise/post-heart-attack-follow-up', label: 'Post-infarction follow-up' },
+  ]}
 >
   <p>Coronary artery disease manifests as angina pectoris (chest tightness on exertion) or a heart attack, resulting from narrowing of the coronary arteries by cholesterol plaques, which disrupts the heart's blood supply.</p>
 

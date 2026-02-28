@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Home', href:'/en'}, {label:'Cardiac Examinations', href:'/en/cardiac-examinations'}, {label:'Echocardiography'}]}
   backHref="/en/cardiac-examinations"
   backLabel="All examinations"
+  relatedLinks={[
+    { href: '/en/areas-of-expertise/valvular-disease', label: 'Valvular disease' },
+    { href: '/en/areas-of-expertise/heart-failure', label: 'Heart failure' },
+    { href: '/en/cardiac-examinations/cardiac-mri', label: 'Cardiac MRI' },
+  ]}
 >
   <p>Echocardiography is an examination performed by the cardiologist, who has the skills to acquire precise heart images and, more importantly, interpret them in the correct clinical context.</p>
 

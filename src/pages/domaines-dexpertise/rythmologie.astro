@@ -21,6 +21,11 @@ import DetailLayout from '../../layouts/DetailLayout.astro';
   ]}
   backHref="/domaines-dexpertise"
   backLabel="Tous les domaines"
+  relatedLinks={[
+    { href: '/symptomes/palpitations', label: 'Symptôme : palpitations' },
+    { href: '/examens-cardiologiques/holter-et-r-test', label: 'Le Holter et R-Test' },
+    { href: '/examens-cardiologiques/stimulateur-cardiaque', label: 'Le stimulateur cardiaque' },
+  ]}
 >
 
   <p>Le cœur bat normalement 60 à 80 fois par minute, soit environ 100 000 fois par jour. À l'effort, il peut atteindre 140 à 200 battements par minute selon l'âge.</p>

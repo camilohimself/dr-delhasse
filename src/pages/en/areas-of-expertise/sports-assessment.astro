@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Home', href:'/en'}, {label:'Areas of Expertise', href:'/en/areas-of-expertise'}, {label:'Sports Assessment'}]}
   backHref="/en/areas-of-expertise"
   backLabel="All areas of expertise"
+  relatedLinks={[
+    { href: '/en/cardiac-examinations/exercise-stress-test', label: 'The stress test' },
+    { href: '/en/cardiac-examinations/electrocardiogram', label: 'The ECG explained' },
+    { href: '/en/areas-of-expertise/prevention', label: 'Cardiovascular prevention' },
+  ]}
 >
   <p>A sports assessment with a cardiologist is important for practising physical activity safely. A stress test is performed based on individual characteristics and the intensity of physical activity.</p>
 

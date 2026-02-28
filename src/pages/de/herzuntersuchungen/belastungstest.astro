@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Startseite', href:'/de'}, {label:'Herzuntersuchungen', href:'/de/herzuntersuchungen'}, {label:'Belastungstest'}]}
   backHref="/de/herzuntersuchungen"
   backLabel="Alle Untersuchungen"
+  relatedLinks={[
+    { href: '/de/fachgebiete/koronare-herzkrankheit', label: 'Koronare Herzkrankheit' },
+    { href: '/de/fachgebiete/sportkardiologie', label: 'Sportkardiologie' },
+    { href: '/de/herzuntersuchungen/elektrokardiogramm', label: 'Das EKG im Detail' },
+  ]}
 >
   <p>Der Belastungstest oder die Ergometrie ist eine Schlüsseluntersuchung zur Bewertung der Reaktion Ihres Herzens auf körperliche Anstrengung.</p>
 

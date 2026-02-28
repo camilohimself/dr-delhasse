@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Home', href:'/en'}, {label:'Areas of Expertise', href:'/en/areas-of-expertise'}, {label:'Hypertension'}]}
   backHref="/en/areas-of-expertise"
   backLabel="All areas of expertise"
+  relatedLinks={[
+    { href: '/en/areas-of-expertise/prevention', label: 'Cardiovascular prevention' },
+    { href: '/en/cardiac-examinations/echocardiography', label: 'Echocardiography' },
+    { href: '/en/cardiac-examinations/laboratory', label: 'Blood tests' },
+  ]}
 >
   <p>A blood pressure of 100/70 mmHg is generally sufficient under normal conditions to adequately supply the body's organs, but it is not uncommon for higher values to be necessary, particularly in the elderly. If blood pressure rises above 140/90 mmHg, it damages organs such as the heart, arteries, kidneys, eyes and brain, and can even lead to complications in some cases.</p>
 

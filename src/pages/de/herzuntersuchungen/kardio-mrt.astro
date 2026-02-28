@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Startseite', href:'/de'}, {label:'Herzuntersuchungen', href:'/de/herzuntersuchungen'}, {label:'Kardio-MRT'}]}
   backHref="/de/herzuntersuchungen"
   backLabel="Alle Untersuchungen"
+  relatedLinks={[
+    { href: '/de/fachgebiete/kardiomyopathien', label: 'Kardiomyopathien' },
+    { href: '/de/herzuntersuchungen/echokardiographie', label: 'Die Echokardiographie' },
+    { href: '/de/fachgebiete/herzklappenerkrankungen', label: 'Herzklappenerkrankungen' },
+  ]}
 >
   <p>Das Kardio-MRT ist eine fortschrittliche Bildgebungstechnik, die das Herz mit grosser Präzision untersucht. Es ist eine nicht-invasive, gut verträgliche Untersuchung.</p>
 

@@ -18,6 +18,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   backHref="/de/symptome"
   backLabel="Alle Symptome"
   showEmergencyBanner={true}
+  relatedLinks={[
+    { href: '/de/fachgebiete/koronare-herzkrankheit', label: 'Koronare Herzkrankheit' },
+    { href: '/de/herzuntersuchungen/belastungstest', label: 'Der Belastungstest' },
+    { href: '/de/herzuntersuchungen/elektrokardiogramm', label: 'Das EKG im Detail' },
+  ]}
 >
   <p>Brustschmerzen können beunruhigend sein, aber nicht alle haben einen kardialen Ursprung. Herzbedingte Schmerzen äussern sich oft als Druckgefühl in der Brustmitte, das in den linken Arm, den Kiefer oder den Rücken ausstrahlen kann. Sie treten typischerweise bei Belastung oder Stress auf und klingen in Ruhe ab. Sie können ein Warnsignal für eine koronare Herzkrankheit sein. Weitere Symptome wie Atemnot, Schweissausbrüche oder Übelkeit sollten ebenfalls aufmerksam machen.</p>
 

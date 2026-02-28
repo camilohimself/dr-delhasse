@@ -21,6 +21,11 @@ import DetailLayout from '../../layouts/DetailLayout.astro';
   ]}
   backHref="/domaines-dexpertise"
   backLabel="Tous les domaines"
+  relatedLinks={[
+    { href: '/domaines-dexpertise/maladie-coronarienne', label: 'La maladie coronarienne' },
+    { href: '/examens-cardiologiques/echocardiographie', label: "L'échocardiographie" },
+    { href: '/examens-cardiologiques/ergometrie', label: "L'épreuve d'effort" },
+  ]}
 >
 
   <p>Après un infarctus, la récupération dépend de l'étendue des lésions au cœur, notamment de la capacité du ventricule gauche à pomper efficacement le sang.</p>

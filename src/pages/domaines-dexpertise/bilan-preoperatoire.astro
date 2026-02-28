@@ -21,6 +21,11 @@ import DetailLayout from '../../layouts/DetailLayout.astro';
   ]}
   backHref="/domaines-dexpertise"
   backLabel="Tous les domaines"
+  relatedLinks={[
+    { href: '/examens-cardiologiques/echocardiographie', label: "L'échocardiographie" },
+    { href: '/examens-cardiologiques/electrocardiogramme', label: "L'ECG en détail" },
+    { href: '/examens-cardiologiques/laboratoire', label: 'Le bilan sanguin' },
+  ]}
 >
 
   <p>L'implication du cardiologue dans un bilan préopératoire est différente selon le contexte envisagé.</p>

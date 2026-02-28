@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Startseite', href:'/de'}, {label:'Fachgebiete', href:'/de/fachgebiete'}, {label:'Rhythmologie'}]}
   backHref="/de/fachgebiete"
   backLabel="Alle Fachgebiete"
+  relatedLinks={[
+    { href: '/de/symptome/herzrasen', label: 'Symptom: Herzrasen' },
+    { href: '/de/herzuntersuchungen/holter-und-r-test', label: 'Holter und R-Test' },
+    { href: '/de/herzuntersuchungen/herzschrittmacher', label: 'Der Herzschrittmacher' },
+  ]}
 >
   <p>Das Herz schlägt normalerweise 60 bis 80 Mal pro Minute, etwa 100 000 Mal pro Tag. Bei Belastung kann es je nach Alter 140 bis 200 Schläge pro Minute erreichen.</p>
 

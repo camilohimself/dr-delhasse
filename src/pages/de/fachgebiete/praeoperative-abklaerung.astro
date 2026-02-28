@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Startseite', href:'/de'}, {label:'Fachgebiete', href:'/de/fachgebiete'}, {label:'Präoperative Abklärung'}]}
   backHref="/de/fachgebiete"
   backLabel="Alle Fachgebiete"
+  relatedLinks={[
+    { href: '/de/herzuntersuchungen/echokardiographie', label: 'Die Echokardiographie' },
+    { href: '/de/herzuntersuchungen/elektrokardiogramm', label: 'Das EKG im Detail' },
+    { href: '/de/herzuntersuchungen/labor', label: 'Die Blutuntersuchung' },
+  ]}
 >
   <p>Die kardiologische Evaluation ist nicht systematisch vor jedem Eingriff erforderlich, wird aber notwendig, wenn kardiale Vulnerabilitäten bestehen. Sie liefert wesentliche Informationen für Chirurgen und Anästhesisten.</p>
 

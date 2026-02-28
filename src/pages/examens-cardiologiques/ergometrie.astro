@@ -17,6 +17,11 @@ import DetailLayout from '../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Accueil', href:'/'}, {label:'Examens cardiologiques', href:'/examens-cardiologiques'}, {label:'Ergométrie'}]}
   backHref="/examens-cardiologiques"
   backLabel="Tous les examens"
+  relatedLinks={[
+    { href: '/domaines-dexpertise/maladie-coronarienne', label: 'La maladie coronarienne' },
+    { href: '/domaines-dexpertise/evaluation-a-la-pratique-sportive', label: 'Évaluation sportive' },
+    { href: '/examens-cardiologiques/electrocardiogramme', label: "L'ECG en détail" },
+  ]}
 >
   <p>Le test à l'effort, ou ergométrie, est un examen clé pour évaluer la réponse de votre cœur à l'effort physique.</p>
 

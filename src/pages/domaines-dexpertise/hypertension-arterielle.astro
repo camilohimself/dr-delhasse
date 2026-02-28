@@ -21,6 +21,11 @@ import DetailLayout from '../../layouts/DetailLayout.astro';
   ]}
   backHref="/domaines-dexpertise"
   backLabel="Tous les domaines"
+  relatedLinks={[
+    { href: '/domaines-dexpertise/prevention', label: 'Prévention cardiovasculaire' },
+    { href: '/examens-cardiologiques/echocardiographie', label: "L'échocardiographie" },
+    { href: '/examens-cardiologiques/laboratoire', label: 'Le bilan sanguin' },
+  ]}
 >
 
   <p>Une pression artérielle de 100/70 mmHg est en général suffisante dans des conditions normales pour alimenter normalement les organes du corps, mais il n'est pas rare que des valeurs plus élevées soient nécessaires, en particulier chez les personnes âgées. Si la pression artérielle devient trop grande et s'élève au-delà de 140/90 mmHg, cela abîme les organes comme le cœur, les artères, le rein, les yeux, le cerveau et peut même dans certains cas entraîner des complications.</p>

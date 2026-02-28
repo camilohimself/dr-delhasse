@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Startseite', href:'/de'}, {label:'Herzuntersuchungen', href:'/de/herzuntersuchungen'}, {label:'Elektrokardiogramm'}]}
   backHref="/de/herzuntersuchungen"
   backLabel="Alle Untersuchungen"
+  relatedLinks={[
+    { href: '/de/symptome/herzrasen', label: 'Symptom: Herzrasen' },
+    { href: '/de/fachgebiete/rhythmologie', label: 'Rhythmologie entdecken' },
+    { href: '/de/herzuntersuchungen/holter-und-r-test', label: 'Holter und R-Test' },
+  ]}
 >
   <p>Das EKG ist eine wichtige Standarduntersuchung, da es fast überall verfügbar und einfach durchzuführen ist. Das Ruhe-EKG wird in der Regel im Liegen durchgeführt.</p>
 

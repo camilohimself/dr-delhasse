@@ -22,6 +22,7 @@ interface Props {
   ctaHref?: string;
   ctaLabel?: string;
   showEmergencyBanner?: boolean;
+  relatedLinks?: { href: string; label: string }[];
 }
 
 const {
@@ -30,7 +31,10 @@ const {
   heroImage, heroImageAlt, icon, iconAlt,
   breadcrumb, backHref, backLabel,
   ctaHref, ctaLabel, showEmergencyBanner = false,
+  relatedLinks = [],
 } = Astro.props;
+
+const relatedTitle = lang === 'fr' ? 'À lire également' : lang === 'en' ? 'Related articles' : 'Weitere Artikel';
 
 const contactHref = ctaHref || (lang === 'fr' ? '/contact' : lang === 'en' ? '/en/contact' : '/de/kontakt');
 const contactLabel = ctaLabel || (lang === 'fr' ? 'Prendre rendez-vous' : lang === 'en' ? 'Book an appointment' : 'Termin vereinbaren');
@@ -56,6 +60,17 @@ const contactLabel = ctaLabel || (lang === 'fr' ? 'Prendre rendez-vous' : lang =
       <img src={icon} alt={iconAlt} class="detail-icon" loading="lazy" width="80" height="80" />
 
       <slot />
+
+      {relatedLinks.length > 0 && (
+        <nav class="detail-related" aria-label={relatedTitle}>
+          <h2>{relatedTitle}</h2>
+          <ul>
+            {relatedLinks.map(link => (
+              <li><a href={link.href}>{link.label}</a></li>
+            ))}
+          </ul>
+        </nav>
+      )}
 
       <div class="detail-cta">
         <a href={backHref} class="btn btn--outline-dark">&larr; {backLabel}</a>
@@ -132,6 +147,39 @@ const contactLabel = ctaLabel || (lang === 'fr' ? 'Prendre rendez-vous' : lang =
     line-height: 1.8;
     margin-bottom: 1.5rem;
     color: var(--color-gray);
+  }
+
+  .detail-related {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .detail-related h2 {
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+    color: var(--color-navy);
+  }
+
+  .detail-related ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .detail-related a {
+    color: var(--color-primary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .detail-related a:hover {
+    color: var(--color-navy);
+    text-decoration: underline;
   }
 
   .detail-cta {

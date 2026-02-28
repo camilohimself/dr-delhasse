@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Startseite', href:'/de'}, {label:'Fachgebiete', href:'/de/fachgebiete'}, {label:'Herzinsuffizienz'}]}
   backHref="/de/fachgebiete"
   backLabel="Alle Fachgebiete"
+  relatedLinks={[
+    { href: '/de/symptome/atemnot', label: 'Symptom: Atemnot' },
+    { href: '/de/herzuntersuchungen/echokardiographie', label: 'Die Echokardiographie' },
+    { href: '/de/herzuntersuchungen/kardio-mrt', label: 'Das Kardio-MRT' },
+  ]}
 >
   <p>Die Herzinsuffizienz ist die Unfähigkeit des Herzens, ausreichend Blut zu den Organen zu pumpen. Sie verursacht Atemnot, Lungenödem und kann zu einer terminalen Herzinsuffizienz fortschreiten.</p>
 

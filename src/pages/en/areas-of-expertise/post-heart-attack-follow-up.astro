@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Home', href:'/en'}, {label:'Areas of Expertise', href:'/en/areas-of-expertise'}, {label:'Post Heart Attack Follow-up'}]}
   backHref="/en/areas-of-expertise"
   backLabel="All areas of expertise"
+  relatedLinks={[
+    { href: '/en/areas-of-expertise/coronary-artery-disease', label: 'Coronary artery disease' },
+    { href: '/en/cardiac-examinations/echocardiography', label: 'Echocardiography' },
+    { href: '/en/cardiac-examinations/exercise-stress-test', label: 'The stress test' },
+  ]}
 >
   <p>After a heart attack, recovery depends on the extent of damage to the heart, particularly the left ventricle's ability to pump blood effectively.</p>
 

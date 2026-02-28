@@ -17,6 +17,11 @@ import DetailLayout from '../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Accueil', href:'/'}, {label:'Examens cardiologiques', href:'/examens-cardiologiques'}, {label:'Échocardiographie'}]}
   backHref="/examens-cardiologiques"
   backLabel="Tous les examens"
+  relatedLinks={[
+    { href: '/domaines-dexpertise/maladie-valvulaires', label: 'Les maladies valvulaires' },
+    { href: '/domaines-dexpertise/insuffisance-cardiaque', label: "L'insuffisance cardiaque" },
+    { href: '/examens-cardiologiques/irm-cardiaque', label: "L'IRM cardiaque" },
+  ]}
 >
   <p>L'échocardiographie est un examen réalisé par le cardiologue, qui a les compétences pour acquérir des images précises du cœur, mais surtout de les interpréter dans le bon contexte clinique.</p>
 

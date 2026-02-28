@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Startseite', href:'/de'}, {label:'Herzuntersuchungen', href:'/de/herzuntersuchungen'}, {label:'Echokardiographie'}]}
   backHref="/de/herzuntersuchungen"
   backLabel="Alle Untersuchungen"
+  relatedLinks={[
+    { href: '/de/fachgebiete/herzklappenerkrankungen', label: 'Herzklappenerkrankungen' },
+    { href: '/de/fachgebiete/herzinsuffizienz', label: 'Herzinsuffizienz' },
+    { href: '/de/herzuntersuchungen/kardio-mrt', label: 'Das Kardio-MRT' },
+  ]}
 >
   <p>Die Echokardiographie ist eine vom Kardiologen durchgeführte Untersuchung, der die Kompetenz besitzt, präzise Herzbilder zu erstellen und sie im richtigen klinischen Kontext zu interpretieren.</p>
 

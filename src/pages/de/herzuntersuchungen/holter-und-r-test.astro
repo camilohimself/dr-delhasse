@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Startseite', href:'/de'}, {label:'Herzuntersuchungen', href:'/de/herzuntersuchungen'}, {label:'Holter und R-Test'}]}
   backHref="/de/herzuntersuchungen"
   backLabel="Alle Untersuchungen"
+  relatedLinks={[
+    { href: '/de/fachgebiete/rhythmologie', label: 'Rhythmologie entdecken' },
+    { href: '/de/symptome/unregelmaessiger-herzschlag', label: 'Symptom: Unregelmässiger Herzschlag' },
+    { href: '/de/herzuntersuchungen/elektrokardiogramm', label: 'Das EKG im Detail' },
+  ]}
 >
   <p>Das Langzeit-EKG oder Holter-EKG besteht in der kontinuierlichen Aufzeichnung der elektrischen Herzaktivität über 24 Stunden oder mehr mit einem tragbaren Gerät.</p>
 

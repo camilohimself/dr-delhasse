@@ -17,6 +17,11 @@ import DetailLayout from '../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Accueil', href:'/'}, {label:'Examens cardiologiques', href:'/examens-cardiologiques'}, {label:'Holter et R-test'}]}
   backHref="/examens-cardiologiques"
   backLabel="Tous les examens"
+  relatedLinks={[
+    { href: '/domaines-dexpertise/rythmologie', label: 'Explorer la rythmologie' },
+    { href: '/symptomes/rythme-cardiaque-irregulier', label: 'Symptôme : rythme irrégulier' },
+    { href: '/examens-cardiologiques/electrocardiogramme', label: "L'ECG en détail" },
+  ]}
 >
   <p>L'ECG de longue durée, ou Holter ECG, consiste à enregistrer en continu l'activité électrique du cœur pendant 24 heures ou plus, grâce à un appareil portable porté par le patient.</p>
 

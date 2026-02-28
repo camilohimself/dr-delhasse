@@ -18,6 +18,11 @@ import DetailLayout from '../../layouts/DetailLayout.astro';
   backHref="/symptomes"
   backLabel="Tous les symptômes"
   showEmergencyBanner
+  relatedLinks={[
+    { href: '/domaines-dexpertise/maladie-coronarienne', label: 'Comprendre la maladie coronarienne' },
+    { href: '/examens-cardiologiques/ergometrie', label: "L'épreuve d'effort" },
+    { href: '/examens-cardiologiques/electrocardiogramme', label: "L'ECG en détail" },
+  ]}
 >
   <p>Ressentir une douleur thoracique peut être inquiétant, mais toutes ne sont pas d'origine cardiaque. Les douleurs liées au cœur se manifestent souvent par une sensation d'oppression au centre de la poitrine, pouvant irradier vers le bras gauche, la mâchoire ou le dos. Elles surviennent généralement à l'effort ou en situation de stress et s'atténuent au repos. Elles peuvent être le signe avant-coureur d'une maladie coronarienne. D'autres signes comme un essoufflement, des sueurs ou des nausées doivent alerter.</p>
 

@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Startseite', href:'/de'}, {label:'Fachgebiete', href:'/de/fachgebiete'}, {label:'Nachsorge nach Herzinfarkt'}]}
   backHref="/de/fachgebiete"
   backLabel="Alle Fachgebiete"
+  relatedLinks={[
+    { href: '/de/fachgebiete/koronare-herzkrankheit', label: 'Koronare Herzkrankheit' },
+    { href: '/de/herzuntersuchungen/echokardiographie', label: 'Die Echokardiographie' },
+    { href: '/de/herzuntersuchungen/belastungstest', label: 'Der Belastungstest' },
+  ]}
 >
   <p>Nach einem Herzinfarkt hängt die Erholung vom Ausmass der Herzschädigung ab, insbesondere von der Fähigkeit des linken Ventrikels, Blut effizient zu pumpen.</p>
 

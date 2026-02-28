@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Home', href:'/en'}, {label:'Areas of Expertise', href:'/en/areas-of-expertise'}, {label:'Rhythmology'}]}
   backHref="/en/areas-of-expertise"
   backLabel="All areas of expertise"
+  relatedLinks={[
+    { href: '/en/symptoms/palpitations', label: 'Symptom: palpitations' },
+    { href: '/en/cardiac-examinations/holter-and-r-test', label: 'Holter and R-Test' },
+    { href: '/en/cardiac-examinations/pacemaker-defibrillator', label: 'The pacemaker' },
+  ]}
 >
   <p>The heart normally beats 60 to 80 times per minute, approximately 100,000 times per day. During exercise, it can reach 140 to 200 beats per minute depending on age.</p>
 

@@ -17,6 +17,11 @@ import DetailLayout from '../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Accueil', href:'/'}, {label:'Examens cardiologiques', href:'/examens-cardiologiques'}, {label:'Stimulateur cardiaque'}]}
   backHref="/examens-cardiologiques"
   backLabel="Tous les examens"
+  relatedLinks={[
+    { href: '/domaines-dexpertise/rythmologie', label: 'Explorer la rythmologie' },
+    { href: '/symptomes/malaise', label: 'Symptôme : malaise' },
+    { href: '/examens-cardiologiques/electrocardiogramme', label: "L'ECG en détail" },
+  ]}
 >
   <p>Le pacemaker est un dispositif implanté pour réguler le rythme cardiaque en cas de battements trop lents (bradycardie). Il surveille en permanence l'activité du cœur et envoie des impulsions électriques lorsque nécessaire. Moderne et adaptable, il ajuste la fréquence cardiaque en fonction de l'activité physique du patient.</p>
 

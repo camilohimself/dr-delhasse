@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Startseite', href:'/de'}, {label:'Fachgebiete', href:'/de/fachgebiete'}, {label:'Bluthochdruck'}]}
   backHref="/de/fachgebiete"
   backLabel="Alle Fachgebiete"
+  relatedLinks={[
+    { href: '/de/fachgebiete/praevention', label: 'Kardiovaskuläre Prävention' },
+    { href: '/de/herzuntersuchungen/echokardiographie', label: 'Die Echokardiographie' },
+    { href: '/de/herzuntersuchungen/labor', label: 'Die Blutuntersuchung' },
+  ]}
 >
   <p>Ein Blutdruck von 100/70 mmHg reicht unter normalen Bedingungen generell aus, um die Organe zu versorgen. Steigt der Blutdruck über 140/90 mmHg, schädigt dies Organe wie Herz, Arterien, Nieren, Augen und Gehirn.</p>
 

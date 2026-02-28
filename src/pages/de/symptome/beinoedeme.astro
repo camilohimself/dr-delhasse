@@ -18,6 +18,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   backHref="/de/symptome"
   backLabel="Alle Symptome"
   showEmergencyBanner={true}
+  relatedLinks={[
+    { href: '/de/fachgebiete/herzinsuffizienz', label: 'Herzinsuffizienz' },
+    { href: '/de/herzuntersuchungen/echokardiographie', label: 'Die Echokardiographie' },
+    { href: '/de/herzuntersuchungen/labor', label: 'Die Blutuntersuchung' },
+  ]}
 >
   <p>Geschwollene Beine oder Ödeme der unteren Extremitäten können verschiedene Ursachen haben. In der Kardiologie ist die Rechtsherzinsuffizienz eine häufige Ursache: Wenn das Herz Schwierigkeiten hat, das Blut zu zirkulieren, staut es sich in den Venen und Flüssigkeit sickert in das Gewebe.</p>
 

@@ -18,6 +18,11 @@ import DetailLayout from '../../layouts/DetailLayout.astro';
   backHref="/symptomes"
   backLabel="Tous les symptômes"
   showEmergencyBanner
+  relatedLinks={[
+    { href: '/domaines-dexpertise/rythmologie', label: 'Explorer la rythmologie' },
+    { href: '/examens-cardiologiques/electrocardiogramme', label: "L'ECG pour diagnostiquer" },
+    { href: '/examens-cardiologiques/echocardiographie', label: "L'échocardiographie" },
+  ]}
 >
   <p>Un malaise peut sembler anodin, et les causes sont très variées. Si un malaise se répète ou survient sans raison apparente, il est essentiel de consulter un médecin. Un malaise ou une perte de connaissance peut aussi être le signe que le cœur ne fonctionne peut-être pas de manière optimale. Cela peut par exemple être la conséquence d'un trouble du rythme, une anomalie valvulaire ou une insuffisance cardiaque — cœur fatigué —, parfois silencieuse au départ.</p>
 

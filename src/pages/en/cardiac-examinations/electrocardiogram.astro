@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Home', href:'/en'}, {label:'Cardiac Examinations', href:'/en/cardiac-examinations'}, {label:'Electrocardiogram'}]}
   backHref="/en/cardiac-examinations"
   backLabel="All examinations"
+  relatedLinks={[
+    { href: '/en/symptoms/palpitations', label: 'Symptom: palpitations' },
+    { href: '/en/areas-of-expertise/rhythmology', label: 'Explore rhythm disorders' },
+    { href: '/en/cardiac-examinations/holter-and-r-test', label: 'Holter and R-Test' },
+  ]}
 >
   <p>The ECG is an important standard examination, as it is available almost everywhere and easy to perform. The resting ECG is generally performed in a lying position.</p>
 

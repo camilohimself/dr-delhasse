@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Home', href:'/en'}, {label:'Cardiac Examinations', href:'/en/cardiac-examinations'}, {label:'Pacemaker & Defibrillator'}]}
   backHref="/en/cardiac-examinations"
   backLabel="All examinations"
+  relatedLinks={[
+    { href: '/en/areas-of-expertise/rhythmology', label: 'Explore rhythm disorders' },
+    { href: '/en/symptoms/fainting', label: 'Symptom: fainting' },
+    { href: '/en/cardiac-examinations/electrocardiogram', label: 'The ECG explained' },
+  ]}
 >
   <p>The pacemaker is an implanted device that regulates heart rhythm when beats are too slow (bradycardia). It continuously monitors the heart's activity and sends electrical impulses when necessary. Modern and adaptable, it adjusts heart rate according to the patient's physical activity.</p>
 

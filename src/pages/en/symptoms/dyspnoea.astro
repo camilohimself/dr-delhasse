@@ -18,6 +18,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   backHref="/en/symptoms"
   backLabel="All symptoms"
   showEmergencyBanner={true}
+  relatedLinks={[
+    { href: '/en/areas-of-expertise/heart-failure', label: 'Heart failure' },
+    { href: '/en/cardiac-examinations/echocardiography', label: 'Echocardiography' },
+    { href: '/en/cardiac-examinations/exercise-stress-test', label: 'The stress test' },
+  ]}
 >
   <p>If you experience breathlessness without an obvious reason, such as without having exerted yourself, it is common to assume it comes from the lungs. Yet the possible causes are numerous, and the origin may be hidden. When the problem is mild, one sometimes chooses to live with it without consulting. This happens particularly in elderly people, whose reduced mobility delays the onset of symptoms.</p>
 

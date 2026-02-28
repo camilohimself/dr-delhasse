@@ -18,6 +18,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   backHref="/de/symptome"
   backLabel="Alle Symptome"
   showEmergencyBanner={true}
+  relatedLinks={[
+    { href: '/de/fachgebiete/rhythmologie', label: 'Rhythmologie entdecken' },
+    { href: '/de/herzuntersuchungen/holter-und-r-test', label: 'Holter und R-Test' },
+    { href: '/de/herzuntersuchungen/elektrokardiogramm', label: 'Das EKG im Detail' },
+  ]}
 >
   <p>Ein unregelmässiger Herzschlag zeichnet sich dadurch aus, dass das Herz ungeordnet schlägt. Er kann ein Zeichen für ein zugrunde liegendes Problem wie Vorhofflimmern oder eine andere Reizleitungsstörung des Herzens sein. Obwohl einige Episoden gutartig sein können, ist es wichtig, einen Kardiologen für eine genaue Diagnose aufzusuchen, insbesondere wenn Sie wiederkehrende Symptome wie Herzrasen, unregelmässige Herzschläge oder Schwindel verspüren.</p>
 

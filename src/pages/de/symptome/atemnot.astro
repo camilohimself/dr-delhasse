@@ -18,6 +18,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   backHref="/de/symptome"
   backLabel="Alle Symptome"
   showEmergencyBanner={true}
+  relatedLinks={[
+    { href: '/de/fachgebiete/herzinsuffizienz', label: 'Herzinsuffizienz' },
+    { href: '/de/herzuntersuchungen/echokardiographie', label: 'Die Echokardiographie' },
+    { href: '/de/herzuntersuchungen/belastungstest', label: 'Der Belastungstest' },
+  ]}
 >
   <p>Wenn Sie ohne offensichtlichen Grund Atemnot verspüren, ohne sich angestrengt zu haben, denkt man häufig, dass es von den Lungen kommt. Die möglichen Ursachen sind jedoch zahlreich, und der Ursprung kann verborgen sein. Wenn die Beschwerden leicht sind, entscheidet man sich manchmal, damit zu leben, ohne einen Arzt aufzusuchen.</p>
 

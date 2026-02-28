@@ -18,6 +18,11 @@ import DetailLayout from '../../layouts/DetailLayout.astro';
   backHref="/symptomes"
   backLabel="Tous les symptômes"
   showEmergencyBanner
+  relatedLinks={[
+    { href: '/domaines-dexpertise/insuffisance-cardiaque', label: "L'insuffisance cardiaque" },
+    { href: '/examens-cardiologiques/echocardiographie', label: "L'échocardiographie" },
+    { href: '/examens-cardiologiques/ergometrie', label: "L'épreuve d'effort" },
+  ]}
 >
   <p>Si vous ressentez un essoufflement sans raison évidente, comme sans avoir fourni d'effort, il est courant de penser que cela provient des poumons. Pourtant, les causes possibles sont nombreuses, et l'origine peut être dissimulée. Lorsque le trouble est léger, on choisit parfois de vivre avec, sans consulter. Cela arrive particulièrement chez les personnes âgées, dont la mobilité réduite retarde l'apparition des symptômes.</p>
 

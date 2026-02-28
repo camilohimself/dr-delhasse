@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Home', href:'/en'}, {label:'Areas of Expertise', href:'/en/areas-of-expertise'}, {label:'Heart Failure'}]}
   backHref="/en/areas-of-expertise"
   backLabel="All areas of expertise"
+  relatedLinks={[
+    { href: '/en/symptoms/dyspnoea', label: 'Symptom: shortness of breath' },
+    { href: '/en/cardiac-examinations/echocardiography', label: 'Echocardiography' },
+    { href: '/en/cardiac-examinations/cardiac-mri', label: 'Cardiac MRI' },
+  ]}
 >
   <p>Heart failure is the heart's inability to pump enough blood to the organs, manifesting during exertion or at rest. It causes breathing difficulties, pulmonary oedema and can progress to terminal cardiac failure.</p>
 

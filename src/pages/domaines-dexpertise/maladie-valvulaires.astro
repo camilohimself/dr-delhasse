@@ -21,6 +21,11 @@ import DetailLayout from '../../layouts/DetailLayout.astro';
   ]}
   backHref="/domaines-dexpertise"
   backLabel="Tous les domaines"
+  relatedLinks={[
+    { href: '/examens-cardiologiques/echocardiographie', label: "L'échocardiographie" },
+    { href: '/symptomes/dyspnee', label: 'Symptôme : essoufflement' },
+    { href: '/examens-cardiologiques/irm-cardiaque', label: "L'IRM cardiaque" },
+  ]}
 >
 
   <p>Le cœur humain possède quatre valves cardiaques : la valve aortique, la valve pulmonaire, la valve mitrale et la valve tricuspide. Elles fonctionnent comme des clapets anti-retour dans une pompe, orientant le flux sanguin dans une seule direction.</p>

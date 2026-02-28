@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Startseite', href:'/de'}, {label:'Herzuntersuchungen', href:'/de/herzuntersuchungen'}, {label:'Labor'}]}
   backHref="/de/herzuntersuchungen"
   backLabel="Alle Untersuchungen"
+  relatedLinks={[
+    { href: '/de/fachgebiete/praevention', label: 'Kardiovaskuläre Prävention' },
+    { href: '/de/fachgebiete/bluthochdruck', label: 'Bluthochdruck' },
+    { href: '/de/symptome/muedigkeit', label: 'Symptom: Müdigkeit' },
+  ]}
 >
   <p>Die Blutanalyse ist ein Schlüsselelement der kardiologischen Abklärung. Die Messung der Blutfette (Cholesterin, Triglyzeride) und des Blutzuckers ermöglicht die Identifizierung kardiovaskulärer Risikofaktoren.</p>
 

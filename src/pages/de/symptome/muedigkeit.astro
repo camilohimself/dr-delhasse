@@ -18,6 +18,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   backHref="/de/symptome"
   backLabel="Alle Symptome"
   showEmergencyBanner={true}
+  relatedLinks={[
+    { href: '/de/fachgebiete/herzinsuffizienz', label: 'Herzinsuffizienz' },
+    { href: '/de/herzuntersuchungen/labor', label: 'Die Blutuntersuchung' },
+    { href: '/de/fachgebiete/praevention', label: 'Kardiovaskuläre Prävention' },
+  ]}
 >
   <p>In der Kardiologie spiegelt Müdigkeit häufig ein Missverhältnis zwischen dem Sauerstoffbedarf und der Sauerstoffversorgung des Gewebes wider. Die Herzinsuffizienz verringert das Herzzeitvolumen, was zu einer mangelhaften Durchblutung von Organen wie Muskeln und Gehirn führt. Dies äussert sich als Energiemangel und kognitive Verlangsamung.</p>
 

@@ -17,6 +17,11 @@ import DetailLayout from '../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Accueil', href:'/'}, {label:'Examens cardiologiques', href:'/examens-cardiologiques'}, {label:'IRM cardiaque'}]}
   backHref="/examens-cardiologiques"
   backLabel="Tous les examens"
+  relatedLinks={[
+    { href: '/domaines-dexpertise/cardiomyopathies', label: 'Les cardiomyopathies' },
+    { href: '/examens-cardiologiques/echocardiographie', label: "L'échocardiographie" },
+    { href: '/domaines-dexpertise/maladie-valvulaires', label: 'Les maladies valvulaires' },
+  ]}
 >
   <p>L'IRM cardiaque est une technique d'imagerie avancée qui permet d'examiner le cœur avec une grande précision. C'est un examen non invasif et bien toléré par la majorité des patients.</p>
 

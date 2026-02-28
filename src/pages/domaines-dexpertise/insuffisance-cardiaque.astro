@@ -21,6 +21,11 @@ import DetailLayout from '../../layouts/DetailLayout.astro';
   ]}
   backHref="/domaines-dexpertise"
   backLabel="Tous les domaines"
+  relatedLinks={[
+    { href: '/symptomes/dyspnee', label: 'Symptôme : essoufflement' },
+    { href: '/examens-cardiologiques/echocardiographie', label: "L'échocardiographie" },
+    { href: '/examens-cardiologiques/irm-cardiaque', label: "L'IRM cardiaque" },
+  ]}
 >
 
   <p>L'insuffisance cardiaque est l'incapacité du cœur à pomper suffisamment de sang vers les organes, se manifestant à l'effort ou au repos. Elle provoque des difficultés respiratoires, un œdème pulmonaire et peut évoluer vers une défaillance cardiaque terminale.</p>

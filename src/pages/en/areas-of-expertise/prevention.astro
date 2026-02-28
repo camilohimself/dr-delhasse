@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Home', href:'/en'}, {label:'Areas of Expertise', href:'/en/areas-of-expertise'}, {label:'Prevention'}]}
   backHref="/en/areas-of-expertise"
   backLabel="All areas of expertise"
+  relatedLinks={[
+    { href: '/en/areas-of-expertise/hypertension', label: 'Hypertension' },
+    { href: '/en/cardiac-examinations/laboratory', label: 'Blood tests' },
+    { href: '/en/areas-of-expertise/sports-assessment', label: 'Sports cardiology' },
+  ]}
 >
   <p>Four major cardiovascular risk factors threaten your heart health and require attention.</p>
 

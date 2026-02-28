@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Home', href:'/en'}, {label:'Cardiac Examinations', href:'/en/cardiac-examinations'}, {label:'Exercise Stress Test'}]}
   backHref="/en/cardiac-examinations"
   backLabel="All examinations"
+  relatedLinks={[
+    { href: '/en/areas-of-expertise/coronary-artery-disease', label: 'Coronary artery disease' },
+    { href: '/en/areas-of-expertise/sports-assessment', label: 'Sports cardiology' },
+    { href: '/en/cardiac-examinations/electrocardiogram', label: 'The ECG explained' },
+  ]}
 >
   <p>The exercise stress test, or ergometry, is a key examination for evaluating your heart's response to physical exertion.</p>
 

@@ -21,6 +21,11 @@ import DetailLayout from '../../layouts/DetailLayout.astro';
   ]}
   backHref="/domaines-dexpertise"
   backLabel="Tous les domaines"
+  relatedLinks={[
+    { href: '/examens-cardiologiques/ergometrie', label: "L'épreuve d'effort" },
+    { href: '/examens-cardiologiques/electrocardiogramme', label: "L'ECG en détail" },
+    { href: '/domaines-dexpertise/prevention', label: 'Prévention cardiovasculaire' },
+  ]}
 >
 
   <p>Le bilan sportif chez un cardiologue est important pour pratiquer une activité physique en sécurité. Un test d'effort est réalisé en fonction des caractéristiques individuelles et de l'intensité de l'activité physique.</p>

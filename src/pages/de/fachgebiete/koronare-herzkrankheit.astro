@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Startseite', href:'/de'}, {label:'Fachgebiete', href:'/de/fachgebiete'}, {label:'Koronare Herzkrankheit'}]}
   backHref="/de/fachgebiete"
   backLabel="Alle Fachgebiete"
+  relatedLinks={[
+    { href: '/de/symptome/brustschmerzen', label: 'Symptom: Brustschmerzen' },
+    { href: '/de/herzuntersuchungen/belastungstest', label: 'Der Belastungstest' },
+    { href: '/de/fachgebiete/nachsorge-nach-herzinfarkt', label: 'Nachsorge nach Herzinfarkt' },
+  ]}
 >
   <p>Die koronare Herzkrankheit äussert sich als Angina pectoris (Brustenge bei Belastung) oder Herzinfarkt, verursacht durch Verengung der Koronararterien durch Cholesterinablagerungen.</p>
 

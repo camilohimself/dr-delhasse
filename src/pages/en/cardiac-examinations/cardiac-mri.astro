@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Home', href:'/en'}, {label:'Cardiac Examinations', href:'/en/cardiac-examinations'}, {label:'Cardiac MRI'}]}
   backHref="/en/cardiac-examinations"
   backLabel="All examinations"
+  relatedLinks={[
+    { href: '/en/areas-of-expertise/cardiomyopathies', label: 'Cardiomyopathies' },
+    { href: '/en/cardiac-examinations/echocardiography', label: 'Echocardiography' },
+    { href: '/en/areas-of-expertise/valvular-disease', label: 'Valvular disease' },
+  ]}
 >
   <p>Cardiac MRI is an advanced imaging technique that allows examination of the heart with great precision. It is a non-invasive examination well tolerated by the majority of patients.</p>
 

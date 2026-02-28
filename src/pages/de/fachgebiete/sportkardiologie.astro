@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Startseite', href:'/de'}, {label:'Fachgebiete', href:'/de/fachgebiete'}, {label:'Sportkardiologie'}]}
   backHref="/de/fachgebiete"
   backLabel="Alle Fachgebiete"
+  relatedLinks={[
+    { href: '/de/herzuntersuchungen/belastungstest', label: 'Der Belastungstest' },
+    { href: '/de/herzuntersuchungen/elektrokardiogramm', label: 'Das EKG im Detail' },
+    { href: '/de/fachgebiete/praevention', label: 'Kardiovaskuläre Prävention' },
+  ]}
 >
   <p>Die sportkardiologische Abklärung ist wichtig für eine sichere körperliche Aktivität. Ein Belastungstest wird je nach individuellen Merkmalen und Intensität der Aktivität durchgeführt.</p>
 

@@ -18,6 +18,11 @@ import DetailLayout from '../../layouts/DetailLayout.astro';
   backHref="/symptomes"
   backLabel="Tous les symptômes"
   showEmergencyBanner
+  relatedLinks={[
+    { href: '/domaines-dexpertise/rythmologie', label: 'Explorer la rythmologie' },
+    { href: '/examens-cardiologiques/electrocardiogramme', label: "L'ECG pour diagnostiquer" },
+    { href: '/examens-cardiologiques/holter-et-r-test', label: 'Surveillance prolongée du rythme' },
+  ]}
 >
   <p>Un cœur qui bat trop fort n'est pas toujours un signe d'émotion. Le stress, la fatigue, la caféine ou l'alcool peuvent en être la cause. Mais parfois, un trouble du rythme cardiaque ou une maladie sous-jacente est en jeu. Si ces sensations sont fréquentes, gênantes ou associées à des douleurs, des malaises ou un essoufflement, un bilan cardiologique s'impose. Un diagnostic précoce permet d'identifier l'origine du problème et d'instaurer une prise en charge adaptée pour contrôler le rythme cardiaque et ainsi assurer une qualité de vie optimale.</p>
 

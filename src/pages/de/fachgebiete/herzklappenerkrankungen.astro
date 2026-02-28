@@ -17,6 +17,11 @@ import DetailLayout from '../../../layouts/DetailLayout.astro';
   breadcrumb={[{label:'Startseite', href:'/de'}, {label:'Fachgebiete', href:'/de/fachgebiete'}, {label:'Herzklappenerkrankungen'}]}
   backHref="/de/fachgebiete"
   backLabel="Alle Fachgebiete"
+  relatedLinks={[
+    { href: '/de/herzuntersuchungen/echokardiographie', label: 'Die Echokardiographie' },
+    { href: '/de/symptome/atemnot', label: 'Symptom: Atemnot' },
+    { href: '/de/herzuntersuchungen/kardio-mrt', label: 'Das Kardio-MRT' },
+  ]}
 >
   <p>Das menschliche Herz besitzt vier Herzklappen: die Aortenklappe, die Pulmonalklappe, die Mitralklappe und die Trikuspidalklappe. Sie funktionieren als Rückschlagventile und lenken den Blutfluss in eine einzige Richtung.</p>
 
